@@ -30,6 +30,7 @@ The original homebridge-fritz plugin by @andig has not been updated since 2022 a
 - **BREAKING**: Increased minimum Node.js version to 18.0.0 (from 4.0.0)
 - Updated minimum Homebridge version to 1.3.0
 - Removed bluebird in favor of native Promises
+- Replaced deprecated extend with native Object.assign()
 - Updated documentation with fork explanation
 
 ---
