@@ -1,6 +1,6 @@
 {
   "name": "homebridge-fritz",
-  "version": "0.9.5",
+  "version": "1.0.0",
   "author": "Andreas Goetz <cpuidle@gmx.de>",
   "homepage": "https://github.com/andig/homebridge-fritz#readme",
   "description": "Homebridge platform plugin for FRITZ!Box",
@@ -34,7 +34,6 @@
   "dependencies": {
     "axios": "^1.11.0",
     "dot-prop": "^9.0.0",
-    "tr-064-async": "^1.0.0",
     "valid-url": "^1.0.9",
     "xml2js": "^0.6.2"
   },

@@ -1,15 +1,30 @@
-# homebridge-fritz (Community Fork)
+# homebridge-fritz (Community Fork) 
 
 > **This is a community-maintained fork** of the original [homebridge-fritz](https://github.com/andig/homebridge-fritz) plugin which is no longer actively maintained.
 
-## Why this fork?
+## Why this fork exists
 
-The original homebridge-fritz plugin by @andig has not been updated since 2022 and contains critical bugs and security vulnerabilities. This fork aims to:
+The original homebridge-fritz plugin by @andig was an excellent foundation but has not been updated since 2022. As the HomeKit ecosystem and FRITZ!Box firmware continue to evolve, several critical issues emerged that needed immediate attention:
 
-- 🐛 Fix critical bugs (NaN temperature values, null battery levels)
-- 🔒 Address security vulnerabilities in dependencies
-- 🚀 Modernize the codebase for current Node.js versions
-- ✅ Ensure compatibility with latest Homebridge and FRITZ!OS versions
+### 🔴 Critical Issues Addressed
+
+1. **Security Vulnerabilities**: The original plugin had 22 known security vulnerabilities, primarily from outdated dependencies
+2. **Functional Bugs**: 
+   - NaN temperature values causing HomeKit to display incorrect data
+   - Null battery levels triggering constant low battery warnings
+   - Incompatibility with newer FRITZ!OS API changes
+3. **Deprecated Dependencies**: Several core dependencies were no longer maintained, creating future compatibility risks
+
+### 🎯 Fork Objectives
+
+This community fork aims to:
+
+- 🔒 **Security First**: Maintain a secure codebase with regular dependency updates
+- 🐛 **Bug-Free Experience**: Fix all known issues and provide stable HomeKit integration
+- 🚀 **Modern Architecture**: Update to current JavaScript standards and Node.js best practices
+- ✅ **Continuous Compatibility**: Regular testing with latest Homebridge and FRITZ!OS versions
+- 🤝 **Community Driven**: Open to contributions and responsive to user feedback
+- 📦 **Zero Breaking Changes**: Maintain backward compatibility for existing users
 
 ## Changelog
 
