@@ -35,18 +35,29 @@ This community fork aims to:
 - Added proper input validation for all sensor values
 
 #### Security
-- Reduced vulnerabilities from 22 to 9
+- **Eliminated ALL security vulnerabilities** (0 vulnerabilities, down from 22)
+- Replaced deprecated tr-064-async with custom axios-based implementation
 - Updated dot-prop from 5.1.0 to 9.0.0 (fixes Prototype Pollution)
-- Updated fritzapi from 0.10.5 to 0.13.0
+- Updated internal fritz-api implementation
 - Removed unnecessary bluebird dependency
-- Remaining vulnerabilities are in upstream dependencies (fritzapi/tr-064-async)
+- Added input validation for all user configurations
+- Improved error handling throughout the codebase
 
 #### Changed
 - **BREAKING**: Increased minimum Node.js version to 18.0.0 (from 4.0.0)
 - Updated minimum Homebridge version to 1.3.0
 - Removed bluebird in favor of native Promises
 - Replaced deprecated extend with native Object.assign()
+- Replaced tr-064-async with lightweight custom implementation
+- Modernized codebase with const/let instead of var
+- Enhanced error handling and input validation
 - Updated documentation with fork explanation
+
+#### Technical Improvements
+- Custom TR-064 implementation using axios (removes 4 critical vulnerabilities)
+- Only implements actually used TR-064 functions (SetEnable, GetInfo)
+- Full test coverage for all new code
+- Reduced total dependencies from 201 to 156 packages
 
 ---
 
