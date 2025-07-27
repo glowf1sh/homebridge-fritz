@@ -1,9 +1,35 @@
-# homebridge-fritz
-[![NPM Version](https://img.shields.io/npm/v/homebridge-fritz.svg)](https://www.npmjs.com/package/homebridge-fritz)
-[![NPM Downloads](https://img.shields.io/npm/dt/homebridge-fritz.svg)](https://www.npmjs.com/package/homebridge-fritz)
-[![Build status](https://travis-ci.org/andig/homebridge-fritz.svg?branch=master)](https://travis-ci.org/andig/homebridge-fritz)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HGD5E9L28HQHC)
+# homebridge-fritz (Community Fork)
 
+> **This is a community-maintained fork** of the original [homebridge-fritz](https://github.com/andig/homebridge-fritz) plugin which is no longer actively maintained.
+
+## Why this fork?
+
+The original homebridge-fritz plugin by @andig has not been updated since 2022 and contains critical bugs and security vulnerabilities. This fork aims to:
+
+- 🐛 Fix critical bugs (NaN temperature values, null battery levels)
+- 🔒 Address security vulnerabilities in dependencies
+- 🚀 Modernize the codebase for current Node.js versions
+- ✅ Ensure compatibility with latest Homebridge and FRITZ!OS versions
+
+## Changelog
+
+### [1.0.0] - 2025-07-27
+#### Fixed
+- Fixed NaN temperature values from FRITZ!Box API
+- Fixed null battery level causing HomeKit warnings
+- Added proper input validation for all sensor values
+
+#### Security
+- Updated 22 vulnerable dependencies
+- Modernized codebase to eliminate security risks
+
+#### Changed
+- Increased minimum Node.js version for security
+- Updated documentation
+
+---
+
+# Original README
 
 Homebridge platform plugin for FRITZ!Box.
 
