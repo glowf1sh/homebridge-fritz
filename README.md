@@ -16,16 +16,21 @@ The original homebridge-fritz plugin by @andig has not been updated since 2022 a
 ### [1.0.0] - 2025-07-27
 #### Fixed
 - Fixed NaN temperature values from FRITZ!Box API
-- Fixed null battery level causing HomeKit warnings
+- Fixed null battery level causing HomeKit warnings  
 - Added proper input validation for all sensor values
 
 #### Security
-- Updated 22 vulnerable dependencies
-- Modernized codebase to eliminate security risks
+- Reduced vulnerabilities from 22 to 9
+- Updated dot-prop from 5.1.0 to 9.0.0 (fixes Prototype Pollution)
+- Updated fritzapi from 0.10.5 to 0.13.0
+- Removed unnecessary bluebird dependency
+- Remaining vulnerabilities are in upstream dependencies (fritzapi/tr-064-async)
 
 #### Changed
-- Increased minimum Node.js version for security
-- Updated documentation
+- **BREAKING**: Increased minimum Node.js version to 18.0.0 (from 4.0.0)
+- Updated minimum Homebridge version to 1.3.0
+- Removed bluebird in favor of native Promises
+- Updated documentation with fork explanation
 
 ---
 
