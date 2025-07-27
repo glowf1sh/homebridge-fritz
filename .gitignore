@@ -1,2 +1,14 @@
 node_modules/
 .vscode/
+
+# WICHTIG: Interne Koordinator-Dateien NIEMALS committen!
+CLAUDE.md
+CLAUDE-agents.md
+doc.md
+todo.md
+bugs.md
+.claude/
+
+# Test-Dateien
+test-*.md
+*.test.md
