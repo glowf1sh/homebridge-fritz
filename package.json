@@ -23,7 +23,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "node_modules/jshint/bin/jshint index.js"
   },
   "engines": {
     "node": ">4.0.0",
@@ -38,7 +38,6 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "jest": "^30.0.5",
     "jshint": "^2.10.2"
   }
 }
