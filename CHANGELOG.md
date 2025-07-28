@@ -5,7 +5,7 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0] - 2025-07-28
+## [1.0.8] - 2025-07-28
 
 ### ⚠️ Breaking Changes
 - **Node.js 22+ Requirement**: Mindestanforderung von Node.js 18.0.0 auf 22.0.0 erhöht

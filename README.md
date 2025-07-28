@@ -1,4 +1,4 @@
-# homebridge-fritz-new v2.0.0 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.8 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -773,12 +773,12 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
-- **2.0.0** (2025-07-28): **BREAKING CHANGE** - Node.js 22+ Requirement
-  - ⚠️ **BREAKING**: Mindestens Node.js 22.0.0 erforderlich (vorher 18.0.0)
+- **1.0.8** (2025-07-28): **Node.js 22+ Update**
+  - 🔄 **Node.js 22+**: Mindestanforderung auf Node.js 22.0.0 erhöht
   - ✅ **Homebridge 2.x ready**: Volle Kompatibilität mit kommender Homebridge v2
   - 🚀 **Performance**: Optimiert für moderne Node.js Runtime
   - 🔧 **CI/CD**: GitHub Actions testet jetzt mit Node.js 22 und 23
-  - 📝 **Dokumentation**: README und Badges aktualisiert
+  - 📝 **Dokumentation**: CHANGELOG.md und MIGRATION.md hinzugefügt
 - **1.0.7** (2025-07-28): **KRITISCHER BUGFIX** - Smart Home API Geräteliste funktioniert jetzt
   - 🐛 **BEHOBEN**: "Could not get devices from FRITZ!Box" Fehler
   - ✅ **CamelCase API-Parameter**: `getdevicelistinfos` → `getDeviceListInfos` korrigiert
