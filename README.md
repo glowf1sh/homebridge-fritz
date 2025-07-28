@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.8 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.9 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -773,6 +773,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.9** (2025-07-28): **Verbessertes Error-Handling und Debug-Logging**
+  - 🐛 **Detaillierte Fehlerausgaben**: Zeigt jetzt genau was bei API-Fehlern passiert
+  - 📝 **Debug-Logging erweitert**: Response Status, Data und vollständige Error-Details
+  - 🔍 **updateDeviceList Debugging**: Zeigt wie viele Smart Home Geräte gefunden wurden
+  - 💡 **Hilft bei Diagnose**: "Could not get devices" zeigt jetzt echte Fehlerursache
 - **1.0.8** (2025-07-28): **Node.js 22+ Update**
   - 🔄 **Node.js 22+**: Mindestanforderung auf Node.js 22.0.0 erhöht
   - ✅ **Homebridge 2.x ready**: Volle Kompatibilität mit kommender Homebridge v2
