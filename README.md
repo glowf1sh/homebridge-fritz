@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.11 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.12 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -773,6 +773,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.12** (2025-07-28): **SSL self-signed certificates und Error-Handling Fix**
+  - 🔒 **SSL-Fix**: TR-064 und API akzeptieren jetzt self-signed certificates der FRITZ!Box
+  - 🐛 **Bessere Fehler**: "undefined" Fehler durch detaillierte Meldungen ersetzt
+  - 🔍 **Error-Details**: Zeigt ob Login-Seite, ungültige Session oder andere Fehler
+  - ✅ **HTTPS-Support**: Funktioniert jetzt mit https://fritz.box Verbindungen
 - **1.0.11** (2025-07-28): **Bluebird Promise-Methoden entfernt**
   - 🐛 **BEHOBEN**: ".reflect is not a function" Fehler
   - 🔄 **Ersetzt**: Bluebird-spezifische Methoden durch native Promise-Alternativen
