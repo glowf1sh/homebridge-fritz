@@ -104,6 +104,20 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
+## 🎉 Was ist neu in Version 1.0.14?
+
+### 🐛 Kritischer Bug-Fix (v1.0.14)
+- **Homebridge Absturz behoben**: UnhandledPromiseRejection führte nicht mehr zum Crash
+- **Robuste Fehlerbehandlung**: Plugin läuft weiter auch wenn getDeviceList fehlschlägt
+- **Debug-Logging repariert**: Log-Funktionalität in fritz-api.js funktioniert jetzt
+
+### 🔍 Debug-Features (v1.0.13)
+- **Erweitertes Debug-Logging**: Detaillierte Ausgaben für Diagnose
+- **TR-064 Verbindungsinfo**: Host, Port, SSL und User werden geloggt
+
+### 🔒 SSL-Support (v1.0.12)
+- **Self-signed Certificates**: Unterstützung für FRITZ!Box HTTPS-Verbindungen
+
 ## 🎉 Was ist neu in Version 1.0.3?
 
 ### 🔒 **100% Sicherheit - 0 Vulnerabilities!**
@@ -141,6 +155,46 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
+
+## 📋 Vollständiger Changelog v1.0.14 (2025-07-28)
+
+### 🐛 Kritischer Bug-Fix: UnhandledPromiseRejection
+
+#### Behobene Probleme
+- **Homebridge Absturz behoben**: UnhandledPromiseRejection führte zum Absturz
+- **Promise-Fehlerbehandlung**: Vollständige catch-Handler für alle Promises
+- **Robuste Fehlerbehandlung**: Plugin läuft weiter auch wenn getDeviceList fehlschlägt
+- **Debug-Logging funktioniert**: Log-Funktionalität in fritz-api.js repariert
+
+#### Technische Details
+- FritzApi akzeptiert nun optionalen log Parameter
+- updateDeviceList gibt bei Fehler leere Liste zurück statt Exception zu werfen
+- Promise.all() hat jetzt proper error handling
+- Platform übergibt log über options an API-Calls
+
+## 📋 Vollständiger Changelog v1.0.13 (2025-07-28)
+
+### 🔍 Debug-Logging für TR-064 Authentifizierung
+
+#### Neue Features
+- **Erweitertes Debug-Logging**: Detaillierte Ausgaben für TR-064 Verbindungsprobleme
+- **Session-ID Tracking**: Logging der Session-ID bei getDeviceList Aufrufen
+- **TR-064 Connection Info**: Ausgabe von Host, Port, SSL und User-Informationen
+- **Verbesserte Fehlerbehandlung**: Klarere Fehlermeldungen bei undefined Errors
+
+## 📋 Vollständiger Changelog v1.0.12 (2025-07-28)
+
+### 🔒 SSL-Support für FRITZ!Box HTTPS
+
+#### Neue Features
+- **Self-signed Certificate Support**: HTTPS-Verbindungen zur FRITZ!Box funktionieren jetzt
+- **SSL-Agent Konfiguration**: Automatische Handhabung von selbst-signierten Zertifikaten
+- **TR-064 SSL-Support**: SSL-Verbindungen für TR-064 API aktiviert
+
+#### Technische Details
+- `rejectUnauthorized: false` für HTTPS-Verbindungen
+- Unterstützt sowohl Smart Home API als auch TR-064 über HTTPS
+- Keine manuellen Zertifikatsimporte mehr nötig
 
 ## 📋 Vollständiger Changelog v1.0.3 (2025-07-28)
 
