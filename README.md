@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.13 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
