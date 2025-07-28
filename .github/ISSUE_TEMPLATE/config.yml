@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Homebridge Community Discord
+    url: https://discord.gg/kqNCe2D
+    about: Für allgemeine Fragen und Community-Support
+  - name: Homebridge Subreddit
+    url: https://www.reddit.com/r/homebridge/
+    about: Diskutieren Sie mit der Homebridge Community

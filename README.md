@@ -37,7 +37,9 @@ npm link
 
 [![npm version](https://badge.fury.io/js/homebridge-fritz-new.svg)](https://www.npmjs.com/package/homebridge-fritz-new)
 [![npm downloads](https://img.shields.io/npm/dt/homebridge-fritz-new.svg)](https://www.npmjs.com/package/homebridge-fritz-new)
+[![Build Status](https://github.com/glowf1sh/homebridge-fritz-new/workflows/Tests/badge.svg)](https://github.com/glowf1sh/homebridge-fritz-new/actions/workflows/test.yml)
 [![Security Status](https://img.shields.io/badge/vulnerabilities-0-brightgreen.svg)](https://github.com/glowf1sh/homebridge-fritz-new/security)
+[![CodeQL](https://github.com/glowf1sh/homebridge-fritz-new/workflows/CodeQL%20Security%20Analysis/badge.svg)](https://github.com/glowf1sh/homebridge-fritz-new/security/code-scanning)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org)
 [![Homebridge Version](https://img.shields.io/badge/homebridge-%3E%3D1.3.0-brightgreen.svg)](https://homebridge.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -456,6 +458,33 @@ Die Konfiguration bleibt unverändert! Alle bestehenden Einstellungen funktionie
 - Native Promises
 - Saubere XML-Verarbeitung
 ```
+
+## 🚀 CI/CD Pipeline
+
+Dieses Projekt nutzt moderne GitHub Actions für kontinuierliche Integration und Deployment:
+
+### Automatisierte Tests
+- **Multi-Version Testing**: Tests laufen automatisch auf Node.js 18, 20 und 22
+- **Code Coverage**: Automatische Coverage-Reports mit Codecov Integration
+- **Security Audits**: Regelmäßige Sicherheitsprüfungen mit `npm audit`
+
+### Automatisches Publishing
+- **NPM Releases**: Automatisches Publishing bei Release-Tags (v*)
+- **GitHub Packages**: Paralleles Publishing ins GitHub Package Registry
+- **Version Validation**: Automatische Prüfung der Versionsnummern
+
+### Security Scanning
+- **CodeQL Analysis**: Wöchentliche Sicherheitsscans
+- **Dependency Review**: Automatische Prüfung bei Pull Requests
+- **Snyk Integration**: Kontinuierliche Vulnerability-Überwachung
+- **Dependabot**: Automatische Updates für Dependencies
+
+### Workflows
+Die CI/CD Pipeline besteht aus folgenden GitHub Actions:
+- `.github/workflows/test.yml` - Automatische Tests bei jedem Push/PR
+- `.github/workflows/npm-publish.yml` - NPM Publishing bei Releases
+- `.github/workflows/codeql.yml` - Security Code Scanning
+- `.github/workflows/release-drafter.yml` - Automatische Release Notes
 
 ## 📝 Lizenz
 
