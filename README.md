@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.0 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.2 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -46,7 +46,7 @@ npm link
 
 > **Dieser Fork ersetzt das veraltete [homebridge-fritz](https://github.com/andig/homebridge-fritz) Paket**, welches seit 2019 nicht mehr gewartet wird und 22 kritische Sicherheitslücken enthält.
 
-> **WICHTIGER HINWEIS**: Dies ist ein Major Release (v1.0.0) mit Breaking Changes! Bitte lesen Sie den Changelog sorgfältig durch.
+> **WICHTIGER HINWEIS**: Dies ist ein Major Release (v1.0.2) mit Breaking Changes! Bitte lesen Sie den Changelog sorgfältig durch.
 
 ## 🔄 MIGRATION VOM ALTEN PAKET
 
@@ -82,7 +82,7 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.0?
+## 🎉 Was ist neu in Version 1.0.2?
 
 ### 🔒 **100% Sicherheit - 0 Vulnerabilities!**
 Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden ALLE behoben:
@@ -471,7 +471,7 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 ### 📝 Documentation - Dokumentation verbessert
 
 #### README.md komplett überarbeitet
-- **Klare Migrationsanleitung**: Schritt-für-Schritt von 0.x zu 1.0.0
+- **Klare Migrationsanleitung**: Schritt-für-Schritt von 0.x zu 1.0.2
 - **Detaillierte Changelogs**: Alle Änderungen dokumentiert
 - **Bessere Beispiele**: Realistische Konfigurationen
 - **FAQ erweitert**: Häufige Probleme und Lösungen
@@ -502,7 +502,7 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 
 ## 🚀 Migration von älteren Versionen
 
-### Von Version 0.x zu 1.0.0
+### Von Version 0.x zu 1.0.2
 
 1. **Node.js aktualisieren**: Stellen Sie sicher, dass Node.js 18 oder höher installiert ist:
    ```bash
