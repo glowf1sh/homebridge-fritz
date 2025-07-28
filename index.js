@@ -2,7 +2,8 @@
  * FRITZ!Box Platform Plugin for HomeBridge (https://github.com/nfarina/homebridge)
  *
  * @url https://github.com/glowf1sh/homebridge-fritz-new
- * @author Andreas Götz <cpuidle@gmx.de>
+ * @original author Andreas Götz
+ * @new author Glowf1sh <https://twitch.tv/glowf1sh>
  * @license MIT
  */
 
