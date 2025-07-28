@@ -84,7 +84,7 @@ describe('Fritz API', function() {
         it('should get device list', async function() {
             nock(testUrl)
                 .get('/webservices/homeautoswitch.lua')
-                .query({ sid: testSid, switchcmd: 'getdevicelistinfos' })
+                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
                 .reply(200, `<?xml version="1.0" encoding="utf-8"?>
                     <devicelist version="1">
                         <device identifier="${testAin}" id="17" functionbitmask="896" fwversion="03.33" manufacturer="AVM" productname="FRITZ!DECT 200">
@@ -120,7 +120,7 @@ describe('Fritz API', function() {
         it('should get filtered device list', async function() {
             nock(testUrl)
                 .get('/webservices/homeautoswitch.lua')
-                .query({ sid: testSid, switchcmd: 'getdevicelistinfos' })
+                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
                 .reply(200, `<?xml version="1.0" encoding="utf-8"?>
                     <devicelist version="1">
                         <device identifier="${testAin}" id="17" functionbitmask="896" fwversion="03.33" manufacturer="AVM" productname="FRITZ!DECT 200">
