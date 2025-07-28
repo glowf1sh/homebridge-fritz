@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.5 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.6 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -754,6 +754,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.6** (2025-07-28): **STABILES RELEASE** - NPM Publishing nach Bugfix
+  - ✅ **Vollständig funktionsfähiges Plugin** - Login UND Accessory-Discovery funktionieren
+  - 📦 **NPM verfügbar** - Umgeht 24h-Regel durch neue Versionsnummer
+  - 🐛 **Authentifizierungsproblem behoben** - Promise-Chain korrigiert
+  - 🧪 **Alle Tests bestanden** - 24 Tests laufen erfolgreich
 - **1.0.5** (2025-07-28): **KRITISCHER BUGFIX** - Authentifizierungsproblem behoben
   - 🐛 **BEHOBEN**: "wrong user credentials" Fehler nach erfolgreichem Login
   - ✅ Promise-Chain in platform.js korrigiert - `updateDeviceList()` wird jetzt korrekt verkettet
