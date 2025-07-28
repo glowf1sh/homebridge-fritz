@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.2 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.3 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -50,7 +50,7 @@ npm link
 
 > **Dieser Fork ersetzt das veraltete [homebridge-fritz](https://github.com/andig/homebridge-fritz) Paket**, welches seit 2019 nicht mehr gewartet wird und 22 kritische Sicherheitslücken enthält.
 
-> **WICHTIGER HINWEIS**: Dies ist ein Major Release (v1.0.2) mit Breaking Changes! Bitte lesen Sie den Changelog sorgfältig durch.
+> **WICHTIGER HINWEIS**: Dies ist ein Major Release (v1.0.3) mit Breaking Changes! Bitte lesen Sie den Changelog sorgfältig durch.
 
 ## 🔄 MIGRATION VOM ALTEN PAKET
 
@@ -86,7 +86,7 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.2?
+## 🎉 Was ist neu in Version 1.0.3?
 
 ### 🔒 **100% Sicherheit - 0 Vulnerabilities!**
 Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden ALLE behoben:
@@ -123,6 +123,24 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
+
+## 📋 Vollständiger Changelog v1.0.3 (2025-07-28)
+
+### 📝 Dokumentations- und Badge-Update
+
+#### Verbesserungen
+- **Erweiterte Badges**: 7 zusätzliche Badges für bessere Projekt-Transparenz hinzugefügt:
+  - Security Badge (0 Vulnerabilities)
+  - Build Status (GitHub Actions)
+  - Last Commit Tracking
+  - GitHub Stars
+  - Dependencies Count
+  - Actively Maintained Status
+  - Bundle Size Information
+- **LICENSE Update**: Copyright-Informationen vollständig aktualisiert (2013-2025)
+- **Badge-Korrekturen**: 
+  - Build Status Badge korrigiert (verweist auf npm-publish.yml)
+  - Dependencies Badge mit statischem Badge ersetzt
 
 ## 📋 Vollständiger Changelog v1.0.2 (2025-07-28)
 
@@ -736,6 +754,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.3** (2025-07-28): Dokumentations- und Badge-Update
+  - 📝 7 erweiterte Badges für bessere Projekt-Transparenz hinzugefügt
+  - ✅ LICENSE mit vollständigen Copyright-Informationen aktualisiert
+  - 🐛 Badge-Korrekturen (Build Status, Dependencies)
+  - 📊 Verbesserte Projekt-Metriken und Status-Anzeigen
 - **1.0.2** (2025-07-28): NPM Publishing Success Release
   - 🎉 Erfolgreich auf NPM veröffentlicht!
   - ✅ CI/CD Pipeline vollständig funktionsfähig
