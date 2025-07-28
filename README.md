@@ -27,8 +27,16 @@ npm install homebridge-fritz-new
 # Repository klonen
 git clone https://github.com/glowf1sh/homebridge-fritz-new.git
 cd homebridge-fritz-new
+
+# Dependencies installieren
 npm install
-npm link
+
+# Package erstellen und installieren
+npm pack
+sudo npm install -g ./homebridge-fritz-new-*.tgz
+
+# Für Homebridge-Service (falls verwendet):
+# npm --prefix "/var/lib/homebridge" install ./homebridge-fritz-new-*.tgz
 ```
 
 📚 **[Detaillierte Installationsanleitung](INSTALLATION.md)** mit allen Methoden und Troubleshooting
