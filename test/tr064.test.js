@@ -4,6 +4,7 @@
 
 const assert = require('assert');
 const nock = require('nock');
+global.nock = nock; // Make nock available globally for test detection
 const { Fritzbox } = require('../lib/tr064');
 
 describe('TR-064', function() {
