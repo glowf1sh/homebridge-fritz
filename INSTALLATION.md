@@ -36,6 +36,9 @@ npm install homebridge-fritz-new
 
 #### Für Standard-NPM:
 ```bash
+# In Homebridge node_modules Verzeichnis wechseln
+cd /var/lib/homebridge/node_modules
+
 # Repository klonen
 git clone https://github.com/glowf1sh/homebridge-fritz-new.git
 cd homebridge-fritz-new
@@ -45,11 +48,14 @@ npm install
 
 # Package erstellen und installieren
 npm pack
-sudo npm install -g ./homebridge-fritz-new-*.tgz
+npm install -g ./homebridge-fritz-new-*.tgz
 ```
 
 #### Für Homebridge-Service:
 ```bash
+# In Homebridge node_modules Verzeichnis wechseln
+cd /var/lib/homebridge/node_modules
+
 # Repository klonen
 git clone https://github.com/glowf1sh/homebridge-fritz-new.git
 cd homebridge-fritz-new
@@ -69,6 +75,9 @@ sudo systemctl restart homebridge
 
 #### Für hb-service:
 ```bash
+# In Homebridge node_modules Verzeichnis wechseln
+cd /var/lib/homebridge/node_modules
+
 # Repository klonen
 git clone https://github.com/glowf1sh/homebridge-fritz-new.git
 cd homebridge-fritz-new

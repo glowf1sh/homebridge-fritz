@@ -24,6 +24,9 @@ npm install homebridge-fritz-new
 ### Alternative Installation über Git:
 
 ```bash
+# In Homebridge node_modules Verzeichnis wechseln
+cd /var/lib/homebridge/node_modules
+
 # Repository klonen
 git clone https://github.com/glowf1sh/homebridge-fritz-new.git
 cd homebridge-fritz-new
@@ -37,7 +40,7 @@ npm pack
 # Installation (wähle eine Methode):
 
 # Standard NPM:
-sudo npm install -g ./homebridge-fritz-new-*.tgz
+npm install -g ./homebridge-fritz-new-*.tgz
 
 # Homebridge-Service:
 npm --prefix "/var/lib/homebridge" install ./homebridge-fritz-new-*.tgz
