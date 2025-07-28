@@ -120,6 +120,30 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
 
+## 📋 Vollständiger Changelog v1.0.2 (2025-07-28)
+
+### 🎉 Erfolgreiche NPM Veröffentlichung!
+
+#### NPM Package jetzt live verfügbar
+- **Package veröffentlicht**: [homebridge-fritz-new](https://www.npmjs.com/package/homebridge-fritz-new) ist jetzt auf NPM verfügbar!
+- **Version 1.0.1**: Erfolgreich deployed und für alle Nutzer installierbar
+- **Automatisches Publishing**: GitHub Actions CI/CD Pipeline funktioniert einwandfrei
+- **GitHub CLI Integration**: Releases werden automatisch über `gh` erstellt
+- **Dual Publishing**: Sowohl NPM als auch GitHub Packages werden unterstützt
+
+#### CI/CD Pipeline Status
+- ✅ **Test Workflow**: Alle Tests laufen erfolgreich auf Node.js 18, 20 und 22
+- ✅ **NPM Publish Workflow**: Automatisches Publishing bei Release-Tags funktioniert
+- ✅ **CodeQL Security Analysis**: Sicherheitsscans laufen wöchentlich
+- ✅ **Release Drafter**: Automatische Release Notes Generierung aktiv
+- ✅ **GitHub Secrets**: NPM_TOKEN und GH_TOKEN korrekt konfiguriert
+
+#### Workflow-Verbesserungen
+- **Fehlerbehandlung**: Robuste Error-Behandlung in allen Workflows
+- **Logging**: Detaillierte Ausgaben für besseres Debugging
+- **Versionsprüfung**: Automatische Validierung der package.json Version
+- **Tag-Synchronisation**: Git-Tags werden automatisch mit NPM-Versionen synchronisiert
+
 ## 📋 Vollständiger Changelog v1.0.1 (2025-07-28)
 
 ### 🚀 CI/CD Pipeline - GitHub Actions Integration
@@ -708,6 +732,12 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.2** (2025-07-28): NPM Publishing Success Release
+  - 🎉 Erfolgreich auf NPM veröffentlicht!
+  - ✅ CI/CD Pipeline vollständig funktionsfähig
+  - ✅ GitHub CLI Integration für automatische Releases
+  - ✅ Alle Workflows getestet und operativ
+  - 📝 README Dokumentation aktualisiert
 - **1.0.1** (2025-07-28): CI/CD Pipeline und Maintenance Release
   - ✨ GitHub Actions CI/CD Pipeline hinzugefügt
     - Automatische Tests für Node.js 18, 20 und 22
