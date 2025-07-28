@@ -1,9 +1,12 @@
 {
   "name": "homebridge-fritz",
   "version": "1.0.0",
-  "author": "Andreas Goetz <cpuidle@gmx.de>",
-  "homepage": "https://github.com/andig/homebridge-fritz#readme",
-  "description": "Homebridge platform plugin for FRITZ!Box",
+  "author": "glowf1sh",
+  "contributors": [
+    "Andreas Goetz <cpuidle@gmx.de> (Original Author)"
+  ],
+  "homepage": "https://github.com/glowf1sh/homebridge-fritz#readme",
+  "description": "Homebridge platform plugin for FRITZ!Box - Active Fork with Security Updates",
   "keywords": [
     "homebridge-plugin",
     "homebridge",
@@ -16,10 +19,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andig/homebridge-fritz.git"
+    "url": "git+https://github.com/glowf1sh/homebridge-fritz.git"
   },
   "bugs": {
-    "url": "https://github.com/andig/homebridge-fritz/issues"
+    "url": "https://github.com/glowf1sh/homebridge-fritz/issues"
   },
   "main": "index.js",
   "scripts": {
