@@ -1,6 +1,6 @@
 {
   "name": "homebridge-fritz-new",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "author": "glowf1sh",
   "contributors": [
     "Andreas Goetz <cpuidle@gmx.de> (Original Author)"
@@ -52,7 +52,7 @@
     "lint": "node_modules/jshint/bin/jshint index.js lib/**/*.js"
   },
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=22.0.0",
     "homebridge": "^1.3.0"
   },
   "dependencies": {

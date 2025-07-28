@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.7 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v2.0.0 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -55,7 +55,7 @@ hb-service add ./homebridge-fritz-new-*.tgz
 
 [![npm version](https://img.shields.io/npm/v/homebridge-fritz-new.svg)](https://www.npmjs.com/package/homebridge-fritz-new)
 [![npm downloads](https://img.shields.io/npm/dt/homebridge-fritz-new.svg)](https://www.npmjs.com/package/homebridge-fritz-new)
-[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org)
 [![Homebridge Version](https://img.shields.io/badge/homebridge-%3E%3D1.3.0-brightgreen.svg)](https://homebridge.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Security](https://img.shields.io/badge/vulnerabilities-0-brightgreen.svg)](https://github.com/glowf1sh/homebridge-fritz-new/security)
@@ -477,12 +477,13 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 
 ### 🚨 Breaking Changes - Wichtige Änderungen
 
-#### 1. Node.js 18+ Requirement
+#### 1. Node.js 22+ Requirement
 - **Warum**: 
   - Sicherheitsupdates nur für aktuelle Versionen
   - Native Features (Promise, async/await, etc.)
   - Performance-Verbesserungen
   - V8-Engine-Optimierungen
+  - Kompatibilität mit Homebridge 2.x
 - **Migration**: 
   - Node.js-Version prüfen: `node --version`
   - Update via Package Manager oder nodejs.org
@@ -544,9 +545,9 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 
 ### Von Version 0.x zu 1.0.2
 
-1. **Node.js aktualisieren**: Stellen Sie sicher, dass Node.js 18 oder höher installiert ist:
+1. **Node.js aktualisieren**: Stellen Sie sicher, dass Node.js 22 oder höher installiert ist:
    ```bash
-   node --version  # Sollte v18.0.0 oder höher sein
+   node --version  # Sollte v22.0.0 oder höher sein
    ```
 
 2. **Altes Plugin deinstallieren und Fork installieren**:
@@ -772,6 +773,12 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **2.0.0** (2025-07-28): **BREAKING CHANGE** - Node.js 22+ Requirement
+  - ⚠️ **BREAKING**: Mindestens Node.js 22.0.0 erforderlich (vorher 18.0.0)
+  - ✅ **Homebridge 2.x ready**: Volle Kompatibilität mit kommender Homebridge v2
+  - 🚀 **Performance**: Optimiert für moderne Node.js Runtime
+  - 🔧 **CI/CD**: GitHub Actions testet jetzt mit Node.js 22 und 23
+  - 📝 **Dokumentation**: README und Badges aktualisiert
 - **1.0.7** (2025-07-28): **KRITISCHER BUGFIX** - Smart Home API Geräteliste funktioniert jetzt
   - 🐛 **BEHOBEN**: "Could not get devices from FRITZ!Box" Fehler
   - ✅ **CamelCase API-Parameter**: `getdevicelistinfos` → `getDeviceListInfos` korrigiert
