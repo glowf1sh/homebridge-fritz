@@ -78,6 +78,39 @@ describe('Fritz API', function() {
                 /Invalid credentials/
             );
         });
+        
+        it('should handle HTTPS URLs with self-signed certificates', async function() {
+            const httpsUrl = 'https://fritz.box';
+            
+            // Mock challenge request
+            nock(httpsUrl)
+                .get('/login_sid.lua')
+                .reply(200, `<?xml version="1.0" encoding="utf-8"?>
+                    <SessionInfo>
+                        <SID>0000000000000000</SID>
+                        <Challenge>1234567890abcdef</Challenge>
+                        <BlockTime>0</BlockTime>
+                        <Rights></Rights>
+                    </SessionInfo>`);
+
+            // Mock login request
+            nock(httpsUrl)
+                .get('/login_sid.lua')
+                .query(true)
+                .reply(200, `<?xml version="1.0" encoding="utf-8"?>
+                    <SessionInfo>
+                        <SID>${testSid}</SID>
+                        <Challenge>1234567890abcdef</Challenge>
+                        <BlockTime>0</BlockTime>
+                        <Rights>
+                            <Name>Dial</Name>
+                            <Access>2</Access>
+                        </Rights>
+                    </SessionInfo>`);
+
+            const sid = await fritz.getSessionID(testUsername, testPassword, { url: httpsUrl });
+            assert.strictEqual(sid, testSid);
+        });
     });
 
     describe('Device List', function() {
@@ -115,6 +148,76 @@ describe('Fritz API', function() {
             assert.strictEqual(devices[0].switch.state, true);
             assert.strictEqual(devices[0].powermeter.power, 1.5);
             assert.strictEqual(devices[0].temperature.celsius, 23);
+        });
+        
+        it('should throw descriptive error when receiving HTML instead of XML (invalid session)', async function() {
+            const htmlLoginPage = `<!DOCTYPE html>
+                <html>
+                <head><title>FRITZ!Box Login</title></head>
+                <body>
+                    <h1>Please login</h1>
+                    <form action="/login_sid.lua" method="post">
+                        <input type="text" name="username">
+                        <input type="password" name="password">
+                    </form>
+                </body>
+                </html>`;
+            
+            nock(testUrl)
+                .get('/webservices/homeautoswitch.lua')
+                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
+                .reply(200, htmlLoginPage, { 'Content-Type': 'text/html' });
+
+            await assert.rejects(
+                fritz.getDeviceList(testSid, { url: testUrl }),
+                /Invalid response - received HTML instead of device list XML/
+            );
+        });
+        
+        it('should throw descriptive error when session is invalid (0000000000000000)', async function() {
+            const invalidSessionResponse = `<?xml version="1.0" encoding="utf-8"?>
+                <SessionInfo>
+                    <SID>0000000000000000</SID>
+                </SessionInfo>`;
+            
+            nock(testUrl)
+                .get('/webservices/homeautoswitch.lua')
+                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
+                .reply(200, invalidSessionResponse);
+
+            await assert.rejects(
+                fritz.getDeviceList(testSid, { url: testUrl }),
+                /Invalid session - authentication required/
+            );
+        });
+        
+        it('should handle empty device list gracefully', async function() {
+            nock(testUrl)
+                .get('/webservices/homeautoswitch.lua')
+                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
+                .reply(200, `<?xml version="1.0" encoding="utf-8"?>
+                    <devicelist version="1">
+                    </devicelist>`);
+
+            const devices = await fritz.getDeviceList(testSid, { url: testUrl });
+            assert(Array.isArray(devices));
+            assert.strictEqual(devices.length, 0);
+        });
+        
+        it('should provide detailed error message on network failure', async function() {
+            nock(testUrl)
+                .get('/webservices/homeautoswitch.lua')
+                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
+                .replyWithError('ECONNREFUSED');
+
+            await assert.rejects(
+                fritz.getDeviceList(testSid, { url: testUrl }),
+                (err) => {
+                    assert(err.message.includes('getDeviceList failed'));
+                    assert(err.originalError);
+                    return true;
+                }
+            );
         });
 
         it('should get filtered device list', async function() {

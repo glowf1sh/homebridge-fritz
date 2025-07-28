@@ -45,6 +45,25 @@ describe('TR-064', function() {
             assert.strictEqual(client.user, 'admin');
             assert.strictEqual(client.password, 'secret');
         });
+        
+        it('should automatically configure httpsAgent for self-signed certificates when SSL is enabled', function() {
+            const client = new Fritzbox({
+                ssl: true
+            });
+            
+            // Verify that httpsAgent is configured
+            assert(client.axiosConfig.httpsAgent);
+            assert.strictEqual(client.axiosConfig.httpsAgent.options.rejectUnauthorized, false);
+        });
+        
+        it('should not configure httpsAgent when SSL is disabled', function() {
+            const client = new Fritzbox({
+                ssl: false
+            });
+            
+            // Verify that httpsAgent is not configured
+            assert.strictEqual(client.axiosConfig.httpsAgent, undefined);
+        });
     });
     
     describe('initTR064Device', function() {
