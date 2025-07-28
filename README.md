@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.3 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.4 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -754,6 +754,9 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.4** (2025-07-28): Publishing Fix und finale Badge-Updates
+  - 🐛 NPM Publishing Issue behoben (1.0.3 bereits durch GitHub Actions publiziert)
+  - ✅ Finale Version mit allen Badge-Verbesserungen verfügbar
 - **1.0.3** (2025-07-28): Dokumentations- und Badge-Update
   - 📝 7 erweiterte Badges für bessere Projekt-Transparenz hinzugefügt
   - ✅ LICENSE mit vollständigen Copyright-Informationen aktualisiert
