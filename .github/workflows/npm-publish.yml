@@ -8,7 +8,7 @@ on:
       types: [published]  # 'published' ist besser als 'created'
     workflow_dispatch:    # Erlaubt manuelles Auslösen
 
-  jobs:
+jobs:
     test:
       runs-on: ubuntu-latest
       strategy:
