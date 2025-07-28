@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.20 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.21 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -103,7 +103,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.20?
+## 🎉 Was ist neu in Version 1.0.21?
+
+### 🔥 Kritischer Bug-Fix: Smart Home API (v1.0.21)
+- **Case-Sensitivity Fix**: API erwartet `getdevicelistinfos` (lowercase)
+- **Error 400 behoben**: Smart Home Geräte werden jetzt korrekt abgerufen
+- **One-Line Fix**: Minimale Änderung mit maximaler Wirkung
+- **Alle Geräte erkannt**: Steckdosen, Thermostate, etc. funktionieren jetzt
 
 ### 🧹 Code-Qualität und Linting (v1.0.20)
 - **JSHint Fehler behoben**: Alle Linting-Warnungen korrigiert
@@ -188,6 +194,27 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
+
+## 📋 Vollständiger Changelog v1.0.21 (2025-07-28)
+
+### 🔥 Kritischer Bug-Fix: Smart Home API Case-Sensitivity
+
+#### Das Problem
+- FRITZ!Box API erwartet lowercase Parameter
+- Code verwendete `getDeviceListInfos` (CamelCase)
+- API erwartete `getdevicelistinfos` (lowercase)
+- Resultat: Error 400, keine Smart Home Geräte gefunden
+
+#### Die Lösung
+- One-Line Fix: CamelCase zu lowercase
+- Betroffene Funktion: getDeviceList in fritz-api.js
+- Minimale, sichere Änderung
+
+#### Ergebnis
+- ✅ Alle Smart Home Geräte werden erkannt
+- ✅ Steckdosen (FRITZ!DECT 200/210) funktionieren
+- ✅ Thermostate (FRITZ!DECT 301) funktionieren
+- ✅ Error 400 ist behoben
 
 ## 📋 Vollständiger Changelog v1.0.20 (2025-07-28)
 
@@ -969,6 +996,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.21** (2025-07-28): **Kritischer Fix: Smart Home API funktioniert wieder**
+  - 🔥 **Case-Fix**: getDeviceListInfos → getdevicelistinfos
+  - ✅ **Geräte erkannt**: Alle Smart Home Geräte werden gefunden
+  - 🐛 **Error 400 behoben**: API akzeptiert jetzt die Anfragen
+  - 🎯 **One-Line Fix**: Minimale Änderung, maximale Wirkung
 - **1.0.20** (2025-07-28): **Code-Qualität: JSHint Fehler behoben**
   - 🧹 **Linting sauber**: Alle JSHint-Warnungen eliminiert
   - 📝 **ES8 Support**: .jshintrc für async/await hinzugefügt
