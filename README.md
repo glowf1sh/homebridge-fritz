@@ -5,6 +5,8 @@
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org)
 [![Homebridge Version](https://img.shields.io/badge/homebridge-%3E%3D1.3.0-brightgreen.svg)](https://homebridge.io)
 
+> **Dies ist eine Weiterentwicklung des ursprünglichen [homebridge-fritz](https://github.com/andig/homebridge-fritz) Paketes**, da dieses vom Entwickler seit vielen Jahren nicht mehr gepflegt und betreut wird.
+
 > **WICHTIGER HINWEIS**: Dies ist ein Major Release (v1.0.0) mit Breaking Changes! Bitte lesen Sie den Changelog sorgfältig durch.
 
 ## 🎉 Was ist neu in Version 1.0.0?
