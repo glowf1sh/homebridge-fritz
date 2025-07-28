@@ -1,4 +1,4 @@
-# Migration Guide - Homebridge 2.x Readiness
+# Migration Guide - Homebridge 2.x Readiness 
 
 ## ⚠️ Breaking Change: Node.js 22+ erforderlich
 
