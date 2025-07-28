@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.6 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.7 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -772,6 +772,12 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.7** (2025-07-28): **KRITISCHER BUGFIX** - Smart Home API Geräteliste funktioniert jetzt
+  - 🐛 **BEHOBEN**: "Could not get devices from FRITZ!Box" Fehler
+  - ✅ **CamelCase API-Parameter**: `getdevicelistinfos` → `getDeviceListInfos` korrigiert
+  - ✅ **XML-Parsing**: Korrekte Struktur für Device-Liste implementiert
+  - 🧪 **Debugging-Script** hinzugefügt für einfaches Testing
+  - 🔧 **Plugin ist jetzt vollständig funktional** - Login, Accessory-Discovery UND Geräteliste!
 - **1.0.6** (2025-07-28): **STABILES RELEASE** - NPM Publishing nach Bugfix
   - ✅ **Vollständig funktionsfähiges Plugin** - Login UND Accessory-Discovery funktionieren
   - 📦 **NPM verfügbar** - Umgeht 24h-Regel durch neue Versionsnummer
