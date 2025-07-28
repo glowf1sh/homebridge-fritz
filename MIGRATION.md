@@ -2,7 +2,7 @@
 
 ## ⚠️ Breaking Change: Node.js 22+ erforderlich
 
-Ab Version 1.0.8 benötigt homebridge-fritz-new mindestens **Node.js 22.0.0** für Kompatibilität mit Homebridge 2.x.
+Ab Version 1.0.8 benötigt homebridge-fritz-new mindestens **Node.js 22.0.0** für volle Kompatibilität mit Homebridge 2.x.
 
 ### Warum diese Änderung?
 
