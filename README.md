@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.19 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.20 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -104,7 +104,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.19?
+## 🎉 Was ist neu in Version 1.0.20?
+
+### 🧹 Code-Qualität und Linting (v1.0.20)
+- **JSHint Fehler behoben**: Alle Linting-Warnungen korrigiert
+- **ES8 Support**: Async/await Functions jetzt korrekt konfiguriert
+- **Code-Formatierung**: Ternary operators sauber formatiert
+- **Fehlerfreies Linting**: npm run lint läuft ohne Warnungen
 
 ### 🔐 Digest Authentication für TR-064 (v1.0.19)
 - **Digest Auth implementiert**: TR-064 nutzt jetzt korrekt Digest statt Basic Auth
@@ -183,6 +189,22 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
+
+## 📋 Vollständiger Changelog v1.0.20 (2025-07-28)
+
+### 🧹 Code-Qualität und Linting
+
+#### Behobene Probleme
+- **Misleading line break**: Ternary operators in einer Zeile formatiert
+- **ES8 Support**: .jshintrc mit esversion: 8 für async/await hinzugefügt
+- **Sauberer Code**: Alle JSHint-Warnungen eliminiert
+- **Linting erfolgreich**: npm run lint läuft fehlerfrei
+
+#### Betroffene Dateien
+- alarmsensor.js: Ternary operator Formatierung
+- outlet.js: ES8 Support und async functions
+- thermostat.js: Ternary operator Formatierung
+- .jshintrc: Neue Konfigurationsdatei
 
 ## 📋 Vollständiger Changelog v1.0.19 (2025-07-28)
 
@@ -948,6 +970,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.20** (2025-07-28): **Code-Qualität: JSHint Fehler behoben**
+  - 🧹 **Linting sauber**: Alle JSHint-Warnungen eliminiert
+  - 📝 **ES8 Support**: .jshintrc für async/await hinzugefügt
+  - 🎨 **Code-Format**: Ternary operators korrekt formatiert
+  - ✅ **npm run lint**: Läuft jetzt fehlerfrei durch
 - **1.0.19** (2025-07-28): **Digest Authentication für TR-064 implementiert**
   - 🔐 **Digest Auth**: TR-064 nutzt jetzt korrekt MD5 Digest Authentication
   - 📦 **axios-digest-auth**: Professionelle Library für RFC 2617 Support
