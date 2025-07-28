@@ -120,6 +120,74 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
 
+## 📋 Vollständiger Changelog v1.0.1 (2025-07-28)
+
+### 🚀 CI/CD Pipeline - GitHub Actions Integration
+
+#### Neue Workflows hinzugefügt
+- **Test Workflow** (`.github/workflows/test.yml`):
+  - Automatische Tests bei jedem Push und Pull Request
+  - Multi-Version Testing: Node.js 18, 20 und 22
+  - Code Coverage Reports mit Codecov Integration
+  - Sicherheitsprüfung mit `npm audit`
+
+- **NPM Publish Workflow** (`.github/workflows/npm-publish.yml`):
+  - Automatisches Publishing bei Release-Tags (v*)
+  - Paralleles Publishing zu NPM und GitHub Packages
+  - Automatische Versionsprüfung
+  - Sichere Token-Verwaltung
+
+- **CodeQL Security Analysis** (`.github/workflows/codeql.yml`):
+  - Wöchentliche Security-Scans
+  - JavaScript/TypeScript Vulnerability Detection
+  - Automatische Issue-Erstellung bei Findings
+
+- **Release Drafter** (`.github/workflows/release-drafter.yml`):
+  - Automatische Release Notes Generierung
+  - Kategorisierung von Changes
+  - Contributor Attribution
+
+### 🔧 Maintenance und Cleanup
+
+#### Travis CI Entfernung
+- `.travis.yml` gelöscht (veraltete CI-Lösung)
+- Migration zu modernen GitHub Actions
+- Keine externen CI-Dependencies mehr
+
+#### GitHub Templates hinzugefügt
+- **Issue Templates**:
+  - Bug Report Template mit strukturiertem Format
+  - Feature Request Template für neue Funktionen
+  - Klare Anweisungen für Contributors
+
+- **Pull Request Template**:
+  - Checkliste für Code-Reviews
+  - Automatische Tests-Anforderung
+  - Dokumentations-Reminder
+
+### 🐛 Bug Fixes
+
+#### YAML Syntax Korrektur
+- Fehlerhafte Einrückungen in Workflow-Dateien behoben
+- Korrekte `on:` Event-Syntax für GitHub Actions
+- Validierte YAML-Struktur für alle Workflows
+
+### 📝 Dokumentation Updates
+
+#### Package.json Verbesserungen
+- Autor-Informationen aktualisiert
+- Repository-URL korrigiert
+- Homepage-Link angepasst
+- Bug-Tracker URL hinzugefügt
+
+### ✨ Neue Features
+
+#### Automatisierung
+- **Continuous Integration**: Tests laufen automatisch bei jedem Code-Change
+- **Continuous Deployment**: Releases werden automatisch zu NPM gepusht
+- **Security Monitoring**: Regelmäßige Sicherheitsprüfungen
+- **Dependency Management**: Automatische Updates via Dependabot
+
 ## 📋 Vollständiger Changelog v1.0.0
 
 ### 🔒 Security - Sicherheitslücken behoben (0 von 22)
@@ -640,6 +708,17 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.1** (2025-07-28): CI/CD Pipeline und Maintenance Release
+  - ✨ GitHub Actions CI/CD Pipeline hinzugefügt
+    - Automatische Tests für Node.js 18, 20 und 22
+    - NPM Publish Workflow für automatische Releases
+    - CodeQL Security Analysis Integration
+    - Dependency Review und Security Scanning
+  - 🔧 Travis CI entfernt (veraltet)
+  - 📝 Issue und Pull Request Templates hinzugefügt
+  - 🐛 YAML Syntax Fehler in Workflows behoben
+  - 📋 Autor-Informationen in package.json aktualisiert
+  - 🚀 Automatisches Publishing zu NPM und GitHub Packages
 - **1.0.0** (2025-07-28): Major security release - 0 vulnerabilities, modernized codebase
 - **0.8.x**: Last version with original dependencies (22 vulnerabilities)
 
