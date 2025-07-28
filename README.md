@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.17 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.18 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -104,7 +104,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.17?
+## 🎉 Was ist neu in Version 1.0.18?
+
+### 🔍 TR-064 Authentication Debug-Features (v1.0.18)
+- **Multi-Username-Tests**: Probiert automatisch verschiedene Username-Formate
+- **Auth-Details-Logging**: Zeigt WWW-Authenticate Header und Auth-Methoden
+- **Alternative Auth-Versuche**: Testet leeren Username und "admin"
+- **Verbesserte Fehleranalyse**: Detaillierte Hinweise bei 401-Fehlern
 
 ### 🎯 UnhandledPromiseRejections endgültig behoben (v1.0.17)
 - **Globaler Error-Handler**: Komplette accessories() Promise-Chain abgesichert
@@ -171,6 +177,27 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
+
+## 📋 Vollständiger Changelog v1.0.18 (2025-07-28)
+
+### 🔍 TR-064 Authentication Debug-Features
+
+#### Neue Features
+- **Multi-Username-Tests**: Probiert automatisch verschiedene Username-Formate bei 401-Fehlern
+- **Auth-Fallback-Strategie**: Versucht nacheinander: Konfigurierter User → Leerer User → "admin"
+- **WWW-Authenticate Logging**: Zeigt Server-Response-Header für Auth-Methoden-Analyse
+- **Detaillierte Auth-Logs**: Username-Länge, versuchte Methoden, alle Fehlversuche
+
+#### Technische Details
+- Bei 401-Fehlern werden automatisch alternative Usernames versucht
+- FRITZ!Box erwartet möglicherweise leeren Username für lokale Zugriffe
+- Debug-Output zeigt genau welche Auth-Methode erwartet wird
+- Hilft bei der Diagnose von TR-064 spezifischen Auth-Anforderungen
+
+#### Debug-Hinweise
+- Manche FRITZ!Box-Modelle erwarten einen leeren Username für TR-064
+- Der Standard-User "admin" wird als Fallback versucht
+- WWW-Authenticate Header zeigt ob Basic oder Digest Auth erwartet wird
 
 ## 📋 Vollständiger Changelog v1.0.17 (2025-07-28)
 
@@ -895,6 +922,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.18** (2025-07-28): **TR-064 Authentication Debug-Features**
+  - 🔍 **Multi-Username-Tests**: Automatische Tests mit verschiedenen Username-Formaten
+  - 🔄 **Auth-Fallback**: Versucht User → Leer → "admin" bei 401-Fehlern
+  - 📋 **WWW-Authenticate Log**: Zeigt welche Auth-Methode Server erwartet
+  - 🐛 **Bessere Diagnose**: Detaillierte Logs für TR-064 Auth-Probleme
 - **1.0.17** (2025-07-28): **UnhandledPromiseRejections endgültig behoben**
   - 🎯 **Globaler Error-Handler**: accessories() Promise-Chain vollständig abgesichert
   - 🛡️ **Debug-Promise gesichert**: Auch Debug-Logs können keine Crashes mehr verursachen
