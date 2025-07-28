@@ -10,13 +10,13 @@
 ## 🎉 Was ist neu in Version 1.0.0?
 
 ### 🔒 **100% Sicherheit - 0 Vulnerabilities!**
-Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Wir haben ALLE behoben:
+Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden ALLE behoben:
 - **Vorher**: 22 Sicherheitslücken (4 kritisch, 7 hoch, 11 mittel)
 - **Jetzt**: 0 Sicherheitslücken ✅
 
 ### 🚀 Vollständige Modernisierung
 
-#### Warum haben wir `fritzapi` und `tr-064-async` ersetzt?
+#### Warum wurden `fritzapi` und `tr-064-async` ersetzt?
 
 **1. fritzapi-Probleme:**
 - Veraltete Abhängigkeiten mit Sicherheitslücken
@@ -30,7 +30,7 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Wir haben AL
 - Keine Updates seit 2019
 - Nutzt veraltete Promise-Bibliotheken
 
-**Unsere Lösung:**
+**Die Lösung:**
 - Eigene schlanke Implementierung mit modernem `axios`
 - Nur die tatsächlich benötigten Funktionen
 - Native Promises statt Bluebird
@@ -139,15 +139,6 @@ Die Konfiguration bleibt unverändert! Alle bestehenden Einstellungen funktionie
 - Native Promises
 - Saubere XML-Verarbeitung
 ```
-
-## 🤝 Beitragen
-
-Wir freuen uns über Beiträge! Bitte beachten Sie:
-
-1. Keine neuen Dependencies ohne Sicherheitsprüfung
-2. Tests für alle neuen Features
-3. Kompatibilität mit Node.js 18+ sicherstellen
-4. Pull Requests gegen den `master` Branch
 
 ## 📝 Lizenz
 
