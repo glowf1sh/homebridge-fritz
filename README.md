@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.9 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.10 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -773,6 +773,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.10** (2025-07-28): **KRITISCHER BUGFIX - dot-prop v9 Kompatibilität**
+  - 🐛 **BEHOBEN**: "dotProp.get is not a function" Fehler
+  - 🔄 **Ersetzt**: dot-prop v9 (ESM-only) durch lodash.get (CommonJS kompatibel)
+  - ✅ **Plugin startet wieder**: Keine Crashes mehr beim Start
+  - 🧪 **Alle Tests bestehen**: 24 Tests laufen erfolgreich
 - **1.0.9** (2025-07-28): **Verbessertes Error-Handling und Debug-Logging**
   - 🐛 **Detaillierte Fehlerausgaben**: Zeigt jetzt genau was bei API-Fehlern passiert
   - 📝 **Debug-Logging erweitert**: Response Status, Data und vollständige Error-Details
