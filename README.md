@@ -104,7 +104,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.14?
+## 🎉 Was ist neu in Version 1.0.15?
+
+### 🐛 Vollständige Promise-Fehlerbehandlung (v1.0.15)
+- **Alle UnhandledPromiseRejections behoben**: getSwitchList, getThermostatList haben jetzt Error-Handler
+- **Individuelle Fehlerbehandlung**: Jede API-Anfrage hat eigenen catch-Handler
+- **Stabilität garantiert**: Homebridge stürzt nicht mehr ab bei API-Fehlern
 
 ### 🐛 Kritischer Bug-Fix (v1.0.14)
 - **Homebridge Absturz behoben**: UnhandledPromiseRejection führte nicht mehr zum Crash
@@ -155,6 +160,21 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
+
+## 📋 Vollständiger Changelog v1.0.15 (2025-07-28)
+
+### 🐛 Vollständige Promise-Fehlerbehandlung
+
+#### Behobene Probleme
+- **Alle UnhandledPromiseRejections behoben**: Keine Abstürze mehr durch unbehandelte Promises
+- **getSwitchList Fehlerbehandlung**: Eigener catch-Handler verhindert Crash
+- **getThermostatList Fehlerbehandlung**: Eigener catch-Handler verhindert Crash
+- **Individuelle Error-Handler**: Jede API-Anfrage behandelt Fehler separat
+
+#### Technische Details
+- Jeder `self.fritz()` Aufruf hat jetzt eigenen `.catch()` Handler
+- Fehler werden geloggt, aber andere Accessories laden weiter
+- Promise.all() kann jetzt sicher mit bereits gefangenen Fehlern umgehen
 
 ## 📋 Vollständiger Changelog v1.0.14 (2025-07-28)
 
