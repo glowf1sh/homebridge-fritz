@@ -895,6 +895,26 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.17** (2025-07-28): **UnhandledPromiseRejections endgültig behoben**
+  - 🎯 **Globaler Error-Handler**: accessories() Promise-Chain vollständig abgesichert
+  - 🛡️ **Debug-Promise gesichert**: Auch Debug-Logs können keine Crashes mehr verursachen
+  - ✅ **100% Stabilität**: Homebridge läuft stabil, auch wenn alle APIs fehlschlagen
+  - 🔧 **Callback-Garantie**: callback wird immer aufgerufen, auch bei Fehlern
+- **1.0.16** (2025-07-28): **Versionsanzeige und erweiterte Debug-Logs**
+  - 📊 **Version beim Start**: Zeigt "homebridge-fritz-new v1.0.16 starting up"
+  - 🔍 **TR-064 Debug erweitert**: URLs, Request-Details, Response-Fehler
+  - 🚨 **401-Fehler Hinweise**: Klarer Verweis auf fehlende TR-064 Berechtigungen
+  - 📡 **Service-Discovery**: Zeigt verfügbare TR-064 Services im Debug-Modus
+- **1.0.15** (2025-07-28): **Promise-Fehlerbehandlung vervollständigt**
+  - 🐛 **getSwitchList abgesichert**: Eigener catch-Handler verhindert Crash
+  - 🐛 **getThermostatList abgesichert**: Eigener catch-Handler verhindert Crash
+  - ✅ **Individuelle Error-Handler**: Jede API-Anfrage behandelt Fehler separat
+  - 🛡️ **Robuste Fehlerbehandlung**: Plugin läuft weiter bei API-Fehlern
+- **1.0.14** (2025-07-28): **Kritischer UnhandledPromiseRejection Fix**
+  - 🚨 **Homebridge-Crash behoben**: UnhandledPromiseRejection führte zum Absturz
+  - 🔧 **updateDeviceList Fix**: Gibt bei Fehler leere Liste statt Exception
+  - 📝 **Log-Funktionalität**: fritz-api.js kann jetzt debug-loggen
+  - ✅ **Promise.all() abgesichert**: Proper error handling für alle Promises
 - **1.0.13** (2025-07-28): **Debug-Logging für TR-064 Auth-Probleme**
   - 🔍 **TR-064 Debug**: Zeigt Verbindungsdetails (ohne Passwort)
   - 🐛 **Bessere Fehler**: "undefined" Errors zeigen jetzt mehr Details
