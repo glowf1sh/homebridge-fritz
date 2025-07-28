@@ -104,7 +104,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.16?
+## 🎉 Was ist neu in Version 1.0.17?
+
+### 🎯 UnhandledPromiseRejections endgültig behoben (v1.0.17)
+- **Globaler Error-Handler**: Komplette accessories() Promise-Chain abgesichert
+- **Debug-Promise gesichert**: Auch Debug-Logs können keine Crashes mehr verursachen
+- **100% Stabilität**: Homebridge läuft stabil, auch wenn alle APIs fehlschlagen
 
 ### 📊 Versionsanzeige und Debug-Verbesserungen (v1.0.16)
 - **Versionsanzeige beim Start**: Plugin zeigt Version beim Homebridge-Start an
@@ -166,6 +171,22 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
+
+## 📋 Vollständiger Changelog v1.0.17 (2025-07-28)
+
+### 🎯 UnhandledPromiseRejections endgültig behoben
+
+#### Behobene Probleme
+- **Globaler Error-Handler**: Die gesamte accessories() Promise-Chain ist jetzt abgesichert
+- **Debug-Promise gesichert**: Auch Debug-Log Promises haben jetzt catch-Handler
+- **Callback-Garantie**: Der callback wird immer aufgerufen, auch bei Fehlern
+- **100% Crash-Schutz**: Keine UnhandledPromiseRejections mehr möglich
+
+#### Technische Details
+- Alle Promise-Chains haben jetzt umfassende Error-Handler
+- accessories() Method hat globalen catch-Block
+- Debug-Promise in fritz() Methode abgesichert
+- Defensive Programmierung für maximale Stabilität
 
 ## 📋 Vollständiger Changelog v1.0.16 (2025-07-28)
 
