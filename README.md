@@ -35,10 +35,12 @@ npm link
 
 ---
 
-[![npm version](https://badge.fury.io/js/homebridge-fritz-new.svg)](https://badge.fury.io/js/homebridge-fritz-new)
+[![npm version](https://badge.fury.io/js/homebridge-fritz-new.svg)](https://www.npmjs.com/package/homebridge-fritz-new)
+[![npm downloads](https://img.shields.io/npm/dt/homebridge-fritz-new.svg)](https://www.npmjs.com/package/homebridge-fritz-new)
 [![Security Status](https://img.shields.io/badge/vulnerabilities-0-brightgreen.svg)](https://github.com/glowf1sh/homebridge-fritz-new/security)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org)
 [![Homebridge Version](https://img.shields.io/badge/homebridge-%3E%3D1.3.0-brightgreen.svg)](https://homebridge.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **Dieser Fork ersetzt das veraltete [homebridge-fritz](https://github.com/andig/homebridge-fritz) Paket**, welches seit 2019 nicht mehr gewartet wird und 22 kritische Sicherheitslücken enthält.
 

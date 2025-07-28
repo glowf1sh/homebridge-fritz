@@ -1,0 +1,59 @@
+# Git
+.git
+.gitignore
+
+# Entwicklungsumgebung
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+
+# Tests
+test/
+*.test.js
+coverage/
+.nyc_output/
+
+# Interne Dokumentation
+CLAUDE.md
+CLAUDE-agents.md
+doc.md
+todo.md
+bugs.md
+.claude/
+
+# Build und temporäre Dateien
+*.log
+npm-debug.log*
+node_modules/
+.npm/
+*.pid
+*.seed
+*.pid.lock
+
+# Konfigurationsdateien für Entwicklung
+config.json
+.env
+.env.*
+
+# CI/CD
+.travis.yml
+.github/
+.gitlab-ci.yml
+.circleci/
+
+# Editoren
+*.swp
+*.swo
+*~
+
+# OS spezifisch
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Optionale Dateien die nicht ins Paket müssen
+*.map
+*.patch
+CHANGELOG.md
+CONTRIBUTING.md

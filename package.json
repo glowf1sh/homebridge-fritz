@@ -14,7 +14,28 @@
     "fritzbox",
     "fritz",
     "homekit",
-    "Siri"
+    "Siri",
+    "smart home",
+    "home automation",
+    "avm",
+    "fritz dect",
+    "fritz powerline",
+    "wifi guest",
+    "thermostat",
+    "outlet",
+    "temperature sensor",
+    "window sensor",
+    "homebridge-fritz replacement",
+    "security patched",
+    "actively maintained"
+  ],
+  "files": [
+    "index.js",
+    "lib/",
+    "README.md",
+    "LICENSE",
+    "INSTALLATION.md",
+    "package.json"
   ],
   "license": "MIT",
   "repository": {
