@@ -1,8 +1,8 @@
-# Migration Guide - homebridge-fritz-new v2.0.0
+# Migration Guide - Homebridge 2.x Readiness
 
 ## ⚠️ Breaking Change: Node.js 22+ erforderlich
 
-Ab Version 2.0.0 benötigt homebridge-fritz-new mindestens **Node.js 22.0.0**.
+Ab Version 1.0.8 benötigt homebridge-fritz-new mindestens **Node.js 22.0.0**.
 
 ### Warum diese Änderung?
 
