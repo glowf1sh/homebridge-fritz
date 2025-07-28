@@ -42,6 +42,9 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 ### 🐛 Behobene Bugs
 - **NaN-Temperaturwerte**: Keine falschen Temperaturanzeigen mehr in HomeKit
 - **Null-Batteriewerte**: Keine ständigen "Batterie schwach" Warnungen mehr
+- **Guest WLAN Status**: Korrektur der API-Response-Verarbeitung
+- **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
+- **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
 
 ### 📋 Vollständiger Changelog v1.0.0
@@ -53,6 +56,10 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - Callbacks → Native Promises
 - `extend` → `Object.assign()`
 - Veraltete Patterns → Moderne JavaScript-Idiome
+- ES6 Classes für bessere Struktur
+- Verbessertes Polling mit setTimeout-Loop
+- Deprecated `hide` Setting entfernt
+- Optimiertes Error Handling
 
 **Neue Abhängigkeitsstruktur:**
 ```
