@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.10 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.11 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -773,6 +773,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.11** (2025-07-28): **Bluebird Promise-Methoden entfernt**
+  - 🐛 **BEHOBEN**: ".reflect is not a function" Fehler
+  - 🔄 **Ersetzt**: Bluebird-spezifische Methoden durch native Promise-Alternativen
+  - ✅ **Native Promises**: .isPending() und .reflect() durch Standard-JavaScript ersetzt
+  - 🧪 **Kompatibilität**: Funktioniert jetzt mit nativen Promises ohne Bluebird
 - **1.0.10** (2025-07-28): **KRITISCHER BUGFIX - dot-prop v9 Kompatibilität**
   - 🐛 **BEHOBEN**: "dotProp.get is not a function" Fehler
   - 🔄 **Ersetzt**: dot-prop v9 (ESM-only) durch lodash.get (CommonJS kompatibel)
