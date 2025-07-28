@@ -6,7 +6,7 @@
     "Andreas Goetz <cpuidle@gmx.de> (Original Author)"
   ],
   "homepage": "https://github.com/glowf1sh/homebridge-fritz-new#readme",
-  "description": "Homebridge platform plugin for FRITZ!Box - Actively maintained fork of the abandoned original homebridge-fritz package with all security vulnerabilities fixed.",
+  "description": "Homebridge platform plugin for FRITZ!Box - Actively maintained fork of the abandoned original homebridge-fritz package with all security vulnerabilities fixed",
   "keywords": [
     "homebridge-plugin",
     "homebridge",
