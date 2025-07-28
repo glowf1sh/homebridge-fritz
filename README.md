@@ -31,12 +31,19 @@ cd homebridge-fritz-new
 # Dependencies installieren
 npm install
 
-# Package erstellen und installieren
+# Package erstellen
 npm pack
+
+# Installation (wähle eine Methode):
+
+# Standard NPM:
 sudo npm install -g ./homebridge-fritz-new-*.tgz
 
-# Für Homebridge-Service (falls verwendet):
-# npm --prefix "/var/lib/homebridge" install ./homebridge-fritz-new-*.tgz
+# Homebridge-Service:
+npm --prefix "/var/lib/homebridge" install ./homebridge-fritz-new-*.tgz
+
+# hb-service:
+hb-service add ./homebridge-fritz-new-*.tgz
 ```
 
 📚 **[Detaillierte Installationsanleitung](INSTALLATION.md)** mit allen Methoden und Troubleshooting
