@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.12 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.13 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -773,6 +773,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.13** (2025-07-28): **Debug-Logging für TR-064 Auth-Probleme**
+  - 🔍 **TR-064 Debug**: Zeigt Verbindungsdetails (ohne Passwort)
+  - 🐛 **Bessere Fehler**: "undefined" Errors zeigen jetzt mehr Details
+  - 📝 **getDeviceList Debug**: Zeigt Session-ID beim Aufruf
+  - 🔧 **Hilft bei Diagnose**: TR-064 Auth-Fehler und API-Probleme
 - **1.0.12** (2025-07-28): **SSL self-signed certificates und Error-Handling Fix**
   - 🔒 **SSL-Fix**: TR-064 und API akzeptieren jetzt self-signed certificates der FRITZ!Box
   - 🐛 **Bessere Fehler**: "undefined" Fehler durch detaillierte Meldungen ersetzt
