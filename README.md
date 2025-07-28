@@ -1,29 +1,32 @@
-# homebridge-fritz v1.0.0 - Major Security & Stability Release
+# homebridge-fritz-new v1.0.0 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
-## ⚠️ WICHTIGER HINWEIS: Installation von diesem Fork
+## ⚠️ WARUM DIESER FORK EXISTIERT
 
-> **Das NPM-Paket `homebridge-fritz` ist veraltet und wird nicht mehr gepflegt!**  
-> Dieses Repository ist ein aktiv gewarteter Fork mit wichtigen Sicherheits-Updates.
+> **Das originale NPM-Paket `homebridge-fritz` von @andig wird seit Jahren nicht mehr gepflegt!**  
+> Letzte Aktivität: 2019 • 22 bekannte Sicherheitslücken • Keine Reaktion auf Issues/PRs
+> 
+> **Dieses Repository `homebridge-fritz-new` ist ein aktiv gewarteter Fork mit:**
+> - ✅ Alle 22 Sicherheitslücken behoben (0 Vulnerabilities)
+> - ✅ Kompatibilität mit aktuellen Node.js/Homebridge Versionen
+> - ✅ Regelmäßige Updates und Support
+> - ✅ Aktive Community-Betreuung
 
-### 🚀 Installation direkt von GitHub (empfohlen):
+### 🚀 Installation des neuen Pakets:
 
 ```bash
 # Global für Homebridge UI
-npm install -g glowf1sh/homebridge-fritz
-
-# Oder direkt mit vollem GitHub-URL
-npm install -g https://github.com/glowf1sh/homebridge-fritz
+npm install -g homebridge-fritz-new
 
 # Für lokale Installation
-npm install glowf1sh/homebridge-fritz
+npm install homebridge-fritz-new
 ```
 
 ### Alternative Installation über Git:
 
 ```bash
 # Repository klonen
-git clone https://github.com/glowf1sh/homebridge-fritz.git
-cd homebridge-fritz
+git clone https://github.com/glowf1sh/homebridge-fritz-new.git
+cd homebridge-fritz-new
 npm install
 npm link
 ```
@@ -32,14 +35,36 @@ npm link
 
 ---
 
-[![npm version](https://badge.fury.io/js/homebridge-fritz.svg)](https://badge.fury.io/js/homebridge-fritz)
-[![Security Status](https://img.shields.io/badge/vulnerabilities-0-brightgreen.svg)](https://github.com/glowf1sh/homebridge-fritz/security)
+[![npm version](https://badge.fury.io/js/homebridge-fritz-new.svg)](https://badge.fury.io/js/homebridge-fritz-new)
+[![Security Status](https://img.shields.io/badge/vulnerabilities-0-brightgreen.svg)](https://github.com/glowf1sh/homebridge-fritz-new/security)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org)
 [![Homebridge Version](https://img.shields.io/badge/homebridge-%3E%3D1.3.0-brightgreen.svg)](https://homebridge.io)
 
-> **Dies ist eine Weiterentwicklung des ursprünglichen [homebridge-fritz](https://github.com/andig/homebridge-fritz) Paketes**, da dieses vom Entwickler seit vielen Jahren nicht mehr gepflegt und betreut wird.
+> **Dieser Fork ersetzt das veraltete [homebridge-fritz](https://github.com/andig/homebridge-fritz) Paket**, welches seit 2019 nicht mehr gewartet wird und 22 kritische Sicherheitslücken enthält.
 
 > **WICHTIGER HINWEIS**: Dies ist ein Major Release (v1.0.0) mit Breaking Changes! Bitte lesen Sie den Changelog sorgfältig durch.
+
+## 🔄 MIGRATION VOM ALTEN PAKET
+
+### Schritt 1: Altes Paket deinstallieren
+```bash
+# Falls das alte homebridge-fritz installiert ist:
+npm uninstall -g homebridge-fritz
+```
+
+### Schritt 2: Neues Paket installieren
+```bash
+npm install -g homebridge-fritz-new
+```
+
+### Schritt 3: Homebridge neustarten
+```bash
+sudo systemctl restart homebridge
+# oder
+homebridge
+```
+
+**Wichtig:** Die Konfiguration bleibt unverändert! Alle Einstellungen funktionieren weiterhin.
 
 ## 🎨 Installation mit Homebridge Config UI X
 
@@ -47,14 +72,11 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 1. Öffnen Sie die Homebridge Web-Oberfläche
 2. Gehen Sie zu "Plugins" 
-3. Falls das alte `homebridge-fritz` installiert ist:
-   - Klicken Sie auf "Deinstallieren"
-   - Warten Sie bis die Deinstallation abgeschlossen ist
-4. Klicken Sie auf das Zahnrad-Symbol (⚙️) oben rechts
-5. Wählen Sie "Install Plugin from GitHub URL"
-6. Geben Sie ein: `glowf1sh/homebridge-fritz`
-7. Klicken Sie auf "Install"
-8. Nach der Installation: Homebridge neustarten
+3. Suchen Sie nach `homebridge-fritz-new`
+4. Klicken Sie auf "Install"
+5. Nach der Installation: Homebridge neustarten
+
+**Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
 ## 🎉 Was ist neu in Version 1.0.0?
 
@@ -380,7 +402,7 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 
 ---
 
-**Empfehlung**: Update auf v1.0.0 wird dringend empfohlen aufgrund der kritischen Sicherheitslücken in älteren Versionen!
+**DRINGEND EMPFOHLEN**: Wechseln Sie vom alten `homebridge-fritz` zu `homebridge-fritz-new`! Das alte Paket hat 22 Sicherheitslücken und wird nicht mehr gewartet.
 
 ## 🚀 Migration von älteren Versionen
 
@@ -396,8 +418,8 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
    # Altes Paket entfernen
    npm uninstall -g homebridge-fritz
    
-   # Neuen Fork installieren
-   npm install -g glowf1sh/homebridge-fritz
+   # Neues Paket installieren
+   npm install -g homebridge-fritz-new
    ```
 
 3. **Homebridge neustarten**: Nach dem Update Homebridge neustarten
@@ -457,26 +479,16 @@ This plugin exposes:
 
 Follow the homebridge installation instructions at [homebridge](https://www.npmjs.com/package/homebridge).
 
-### ⚠️ Installation dieses Forks (nicht das alte NPM-Paket!):
+### ⚠️ Installation des neuen Pakets:
 
-**Option 1: Direkt von GitHub (empfohlen)**
+**Mit NPM:**
 ```bash
-npm install -g glowf1sh/homebridge-fritz
+npm install -g homebridge-fritz-new
 ```
 
-**Option 2: Über Git Clone**
-```bash
-git clone https://github.com/glowf1sh/homebridge-fritz.git
-cd homebridge-fritz
-npm install
-npm link
-```
-
-**Option 3: In Homebridge UI**
-1. Gehen Sie zu "Plugins"
-2. Klicken Sie auf das Zahnrad-Symbol
-3. Wählen Sie "Install from GitHub URL"
-4. Geben Sie ein: `glowf1sh/homebridge-fritz`
+**Mit Homebridge UI:**
+1. Suchen Sie nach "homebridge-fritz-new"
+2. Klicken Sie auf "Install"
 
 ### Wichtig: Deinstallation des alten Pakets
 
@@ -485,7 +497,10 @@ Falls Sie das alte NPM-Paket installiert haben:
 npm uninstall -g homebridge-fritz
 ```
 
-Dann installieren Sie diesen Fork wie oben beschrieben.
+Dann installieren Sie das neue Paket:
+```bash
+npm install -g homebridge-fritz-new
+```
 
 Add platform to `config.json`, for configuration see below.
 

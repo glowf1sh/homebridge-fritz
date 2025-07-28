@@ -1,12 +1,12 @@
 {
-  "name": "homebridge-fritz",
+  "name": "homebridge-fritz-new",
   "version": "1.0.0",
   "author": "glowf1sh",
   "contributors": [
     "Andreas Goetz <cpuidle@gmx.de> (Original Author)"
   ],
-  "homepage": "https://github.com/glowf1sh/homebridge-fritz#readme",
-  "description": "Homebridge platform plugin for FRITZ!Box - Active Fork with Security Updates",
+  "homepage": "https://github.com/glowf1sh/homebridge-fritz-new#readme",
+  "description": "Homebridge platform plugin for FRITZ!Box - Actively maintained fork of the abandoned original homebridge-fritz package with all security vulnerabilities fixed",
   "keywords": [
     "homebridge-plugin",
     "homebridge",
@@ -19,10 +19,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/glowf1sh/homebridge-fritz.git"
+    "url": "git+https://github.com/glowf1sh/homebridge-fritz-new.git"
   },
   "bugs": {
-    "url": "https://github.com/glowf1sh/homebridge-fritz/issues"
+    "url": "https://github.com/glowf1sh/homebridge-fritz-new/issues"
   },
   "main": "index.js",
   "scripts": {

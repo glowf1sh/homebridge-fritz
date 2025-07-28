@@ -1,22 +1,25 @@
-# Installation Guide - homebridge-fritz Fork
+# Installation Guide - homebridge-fritz-new
 
-## ⚠️ Wichtiger Hinweis
+## ⚠️ Wichtiger Hinweis: Warum homebridge-fritz-new?
 
-Das offizielle NPM-Paket `homebridge-fritz` wird seit Jahren nicht mehr gepflegt und enthält 22 Sicherheitslücken. Dieser Fork behebt alle Sicherheitsprobleme und wird aktiv gewartet.
+Das originale NPM-Paket `homebridge-fritz` von @andig wird seit 2019 nicht mehr gepflegt:
+- Letzte Veröffentlichung: 2019
+- 22 bekannte Sicherheitslücken (4 kritisch!)
+- Keine Reaktion auf Issues oder Pull Requests
+- Inkompatibel mit aktuellen Node.js Versionen
+
+`homebridge-fritz-new` ist der aktiv gewartete Nachfolger mit allen Sicherheitsproblemen behoben.
 
 ## 🚀 Installationsmethoden
 
-### Methode 1: NPM direkt von GitHub (Empfohlen)
+### Methode 1: NPM Installation (Empfohlen)
 
 ```bash
 # Global für Homebridge
-npm install -g glowf1sh/homebridge-fritz
-
-# Oder mit vollem URL
-npm install -g https://github.com/glowf1sh/homebridge-fritz
+npm install -g homebridge-fritz-new
 
 # Für Docker/lokale Installation
-npm install glowf1sh/homebridge-fritz
+npm install homebridge-fritz-new
 ```
 
 ### Methode 2: Homebridge Config UI X
@@ -24,9 +27,8 @@ npm install glowf1sh/homebridge-fritz
 1. Öffnen Sie die Homebridge Web-Oberfläche
 2. Navigieren Sie zu "Plugins"
 3. Deinstallieren Sie ggf. das alte `homebridge-fritz`
-4. Klicken Sie auf das Zahnrad-Symbol (⚙️)
-5. Wählen Sie "Install Plugin from GitHub URL"
-6. Geben Sie ein: `glowf1sh/homebridge-fritz`
+4. Suchen Sie nach `homebridge-fritz-new`
+5. Klicken Sie auf "Install"
 7. Klicken Sie "Install"
 8. Starten Sie Homebridge neu
 
@@ -34,8 +36,8 @@ npm install glowf1sh/homebridge-fritz
 
 ```bash
 # Repository klonen
-git clone https://github.com/glowf1sh/homebridge-fritz.git
-cd homebridge-fritz
+git clone https://github.com/glowf1sh/homebridge-fritz-new.git
+cd homebridge-fritz-new
 
 # Dependencies installieren
 npm install
@@ -51,7 +53,7 @@ Fügen Sie zu Ihrer `package.json` hinzu:
 ```json
 {
   "dependencies": {
-    "homebridge-fritz": "glowf1sh/homebridge-fritz"
+    "homebridge-fritz-new": "^1.0.0"
   }
 }
 ```
@@ -102,14 +104,14 @@ services:
     volumes:
       - ./homebridge:/homebridge
     environment:
-      - PACKAGES=glowf1sh/homebridge-fritz
+      - PACKAGES=homebridge-fritz-new
 ```
 
 ### Dockerfile
 
 ```dockerfile
 FROM homebridge/homebridge:latest
-RUN npm install -g glowf1sh/homebridge-fritz
+RUN npm install -g homebridge-fritz-new
 ```
 
 ## 🔧 Troubleshooting
@@ -122,7 +124,7 @@ RUN npm install -g glowf1sh/homebridge-fritz
 npm cache clean --force
 
 # Neu installieren
-npm install -g glowf1sh/homebridge-fritz
+npm install -g homebridge-fritz-new
 ```
 
 ### Problem: "Permission denied"
@@ -130,12 +132,12 @@ npm install -g glowf1sh/homebridge-fritz
 **Lösung:**
 ```bash
 # Mit sudo (nicht empfohlen)
-sudo npm install -g glowf1sh/homebridge-fritz
+sudo npm install -g homebridge-fritz-new
 
 # Besser: NPM prefix ändern
 npm config set prefix ~/.npm-global
 export PATH=~/.npm-global/bin:$PATH
-npm install -g glowf1sh/homebridge-fritz
+npm install -g homebridge-fritz-new
 ```
 
 ### Problem: Alte Version wird noch verwendet
@@ -152,7 +154,7 @@ npm root -g
 rm -rf $(npm root -g)/homebridge-fritz
 
 # Neu installieren
-npm install -g glowf1sh/homebridge-fritz
+npm install -g homebridge-fritz-new
 ```
 
 ## ✅ Verifikation
@@ -164,7 +166,7 @@ Nach der Installation prüfen:
 npm list homebridge-fritz
 
 # Sollte zeigen:
-# └── homebridge-fritz@1.0.0 (git+https://github.com/glowf1sh/homebridge-fritz.git)
+# └── homebridge-fritz-new@1.0.0
 
 # Homebridge Config prüfen
 homebridge -D
@@ -177,6 +179,6 @@ Die Konfiguration bleibt identisch zum Original. Siehe [README.md](README.md#con
 ## 🆘 Hilfe
 
 Bei Problemen:
-1. [Issues auf GitHub](https://github.com/glowf1sh/homebridge-fritz/issues)
+1. [Issues auf GitHub](https://github.com/glowf1sh/homebridge-fritz-new/issues)
 2. [Homebridge Discord](https://discord.gg/homebridge)
 3. Debug-Log erstellen: `homebridge -D`
