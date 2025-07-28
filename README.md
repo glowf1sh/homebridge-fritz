@@ -104,7 +104,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.15?
+## 🎉 Was ist neu in Version 1.0.16?
+
+### 📊 Versionsanzeige und Debug-Verbesserungen (v1.0.16)
+- **Versionsanzeige beim Start**: Plugin zeigt Version beim Homebridge-Start an
+- **Erweiterte Debug-Logs**: Detaillierte Ausgaben für TR-064 Verbindungsprobleme
+- **Bessere Fehlerdiagnose**: Klare Hinweise bei Authentication-Fehlern
+- **TR-064 Port-Klarstellung**: Port 49443 wird korrekt verwendet
 
 ### 🐛 Vollständige Promise-Fehlerbehandlung (v1.0.15)
 - **Alle UnhandledPromiseRejections behoben**: getSwitchList, getThermostatList haben jetzt Error-Handler
@@ -160,6 +166,27 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
+
+## 📋 Vollständiger Changelog v1.0.16 (2025-07-28)
+
+### 📊 Versionsanzeige und Debug-Verbesserungen
+
+#### Neue Features
+- **Versionsanzeige**: Plugin zeigt beim Start `homebridge-fritz-new v1.0.16 starting up`
+- **Erweiterte TR-064 Debug-Logs**: URLs, Request-Details, Response-Fehler
+- **Bessere Fehlerdiagnose**: Spezifische Hinweise bei 401-Fehlern
+- **Service-Discovery-Logs**: Zeigt verfügbare TR-064 Services im Debug-Modus
+
+#### Technische Details
+- Version wird aus package.json gelesen und einmalig geloggt
+- TR-064 verwendet bereits korrekten Port 49443 (nicht 443)
+- Debug-Ausgaben zeigen vollständige URLs und Fehlerdetails
+- Hinweis auf TR-064 Berechtigungen bei Authentication-Fehlern
+
+#### Wichtiger Hinweis
+Falls TR-064 Authentication fehlschlägt: Prüfen Sie in der FRITZ!Box unter
+System > FRITZ!Box-Benutzer, ob der Benutzer die Berechtigung
+"FRITZ!Box Einstellungen" hat. Diese ist für TR-064 zwingend erforderlich!
 
 ## 📋 Vollständiger Changelog v1.0.15 (2025-07-28)
 
