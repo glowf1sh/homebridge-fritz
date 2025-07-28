@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.18 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.19 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -104,7 +104,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.18?
+## 🎉 Was ist neu in Version 1.0.19?
+
+### 🔐 Digest Authentication für TR-064 (v1.0.19)
+- **Digest Auth implementiert**: TR-064 nutzt jetzt korrekt Digest statt Basic Auth
+- **axios-digest-auth Integration**: Professionelle Library für MD5 Digest Auth
+- **Problem gelöst**: TR-064 erwartet Digest Authentication (MD5, qop="auth")
+- **Fallback bleibt**: Multi-Username Tests weiterhin aktiv
 
 ### 🔍 TR-064 Authentication Debug-Features (v1.0.18)
 - **Multi-Username-Tests**: Probiert automatisch verschiedene Username-Formate
@@ -177,6 +183,26 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
+
+## 📋 Vollständiger Changelog v1.0.19 (2025-07-28)
+
+### 🔐 Digest Authentication für TR-064
+
+#### Das Problem war:
+- TR-064 erwartet Digest Authentication (RFC 2617)
+- Unser Code sendete nur Basic Authentication
+- WWW-Authenticate Header zeigte: `Digest realm="HTTPS Access",algorithm=MD5,qop="auth"`
+
+#### Die Lösung:
+- Integration von `@mhoc/axios-digest-auth` Library
+- Korrekte Implementierung von MD5 Digest Authentication
+- Unterstützung für nonce-basierte Challenge-Response
+
+#### Technische Details:
+- Digest Auth mit MD5 Hash-Algorithmus
+- Quality of Protection (qop) = "auth"
+- Behält Multi-Username Fallback-Strategie
+- Funktioniert auf beiden Ports (49443 HTTPS, 49000 HTTP)
 
 ## 📋 Vollständiger Changelog v1.0.18 (2025-07-28)
 
@@ -922,6 +948,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.19** (2025-07-28): **Digest Authentication für TR-064 implementiert**
+  - 🔐 **Digest Auth**: TR-064 nutzt jetzt korrekt MD5 Digest Authentication
+  - 📦 **axios-digest-auth**: Professionelle Library für RFC 2617 Support
+  - ✅ **Problem gelöst**: Basic Auth war falsch, Digest Auth war nötig
+  - 🔄 **Kompatibel**: Funktioniert mit HTTPS (49443) und HTTP (49000)
 - **1.0.18** (2025-07-28): **TR-064 Authentication Debug-Features**
   - 🔍 **Multi-Username-Tests**: Automatische Tests mit verschiedenen Username-Formaten
   - 🔄 **Auth-Fallback**: Versucht User → Leer → "admin" bei 401-Fehlern
