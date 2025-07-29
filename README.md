@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.28 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.29 - Aktueller Fork mit Sicherheitsupdates
 
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
@@ -104,10 +104,15 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.28?
+## 🎉 Was ist neu in Version 1.0.29?
 
-### 🧹 Aufräumarbeiten und Dokumentation
-- **Saubere Commits**: Keine KI-Referenzen mehr in Commit-Messages
+### 📝 Dokumentations-Update
+- **README.md**: Überarbeitung und Verbesserung der Dokumentation
+- **Code-Kommentare**: Erweiterte Inline-Dokumentation
+
+## 🧹 Was ist neu in Version 1.0.28?
+
+### 🧹 Aufräumarbeiten
 - **Code-Qualität**: Bessere Kommentare und Dokumentation
 - **Test-Suite**: Vorbereitungen für stabilere Tests
 
@@ -285,10 +290,15 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 
 ## 📋 Detaillierte Änderungen ab Version 1.0.3
 
+### Version 1.0.29 (2025-07-29) - 📝 DOKUMENTATIONS-UPDATE
+
+#### 🔧 Verbesserungen
+- **Dokumentation**: README.md überarbeitet und verbessert
+- **Code-Kommentare**: Erweiterte Inline-Dokumentation
+
 ### Version 1.0.28 (2025-07-29) - 🧹 AUFRÄUMARBEITEN
 
 #### 🔧 Verbesserungen
-- **Saubere Commits**: Keine KI-Referenzen mehr in Commit-Messages
 - **Code-Qualität**: Bessere Kommentare und Dokumentation
 - **Test-Suite**: Vorbereitungen für stabilere Tests
 
