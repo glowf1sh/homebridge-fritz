@@ -1,5 +1,19 @@
-# homebridge-fritz-new v1.0.34 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.36 - Aktueller Fork mit Sicherheitsupdates
 
+
+## Was ist neu in Version 1.0.36?
+
+- **XML-First Ansatz**: Features werden jetzt aus XML-Elementen erkannt, nicht aus der unzuverlässigen Bitmask
+- **Zukunftssicher**: Unbekannte XML-Elemente werden automatisch erkannt und geloggt
+- **Generische Wert-Extraktion**: Auch neue Gerätetypen werden automatisch unterstützt
+- **Verbesserte Geräte-Erkennung**: Thermostate mit falscher Bitmask werden zuverlässig erkannt
+
+## Was ist neu in Version 1.0.35?
+
+- **Feature-basierte API-Calls**: Plugin erkennt jetzt automatisch welche Features ein Gerät hat
+- **Keine falschen API-Befehle mehr**: getBatteryCharge nur bei Thermostaten, getTempTarget nur bei Thermostaten
+- **Functionbitmask-Parsing**: Nutzt die Fritz!Box functionbitmask um Geräte-Features zu erkennen
+- **Verbesserte Fehlervermeidung**: Keine HTTP 400/500 Fehler mehr durch falsche Befehle
 
 ## Was ist neu in Version 1.0.34?
 

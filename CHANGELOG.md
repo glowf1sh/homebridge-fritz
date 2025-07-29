@@ -5,6 +5,75 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.36] - 2025-07-29
+
+### ✨ Added
+- **XML-First Feature-Erkennung**: Features werden aus tatsächlichen XML-Elementen erkannt
+- **Zukunftssichere Architektur**: Unbekannte XML-Elemente werden automatisch erkannt
+- **Generische Wert-Extraktion**: extractAllValues() extrahiert Werte auch von unbekannten Elementen
+- **Erweiterte Feature-Flags**: Unterstützung für humidity, colorcontrol, levelcontrol, blind
+- **SimpleOnOff Element**: Unterstützung für das neu entdeckte simpleonoff Element in FRITZ!Smart Energy Geräten
+
+### 🔧 Changed
+- **parseDeviceFeatures()**: Nutzt jetzt XML-Elemente statt nur Bitmask
+- **processDevicesByFunctionBitmask()**: Prüft XML-Elemente für Gerätetyp-Erkennung
+- **Logging verbessert**: Unbekannte Elemente werden geloggt für zukünftige Unterstützung
+
+### 🚀 Performance
+- **Zuverlässigere Erkennung**: Keine Abhängigkeit mehr von fehlerhaften Bitmasks
+- **Automatische Unterstützung**: Neue Fritz!Box Geräte werden automatisch erkannt
+
+## [1.0.35] - 2025-07-29
+
+### 🐛 Fixed
+- **Feature-basierte API-Calls**: Keine falschen API-Befehle mehr auf unpassenden Gerätetypen
+- **HTTP 400/500 Fehler behoben**: getBatteryCharge und getTempTarget nur noch bei passenden Geräten
+- **Functionbitmask korrekt interpretiert**: Bit 13 (8192) für Thermostate statt Bit 8
+
+### ✨ Added
+- **Feature-Erkennung**: parseDeviceFeatures() analysiert die functionbitmask
+- **Feature-Flags**: Jedes Accessory speichert seine Features (hasTemperature, hasBattery, etc.)
+- **Intelligente API-Calls**: pollBatteryStatus prüft features.hasBattery statt Gerätetyp
+
+### 🔧 Changed
+- **Verbesserte Geräte-Erkennung**: Thermostate werden über Bit 13 statt Bit 8 erkannt
+- **Feature-basierte Logik**: Alle API-Calls prüfen jetzt die tatsächlichen Geräte-Features
+
+## [1.0.34] - 2025-07-29
+
+### 🐛 Fixed
+- **Request-Overload behoben**: Parallele API-Anfragen überfordern nicht mehr die Fritz!Box
+- **Request-Queue implementiert**: Nur noch eine API-Anfrage gleichzeitig (p-queue mit concurrency=1)
+- **Device-List Caching**: 10-Sekunden Cache verhindert redundante Gerätelisten-Abfragen
+
+### ✨ Added
+- **p-queue Dependency**: Request-Queue für kontrollierte API-Kommunikation
+- **Request-Throttling**: 200ms Intervall zwischen Anfragen verhindert API-Überlastung
+- **Device-Cache**: Intelligentes Caching der Geräteliste reduziert API-Calls
+
+### 🚀 Performance
+- **Drastisch reduzierte API-Last**: Von hunderten parallelen Anfragen auf kontrollierte sequenzielle Verarbeitung
+- **Stabilere Fritz!Box Kommunikation**: Keine Überlastung der Fritz!Box mehr
+
+## [1.0.33] - 2025-07-29
+
+### 🐛 Fixed
+- **Timeout-Optionen korrekt propagiert**: fritz() Methode übergibt jetzt Timeout-Einstellungen an alle API-Calls
+- **Konsistente Timeout-Behandlung**: Alle API-Operationen nutzen jetzt das konfigurierte 15-Sekunden Timeout
+
+### 🔧 Changed
+- **Verbesserte Options-Vererbung**: Platform-Optionen werden korrekt an alle API-Ebenen weitergegeben
+
+## [1.0.32] - 2025-07-29
+
+### 🐛 Fixed
+- **Timeout erhöht**: Von 5 auf 15 Sekunden für stabilere API-Kommunikation
+- **Retry-Flag korrigiert**: isRetry wird jetzt korrekt an API-Calls übergeben um Endlos-Schleifen zu verhindern
+
+### 🔧 Changed
+- **Längere Timeouts**: Bessere Unterstützung für langsame Fritz!Box Antworten
+- **Retry-Logik verbessert**: Verhindert unendliche Retry-Loops bei Session-Fehlern
+
 ## [1.0.31] - 2025-07-29
 
 ### 🐛 Fixed
