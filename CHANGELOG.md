@@ -5,6 +5,19 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.37] - 2025-07-29
+
+### 🐛 Fixed
+- **"inval" Fehlerbehandlung korrigiert**: "inval" Antworten werden nicht mehr als Session-Fehler behandelt
+- **Unnötige Re-Authentifizierungen vermieden**: Fritz!Box antwortet mit "inval" wenn ein Gerät einen Befehl nicht unterstützt
+- **Stabilere API-Kommunikation**: Gerätespezifische Fehler führen nicht mehr zu Session-Erneuerungen
+
+### 🔧 Changed
+- **apiCall()**: Nur noch leere Antworten und "0000000000000000" gelten als Session-Fehler
+- **getTemperature()**: Gibt null zurück bei "inval" statt Fehler zu werfen
+- **getTempTarget()**: Gibt null zurück bei "inval" statt Fehler zu werfen
+- **getBatteryCharge()**: Fängt "inval" Fehler ab und gibt Standard-Wert zurück
+
 ## [1.0.36] - 2025-07-29
 
 ### ✨ Added

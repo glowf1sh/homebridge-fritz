@@ -1,5 +1,11 @@
-# homebridge-fritz-new v1.0.36 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.37 - Aktueller Fork mit Sicherheitsupdates
 
+
+## Was ist neu in Version 1.0.37?
+
+- **"inval" Fehlerbehandlung**: "inval" Antworten werden korrekt als Geräte-Inkompatibilität erkannt
+- **Keine unnötigen Re-Authentifizierungen**: Session bleibt stabil auch bei inkompatiblen Befehlen
+- **Verbesserte Fehlerbehandlung**: getTemperature/getTempTarget geben null zurück statt Fehler zu werfen
 
 ## Was ist neu in Version 1.0.36?
 
@@ -208,6 +214,11 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.37 (2025-07-29)
+- **"inval" Fehlerbehandlung**: "inval" wird nicht mehr als Session-Fehler behandelt
+- **Stabilere Session**: Keine unnötigen Re-Authentifizierungen bei inkompatiblen Befehlen
+- **Null-Rückgabe**: getTemperature/getTempTarget geben null zurück statt Fehler zu werfen
 
 ### Version 1.0.36 (2025-07-29)
 - **XML-First Feature-Erkennung**: Features werden aus XML-Elementen erkannt statt aus Bitmask
