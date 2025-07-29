@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.23 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.24 - Aktueller Fork mit Sicherheitsupdates
 
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
@@ -68,7 +68,7 @@ hb-service add ./homebridge-fritz-new-*.tgz
 
 > **Dieser Fork ersetzt das veraltete [homebridge-fritz](https://github.com/andig/homebridge-fritz) Paket**, welches seit 2019 nicht mehr gewartet wird und 22 kritische Sicherheitslücken enthält.
 
-> **WICHTIGER HINWEIS**: Dies ist Version 1.0.23 mit Dynamic Platform Implementation! Diese Version behebt kritische Timeout-Probleme beim Homebridge-Neustart.
+> **WICHTIGER HINWEIS**: Dies ist Version 1.0.24 mit verbessertem Polling-System und dynamischer Service-Erstellung! Diese Version behebt den Circular Structure JSON Error und verbessert das Session-Management erheblich.
 
 ## 🔄 MIGRATION VOM ALTEN PAKET
 
@@ -206,6 +206,65 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Temperatur-Konvertierung**: Falsche Division durch 2 entfernt
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
+
+## 📋 Vollständiger Changelog v1.0.24 (2025-07-29)
+
+### 🚀 Verbessertes Polling-System und dynamische Service-Erstellung
+
+#### Neue Features
+- **Zwei-Stufen-Polling System**: Optimierte Performance durch verschiedene Polling-Intervalle:
+  - Discovery: Alle 5 Minuten (getdevicelistinfos)
+  - Schaltzustände: Alle 3 Sekunden (getswitchstate)
+  - Sensordaten: Alle 10 Sekunden (gettemperature, getswitchpower)
+  - Batteriestatus: Alle 15 Minuten
+- **Dynamische Service-Erstellung**: Services werden basierend auf functionbitmask erstellt:
+  - Bit 32: Temperatursensor → TemperatureSensor Service
+  - Bit 256: Heizkörperregler → Thermostat Service
+  - Bit 512: Schaltbare Steckdose → Outlet Service
+  - Bit 65536: Leistungsmesser → Custom Power Characteristics
+
+#### Behobene Probleme
+- **Circular Structure JSON Error**: Timer werden nicht mehr im Context gespeichert
+- **Session-Verlust nach 60 Sekunden**: Verbessertes Session-Management mit Cache
+- **Automatisches Re-Login**: Bei 403-Fehlern wird die Session automatisch erneuert
+- **Session-Persistenz**: Session-ID wird zwischengespeichert und wiederverwendet
+
+#### Technische Verbesserungen
+- Zentrale Polling-Verwaltung in platform.js
+- Keine Timer-Referenzen mehr in Accessory Context
+- Robustes Session-Management mit automatischer Wiederherstellung
+- Effizientere API-Nutzung durch gestaffelte Polling-Intervalle
+
+## 📋 Vollständiger Changelog v1.0.23 (2025-07-29)
+
+### ⏱️ Konfigurierbarer Timeout
+
+#### Neue Features
+- **Timeout-Option**: Konfigurierbarer Timeout für alle API-Requests
+  - Standard: 5000ms (5 Sekunden)
+  - Kann in der Konfiguration angepasst werden
+  - Verhindert Hänger bei langsamen FRITZ!Box Antworten
+
+#### Konfiguration
+```json
+{
+  "platform": "FRITZ!Box",
+  "name": "FRITZ!Box",
+  "username": "admin",
+  "password": "password",
+  "url": "http://fritz.box",
+  "timeout": 10000
+}
+```
+
+## 📋 Vollständiger Changelog v1.0.22 (2025-07-29)
+
+### 🐛 ES6 Klassen-Konstruktor Fix
+
+#### Behobene Probleme
+- **TypeError: Class constructors cannot be invoked without 'new'**: ES6 Klassen-Syntax korrigiert
+- **Platform-Initialisierung**: Korrekte Instanziierung mit `new FritzPlatform()`
+- **Homebridge-Kompatibilität**: Volle Unterstützung für Homebridge v1.8.0+
 
 ## 📋 Vollständiger Changelog v1.0.21 (2025-07-28)
 

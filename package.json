@@ -1,6 +1,6 @@
 {
   "name": "homebridge-fritz-new",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "author": "glowf1sh",
   "contributors": [
     "Andreas Goetz <cpuidle@gmx.de> (Original Author)"
@@ -56,15 +56,17 @@
     "homebridge": "^1.3.0"
   },
   "dependencies": {
-    "axios": "^1.11.0",
     "@mhoc/axios-digest-auth": "^0.8.0",
+    "axios": "^1.11.0",
     "lodash.get": "^4.4.2",
     "valid-url": "^1.0.9",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
+    "chai": "^5.2.1",
     "jshint": "^2.10.2",
     "mocha": "^11.7.1",
-    "nock": "^14.0.7"
+    "nock": "^14.0.7",
+    "sinon": "^21.0.0"
   }
 }
