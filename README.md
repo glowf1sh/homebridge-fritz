@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.29 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.30 - Aktueller Fork mit Sicherheitsupdates
 
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
@@ -104,7 +104,16 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.29?
+## 🎉 Was ist neu in Version 1.0.30?
+
+### 🚀 Robustes Session-Management
+- **Intelligente API-Schicht**: Automatische Session-Erneuerung bei Fehlern
+- **Fehler-Normalisierung**: Erkennt "inval" und leere Antworten als Session-Fehler
+- **Auto-Retry**: Bei Session-Fehlern wird automatisch neu eingeloggt
+- **Promise-Fehler behoben**: Alle UnhandledPromiseRejections beseitigt
+- **Timeout erhöht**: Von 5 auf 10 Sekunden für stabilere Verbindungen
+
+## 📝 Was ist neu in Version 1.0.29?
 
 ### 📝 Dokumentations-Update
 - **README.md**: Überarbeitung und Verbesserung der Dokumentation
@@ -289,6 +298,19 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Performance**: Optimiertes Polling, Connection-Pooling, Smart Caching
 
 ## 📋 Detaillierte Änderungen ab Version 1.0.3
+
+### Version 1.0.30 (2025-07-29) - 🚀 ROBUSTES SESSION-MANAGEMENT
+
+#### 🐛 Kritische Fehler behoben
+- **UnhandledPromiseRejection komplett gelöst**: getTempTarget und andere Fehler führen nicht mehr zu Crashes
+- **Session-Management revolutioniert**: Automatische Erneuerung bei allen Arten von Session-Fehlern
+- **Fehler-Normalisierung**: API erkennt jetzt "inval", leere Strings und HTTP 403 als Session-Probleme
+
+#### 🔧 Technische Verbesserungen
+- **Intelligente makeRequest() API**: Zentrale Stelle für alle API-Calls mit Auto-Retry
+- **Timeout erhöht**: Alle API-Calls nutzen jetzt 10 statt 5 Sekunden Timeout
+- **Promise-Ketten gesichert**: .catch() Handler für queryTargetTemperature und querySensorState
+- **Bessere Fehlerbehandlung**: Klare Trennung zwischen Session-Fehlern und echten API-Fehlern
 
 ### Version 1.0.29 (2025-07-29) - 📝 DOKUMENTATIONS-UPDATE
 
