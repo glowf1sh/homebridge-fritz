@@ -1,5 +1,12 @@
-# homebridge-fritz-new v1.0.33 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.34 - Aktueller Fork mit Sicherheitsupdates
 
+
+## Was ist neu in Version 1.0.34?
+
+- **Request-Queue implementiert**: Nur noch 1 Request gleichzeitig an die Fritz!Box (verhindert Überlastung)
+- **Device-List-Caching**: 10 Sekunden Cache für getDeviceList (reduziert Anfragen drastisch)
+- **Bessere Fehlerbehandlung**: Timeouts und 'inval' werden nicht mehr als Session-Fehler behandelt
+- **p-queue Integration**: Professionelle Request-Limitierung mit 200ms Pause zwischen Requests
 
 ## Was ist neu in Version 1.0.33?
 
