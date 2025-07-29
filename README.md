@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.27 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.28 - Aktueller Fork mit Sicherheitsupdates
 
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
@@ -260,6 +260,13 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Performance**: Optimiertes Polling, Connection-Pooling, Smart Caching
 
 ## 📋 Detaillierte Änderungen ab Version 1.0.3
+
+### Version 1.0.28 (2025-07-29) - 🧹 AUFRÄUMARBEITEN
+
+#### 🔧 Verbesserungen
+- **Saubere Commits**: Keine KI-Referenzen mehr in Commit-Messages
+- **Code-Qualität**: Bessere Kommentare und Dokumentation
+- **Test-Suite**: Vorbereitungen für stabilere Tests
 
 ### Version 1.0.27 (2025-07-29) - 🔧 WEITERE STABILITÄTSVERBESSERUNGEN
 
