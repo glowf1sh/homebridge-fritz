@@ -209,6 +209,29 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
 
+### Version 1.0.36 (2025-07-29)
+- **XML-First Feature-Erkennung**: Features werden aus XML-Elementen erkannt statt aus Bitmask
+- **Zukunftssicher**: Automatische Erkennung unbekannter XML-Elemente
+- **SimpleOnOff Support**: Neues Element in FRITZ!Smart Energy Geräten wird unterstützt
+
+### Version 1.0.35 (2025-07-29)
+- **Feature-basierte API-Calls**: Keine falschen getBatteryCharge/getTempTarget mehr
+- **Fritz!Smart Thermo 301 Fix**: Thermostate mit falscher Bitmask werden erkannt
+- **Verbesserte Battery-Erkennung**: Batterie-Info aus HKR-Element
+
+### Version 1.0.34 (2025-07-29)
+- **Request-Queue**: Nur noch 1 Request gleichzeitig verhindert Fritz!Box Überlastung
+- **Device-List-Caching**: 10 Sekunden Cache reduziert API-Anfragen drastisch
+- **p-queue Integration**: Professionelle Request-Limitierung
+
+### Version 1.0.33 (2025-07-29)
+- **Timeout-Fix**: Platform-Timeout wird korrekt an alle API-Calls weitergegeben
+- **Default-Timeout erhöht**: Von 10s auf 15s für bessere Stabilität
+
+### Version 1.0.32 (2025-07-29)
+- **Timeout erhöht**: Von 5s auf 15s für stabilere Kommunikation
+- **Retry-Flag korrigiert**: Verhindert endlose Re-Auth-Loops
+
 ### Version 1.0.31 (2025-07-29)
 - **Kritische Stabilität-Fixes**: UnhandledPromiseRejections behoben
 - **Session-Management verbessert**: Timeout-Fehler werden jetzt korrekt als Session-Fehler erkannt
