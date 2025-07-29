@@ -68,7 +68,7 @@ hb-service add ./homebridge-fritz-new-*.tgz
 
 > **Dieser Fork ersetzt das veraltete [homebridge-fritz](https://github.com/andig/homebridge-fritz) Paket**, welches seit 2019 nicht mehr gewartet wird und 22 kritische Sicherheitslücken enthält.
 
-> **WICHTIGER HINWEIS**: Dies ist Version 1.0.24 mit verbessertem Polling-System und dynamischer Service-Erstellung! Diese Version behebt den Circular Structure JSON Error und verbessert das Session-Management erheblich.
+> **WICHTIGER HINWEIS**: Dies ist ein aktiv gewarteter Fork mit allen Sicherheitsupdates und Bugfixes!
 
 ## 🔄 MIGRATION VOM ALTEN PAKET
 
@@ -103,6 +103,30 @@ Wenn Sie Homebridge Config UI X verwenden:
 5. Nach der Installation: Homebridge neustarten
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
+
+## 🎉 Was ist neu in Version 1.0.28?
+
+### 🧹 Aufräumarbeiten und Dokumentation
+- **Saubere Commits**: Keine KI-Referenzen mehr in Commit-Messages
+- **Code-Qualität**: Bessere Kommentare und Dokumentation
+- **Test-Suite**: Vorbereitungen für stabilere Tests
+
+## 🔧 Was ist neu in Version 1.0.27?
+
+### 🔧 Weitere Stabilitätsverbesserungen
+- **Erweiterte Promise-Behandlung**: Noch mehr .catch() Handler für absolute Stabilität
+- **Session-Wartezeit**: Polling-System wartet jetzt explizit auf erste Session
+- **WiFi-Accessory Timing**: 2 Sekunden Verzögerung vor erstem Update
+- **Login-Retry Timer**: Wird jetzt auch bei Cleanup sauber entfernt
+
+## 🚨 Was ist neu in Version 1.0.26?
+
+### 🚨 Kritische Bugfixes
+- **UnhandledPromiseRejection Fix**: Polling startet nicht mehr bevor Session existiert
+- **Promise Error Handling**: Alle Promise-Ketten haben jetzt .catch() Handler
+- **Session Management**: Polling-Methoden prüfen ob Session vorhanden ist
+- **Login Retry**: Automatischer Retry nach 30 Sekunden bei Login-Fehler
+- **Homebridge Crash Prevention**: Verhindert kompletten Absturz bei API-Fehlern
 
 ## 🎉 Was ist neu in Version 1.0.25?
 
