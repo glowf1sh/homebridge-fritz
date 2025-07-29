@@ -427,6 +427,12 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 
 ### 🐛 Bug Fixes - Kritische Fehler behoben
 
+**v1.0.26 - UUID Duplicate Characteristic Fix**
+- **Problem**: Homebridge crashed mit "Cannot add a Characteristic with the same UUID" beim Neustart
+- **Ursache**: `getCharacteristic()` fügt automatisch Characteristics hinzu, wenn sie nicht existieren
+- **Fix**: Prüfung über `characteristics` Array statt `getCharacteristic()` vor dem Hinzufügen
+- **Betroffene Dateien**: `lib/accessories/outlet.js`
+
 #### Temperatur-Bugs
 - **NaN-Werte bei Temperatursensoren**:
   - Problem: `parseInt()` ohne Validierung führte zu NaN in HomeKit
