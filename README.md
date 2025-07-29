@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.23 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.23 - Aktueller Fork mit Sicherheitsupdates
 
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
@@ -165,6 +165,9 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ### 🔒 SSL-Support (v1.0.12)
 - **Self-signed Certificates**: Unterstützung für FRITZ!Box HTTPS-Verbindungen
+
+### Maintainance Fixes (v1.0.4 - v1.0.11)
+Viele kleinere einzelne Fixes und Tests
 
 ## 🎉 Was ist neu in Version 1.0.3?
 
