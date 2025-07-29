@@ -903,6 +903,7 @@ Add platform to `config.json`, for configuration see below.
       "password": "<password>",
       "url": "http://fritz.box",
       "interval": 60,
+      "timeout": 10000,
       "concurrent": true,
       "devices": {
         "wifi": {
@@ -935,6 +936,7 @@ The following settings are optional:
 
 - `url`: FRITZ!Box address
 - `interval`: polling interval for updating accessories if state was changed outside homebringe
+- `timeout`: API request timeout in milliseconds (default: 5000). Increase this value if you experience "timeout of 5000ms exceeded" errors
 - `concurrent`: set to `false` to avoid concurrent api requests. May work more stable on older FRITZ!Boxes but has slower performance
 - `devices`: detailed configuration for individual devices. To be uniquely addressable, each device uses its `AIN` as key. The guest wifi device is always called `wifi`. Supported device configuration options are:
   - `display: false` to disable the device, e.g. useful for main wifi
