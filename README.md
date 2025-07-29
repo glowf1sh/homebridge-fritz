@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.30 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.31 - Aktueller Fork mit Sicherheitsupdates
 
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
