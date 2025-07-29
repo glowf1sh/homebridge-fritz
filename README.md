@@ -1,6 +1,22 @@
 # homebridge-fritz-new v1.0.33 - Aktueller Fork mit Sicherheitsupdates
 
 
+## Was ist neu in Version 1.0.33?
+
+- **Timeout-Fix**: Platform-Timeout-Einstellungen werden jetzt korrekt an alle API-Calls weitergegeben
+- **Default-Timeout**: Von 10s auf 15s erhöht für bessere Stabilität
+
+### Version 1.0.32 
+- **KRITISCHER HOTFIX**: Login-Concurrency funktioniert jetzt wirklich
+- **Timeout erhöht**: Standard-Timeout von 5s auf 15s erhöht
+- **Retry-Loop verhindert**: isRetry-Flag verhindert endlose Re-Auth-Versuche
+
+### Version 1.0.31
+- **Kritische Stabilität-Fixes**: UnhandledPromiseRejections vollständig behoben  
+- **Session-Management verbessert**: Timeout-Fehler werden als Session-Fehler erkannt
+- **Login-Concurrency-Schutz**: Verhindert Race-Conditions bei parallelen Logins
+- **Robuste Fehlerbehandlung**: Alle Accessories nutzen async/await mit try/catch
+
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
 > **Das originale NPM-Paket `homebridge-fritz` von @andig wird seit Jahren nicht mehr gepflegt!**  
