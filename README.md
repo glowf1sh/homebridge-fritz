@@ -1,13 +1,5 @@
-# homebridge-fritz-new v1.0.22 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.23 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
-> ## 🚧 ENTWICKLUNGSVERSION - WORK IN PROGRESS 🚧
-> 
-> **WICHTIG:** Dies ist aktuell eine Entwicklungsversion!
-> - Die Lauffähigkeit ist noch nicht zu 100% gewährleistet
-> - Wir arbeiten aktiv daran, die volle Funktionalität wiederherzustellen
-> - Bitte melden Sie gefundene Probleme als Issues
-> 
-> **Status:** Umstellung auf Dynamic Platform API in Arbeit
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -76,7 +68,7 @@ hb-service add ./homebridge-fritz-new-*.tgz
 
 > **Dieser Fork ersetzt das veraltete [homebridge-fritz](https://github.com/andig/homebridge-fritz) Paket**, welches seit 2019 nicht mehr gewartet wird und 22 kritische Sicherheitslücken enthält.
 
-> **WICHTIGER HINWEIS**: Dies ist ein Major Release (v1.0.3) mit Breaking Changes! Bitte lesen Sie den Changelog sorgfältig durch.
+> **WICHTIGER HINWEIS**: Dies ist Version 1.0.23 mit Dynamic Platform Implementation! Diese Version behebt kritische Timeout-Probleme beim Homebridge-Neustart.
 
 ## 🔄 MIGRATION VOM ALTEN PAKET
 
@@ -112,12 +104,20 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.21?
+## 🎉 Was ist neu in Version 1.0.23?
 
-### 🔥 Kritischer Bug-Fix: Smart Home API (v1.0.21)
+### 🚀 Dynamic Platform Implementation - Production Ready
+- **Dynamic Platform API**: Refactoring von Static zu Dynamic Platform  
+- **Timeout-Probleme behoben**: Besseres Handling bei Homebridge-Neustarts
+- **configureAccessory()**: Implementiert für Accessory-Cache-Verwaltung
+- **Alle Accessory-Typen**: Auf Dynamic Platform umgestellt (Outlet, WiFi, Thermostat, etc.)
+- **Periodische Updates**: Alle 60 Sekunden automatische Geräte-Updates
+- **Verbesserte Test-Suite**: 49+ Tests für Produktionsreife
+
+### 🔥 Vorherige kritische Fixes (v1.0.21-1.0.22)
 - **Case-Sensitivity Fix**: API erwartet `getdevicelistinfos` (lowercase)
+- **ES6 Klassen-Fehler behoben**: "Class extends value undefined" repariert
 - **Error 400 behoben**: Smart Home Geräte werden jetzt korrekt abgerufen
-- **One-Line Fix**: Minimale Änderung mit maximaler Wirkung
 - **Alle Geräte erkannt**: Steckdosen, Thermostate, etc. funktionieren jetzt
 
 ### 🧹 Code-Qualität und Linting (v1.0.20)
@@ -1007,6 +1007,13 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.23** (2025-07-29): **Dynamic Platform Implementation - Production Ready**
+  - 🚀 **Dynamic Platform API**: Refactoring von Static zu Dynamic Platform
+  - 🔧 **Timeout-Probleme behoben**: Besseres Handling bei Homebridge-Neustarts
+  - ⚡ **configureAccessory()**: Implementiert für Accessory-Cache-Verwaltung
+  - 🔄 **Alle Accessory-Typen**: Auf Dynamic Platform umgestellt (Outlet, WiFi, Thermostat, etc.)
+  - 📊 **Periodische Updates**: Alle 60 Sekunden automatische Geräte-Updates
+  - 🧪 **Verbesserte Test-Suite**: 49+ Tests für Produktionsreife
 - **1.0.22** (2025-07-29): **ES6 Klassen-Kompatibilität - Kritische Fehler behoben**
   - 🐛 **"Class extends value undefined"**: ES6 Modul-Importe korrigiert
   - 🐛 **"Cannot be invoked without 'new'"**: super() Aufrufe hinzugefügt
