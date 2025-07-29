@@ -1,5 +1,14 @@
 # homebridge-fritz-new v1.0.22 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
+> ## 🚧 ENTWICKLUNGSVERSION - WORK IN PROGRESS 🚧
+> 
+> **WICHTIG:** Dies ist aktuell eine Entwicklungsversion!
+> - Die Lauffähigkeit ist noch nicht zu 100% gewährleistet
+> - Wir arbeiten aktiv daran, die volle Funktionalität wiederherzustellen
+> - Bitte melden Sie gefundene Probleme als Issues
+> 
+> **Status:** Umstellung auf Dynamic Platform API in Arbeit
+
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
 > **Das originale NPM-Paket `homebridge-fritz` von @andig wird seit Jahren nicht mehr gepflegt!**  

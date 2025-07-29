@@ -117,7 +117,7 @@ describe('Fritz API', function() {
         it('should get device list', async function() {
             nock(testUrl)
                 .get('/webservices/homeautoswitch.lua')
-                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
+                .query({ sid: testSid, switchcmd: 'getdevicelistinfos' })
                 .reply(200, `<?xml version="1.0" encoding="utf-8"?>
                     <devicelist version="1">
                         <device identifier="${testAin}" id="17" functionbitmask="896" fwversion="03.33" manufacturer="AVM" productname="FRITZ!DECT 200">
@@ -165,7 +165,7 @@ describe('Fritz API', function() {
             
             nock(testUrl)
                 .get('/webservices/homeautoswitch.lua')
-                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
+                .query({ sid: testSid, switchcmd: 'getdevicelistinfos' })
                 .reply(200, htmlLoginPage, { 'Content-Type': 'text/html' });
 
             await assert.rejects(
@@ -182,7 +182,7 @@ describe('Fritz API', function() {
             
             nock(testUrl)
                 .get('/webservices/homeautoswitch.lua')
-                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
+                .query({ sid: testSid, switchcmd: 'getdevicelistinfos' })
                 .reply(200, invalidSessionResponse);
 
             await assert.rejects(
@@ -194,7 +194,7 @@ describe('Fritz API', function() {
         it('should handle empty device list gracefully', async function() {
             nock(testUrl)
                 .get('/webservices/homeautoswitch.lua')
-                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
+                .query({ sid: testSid, switchcmd: 'getdevicelistinfos' })
                 .reply(200, `<?xml version="1.0" encoding="utf-8"?>
                     <devicelist version="1">
                     </devicelist>`);
@@ -207,7 +207,7 @@ describe('Fritz API', function() {
         it('should provide detailed error message on network failure', async function() {
             nock(testUrl)
                 .get('/webservices/homeautoswitch.lua')
-                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
+                .query({ sid: testSid, switchcmd: 'getdevicelistinfos' })
                 .replyWithError('ECONNREFUSED');
 
             await assert.rejects(
@@ -223,7 +223,7 @@ describe('Fritz API', function() {
         it('should get filtered device list', async function() {
             nock(testUrl)
                 .get('/webservices/homeautoswitch.lua')
-                .query({ sid: testSid, switchcmd: 'getDeviceListInfos' })
+                .query({ sid: testSid, switchcmd: 'getdevicelistinfos' })
                 .reply(200, `<?xml version="1.0" encoding="utf-8"?>
                     <devicelist version="1">
                         <device identifier="${testAin}" id="17" functionbitmask="896" fwversion="03.33" manufacturer="AVM" productname="FRITZ!DECT 200">
