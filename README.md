@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.21 - Aktiv gepflegter Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.22 - Aktiv gepflegter Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -996,6 +996,11 @@ For even more detailed logs set `"debug": true` in the platform configuration.
 
 ## Version History
 
+- **1.0.22** (2025-07-29): **ES6 Klassen-Kompatibilität - Kritische Fehler behoben**
+  - 🐛 **"Class extends value undefined"**: ES6 Modul-Importe korrigiert
+  - 🐛 **"Cannot be invoked without 'new'"**: super() Aufrufe hinzugefügt
+  - ✅ **Vollständige ES6-Kompatibilität**: Alle Accessory-Klassen überarbeitet
+  - 🚀 **Plugin startet wieder**: Kritische Startfehler eliminiert
 - **1.0.21** (2025-07-28): **Kritischer Fix: Smart Home API funktioniert wieder**
   - 🔥 **Case-Fix**: getDeviceListInfos → getdevicelistinfos
   - ✅ **Geräte erkannt**: Alle Smart Home Geräte werden gefunden
