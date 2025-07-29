@@ -104,72 +104,106 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
-## 🎉 Was ist neu in Version 1.0.23?
+## 🎉 Was ist neu in Version 1.0.25?
 
-### 🚀 Dynamic Platform Implementation - Production Ready
+### 🔧 Workflow-Fix für NPM Publishing
+- **GitHub Actions Workflow repariert**: Tests sind jetzt optional
+- **NPM Publishing funktioniert wieder**: Auch ohne Test-Dateien
+
+## 📋 Was war neu in Version 1.0.24?
+
+### 🚀 Robuste Polling-Strategie und Session-Management
+- **Zwei-Stufen-Polling System**: 
+  - Discovery alle 5 Minuten für neue/entfernte Geräte
+  - Schaltzustände alle 3 Sekunden für schnelle Reaktion
+  - Sensordaten alle 10 Sekunden
+  - Batteriestatus alle 15 Minuten
+- **Session-Management mit automatischem Re-Login**: Keine Session-Verluste mehr
+- **Circular JSON Error behoben**: Keine Timer-Objekte im Accessory Context
+- **Dynamische Service-Erstellung**: Automatische Erkennung via functionbitmask
+- **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
+
+## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.25 (2025-07-29)
+- **GitHub Actions Workflow Fix**: Tests sind jetzt optional, NPM Publishing funktioniert wieder
+- **README Verbesserungen**: Version 1.0.24 Details hinzugefügt
+
+### Version 1.0.24 (2025-07-29)
+- **Verbessertes Polling-System**: Verschiedene Intervalle für Discovery, Schaltzustände, Sensordaten
+- **Dynamische Service-Erstellung**: Services basierend auf functionbitmask
+- **Circular Structure JSON Error**: Timer-Referenzen aus Context entfernt
+- **Session-Persistenz**: Verbessertes Session-Management mit Cache
+
+### Version 1.0.23 (2025-07-29)
+
 - **Dynamic Platform API**: Refactoring von Static zu Dynamic Platform  
-- **Timeout-Probleme behoben**: Besseres Handling bei Homebridge-Neustarts
+- **Timeout-Option**: Konfigurierbarer Timeout für alle API-Requests (Standard: 5000ms)
 - **configureAccessory()**: Implementiert für Accessory-Cache-Verwaltung
-- **Alle Accessory-Typen**: Auf Dynamic Platform umgestellt (Outlet, WiFi, Thermostat, etc.)
+- **Alle Accessory-Typen**: Auf Dynamic Platform umgestellt
 - **Periodische Updates**: Alle 60 Sekunden automatische Geräte-Updates
 - **Verbesserte Test-Suite**: 49+ Tests für Produktionsreife
 
-### 🔥 Vorherige kritische Fixes (v1.0.21-1.0.22)
+### Version 1.0.22 (2025-07-29)
+- **ES6 Klassen-Konstruktor Fix**: TypeError "Class constructors cannot be invoked without 'new'" behoben
+- **Platform-Initialisierung**: Korrekte Instanziierung mit `new FritzPlatform()`
+- **Homebridge-Kompatibilität**: Volle Unterstützung für Homebridge v1.8.0+
+
+### Version 1.0.21 (2025-07-28)
 - **Case-Sensitivity Fix**: API erwartet `getdevicelistinfos` (lowercase)
-- **ES6 Klassen-Fehler behoben**: "Class extends value undefined" repariert
 - **Error 400 behoben**: Smart Home Geräte werden jetzt korrekt abgerufen
 - **Alle Geräte erkannt**: Steckdosen, Thermostate, etc. funktionieren jetzt
 
-### 🧹 Code-Qualität und Linting (v1.0.20)
+### Version 1.0.20 (2025-07-28)
 - **JSHint Fehler behoben**: Alle Linting-Warnungen korrigiert
 - **ES8 Support**: Async/await Functions jetzt korrekt konfiguriert
 - **Code-Formatierung**: Ternary operators sauber formatiert
 - **Fehlerfreies Linting**: npm run lint läuft ohne Warnungen
 
-### 🔐 Digest Authentication für TR-064 (v1.0.19)
+### Version 1.0.19 (2025-07-28)
 - **Digest Auth implementiert**: TR-064 nutzt jetzt korrekt Digest statt Basic Auth
 - **axios-digest-auth Integration**: Professionelle Library für MD5 Digest Auth
 - **Problem gelöst**: TR-064 erwartet Digest Authentication (MD5, qop="auth")
 - **Fallback bleibt**: Multi-Username Tests weiterhin aktiv
 
-### 🔍 TR-064 Authentication Debug-Features (v1.0.18)
+### Version 1.0.18 (2025-07-28)
 - **Multi-Username-Tests**: Probiert automatisch verschiedene Username-Formate
 - **Auth-Details-Logging**: Zeigt WWW-Authenticate Header und Auth-Methoden
 - **Alternative Auth-Versuche**: Testet leeren Username und "admin"
 - **Verbesserte Fehleranalyse**: Detaillierte Hinweise bei 401-Fehlern
 
-### 🎯 UnhandledPromiseRejections endgültig behoben (v1.0.17)
+### Version 1.0.17 (2025-07-28)
 - **Globaler Error-Handler**: Komplette accessories() Promise-Chain abgesichert
 - **Debug-Promise gesichert**: Auch Debug-Logs können keine Crashes mehr verursachen
 - **100% Stabilität**: Homebridge läuft stabil, auch wenn alle APIs fehlschlagen
 
-### 📊 Versionsanzeige und Debug-Verbesserungen (v1.0.16)
+### Version 1.0.16 (2025-07-28)
 - **Versionsanzeige beim Start**: Plugin zeigt Version beim Homebridge-Start an
 - **Erweiterte Debug-Logs**: Detaillierte Ausgaben für TR-064 Verbindungsprobleme
 - **Bessere Fehlerdiagnose**: Klare Hinweise bei Authentication-Fehlern
 - **TR-064 Port-Klarstellung**: Port 49443 wird korrekt verwendet
 
-### 🐛 Vollständige Promise-Fehlerbehandlung (v1.0.15)
+### Version 1.0.15 (2025-07-28)
 - **Alle UnhandledPromiseRejections behoben**: getSwitchList, getThermostatList haben jetzt Error-Handler
 - **Individuelle Fehlerbehandlung**: Jede API-Anfrage hat eigenen catch-Handler
 - **Stabilität garantiert**: Homebridge stürzt nicht mehr ab bei API-Fehlern
 
-### 🐛 Kritischer Bug-Fix (v1.0.14)
+### Version 1.0.14 (2025-07-28)
 - **Homebridge Absturz behoben**: UnhandledPromiseRejection führte nicht mehr zum Crash
 - **Robuste Fehlerbehandlung**: Plugin läuft weiter auch wenn getDeviceList fehlschlägt
 - **Debug-Logging repariert**: Log-Funktionalität in fritz-api.js funktioniert jetzt
 
-### 🔍 Debug-Features (v1.0.13)
+### Version 1.0.13 (2025-07-28)
 - **Erweitertes Debug-Logging**: Detaillierte Ausgaben für Diagnose
 - **TR-064 Verbindungsinfo**: Host, Port, SSL und User werden geloggt
 
-### 🔒 SSL-Support (v1.0.12)
+### Version 1.0.12 (2025-07-28)
 - **Self-signed Certificates**: Unterstützung für FRITZ!Box HTTPS-Verbindungen
 
-### Maintainance Fixes (v1.0.4 - v1.0.11)
-Viele kleinere einzelne Fixes und Tests
+### Version 1.0.4 - 1.0.11 (2025-07-27)
+- Maintainance Fixes: Viele kleinere einzelne Fixes und Tests
 
-## 🎉 Was ist neu in Version 1.0.3?
+### Version 1.0.3 (2025-07-27)
 
 ### 🔒 **100% Sicherheit - 0 Vulnerabilities!**
 Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden ALLE behoben:
@@ -207,236 +241,26 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Fehlende Callbacks**: Login-Fehler werden jetzt korrekt behandelt
 - **Verbesserte Fehlerbehandlung**: Robuster gegen API-Änderungen
 
-## 📋 Vollständiger Changelog v1.0.24 (2025-07-29)
+### Version 1.0.2 (2025-07-28)
+- **NPM Package veröffentlicht**: homebridge-fritz-new ist jetzt auf NPM verfügbar
+- **CI/CD Pipeline**: GitHub Actions funktioniert einwandfrei
+- **Automatisches Publishing**: Bei Release-Tags wird automatisch veröffentlicht
 
-### 🚀 Verbessertes Polling-System und dynamische Service-Erstellung
+### Version 1.0.1 (2025-07-28)
+- **GitHub Actions Integration**: CI/CD Pipeline hinzugefügt
+- **Test Workflow**: Multi-Version Testing auf Node.js 18, 20 und 22
+- **Security Analysis**: CodeQL für Vulnerability Detection
+- **Release Automation**: Automatische Release Notes Generierung
 
-#### Neue Features
-- **Zwei-Stufen-Polling System**: Optimierte Performance durch verschiedene Polling-Intervalle:
-  - Discovery: Alle 5 Minuten (getdevicelistinfos)
-  - Schaltzustände: Alle 3 Sekunden (getswitchstate)
-  - Sensordaten: Alle 10 Sekunden (gettemperature, getswitchpower)
-  - Batteriestatus: Alle 15 Minuten
-- **Dynamische Service-Erstellung**: Services werden basierend auf functionbitmask erstellt:
-  - Bit 32: Temperatursensor → TemperatureSensor Service
-  - Bit 256: Heizkörperregler → Thermostat Service
-  - Bit 512: Schaltbare Steckdose → Outlet Service
-  - Bit 65536: Leistungsmesser → Custom Power Characteristics
+### Version 1.0.0 (2025-07-27)
+- **100% Sicherheit**: Alle 22 Sicherheitslücken behoben (0 Vulnerabilities)
+- **Modernisierung**: Vollständige Code-Modernisierung auf ES6+
+- **Dependencies reduziert**: Von 201 auf 156 Packages
+- **Bug Fixes**: NaN-Temperaturwerte, Null-Batteriewerte, Guest WLAN Status
+- **Performance**: Optimiertes Polling, Connection-Pooling, Smart Caching
 
-#### Behobene Probleme
-- **Circular Structure JSON Error**: Timer werden nicht mehr im Context gespeichert
-- **Session-Verlust nach 60 Sekunden**: Verbessertes Session-Management mit Cache
-- **Automatisches Re-Login**: Bei 403-Fehlern wird die Session automatisch erneuert
-- **Session-Persistenz**: Session-ID wird zwischengespeichert und wiederverwendet
+## 📋 Detaillierte Änderungen ab Version 1.0.3
 
-#### Technische Verbesserungen
-- Zentrale Polling-Verwaltung in platform.js
-- Keine Timer-Referenzen mehr in Accessory Context
-- Robustes Session-Management mit automatischer Wiederherstellung
-- Effizientere API-Nutzung durch gestaffelte Polling-Intervalle
-
-## 📋 Vollständiger Changelog v1.0.23 (2025-07-29)
-
-### ⏱️ Konfigurierbarer Timeout
-
-#### Neue Features
-- **Timeout-Option**: Konfigurierbarer Timeout für alle API-Requests
-  - Standard: 5000ms (5 Sekunden)
-  - Kann in der Konfiguration angepasst werden
-  - Verhindert Hänger bei langsamen FRITZ!Box Antworten
-
-#### Konfiguration
-```json
-{
-  "platform": "FRITZ!Box",
-  "name": "FRITZ!Box",
-  "username": "admin",
-  "password": "password",
-  "url": "http://fritz.box",
-  "timeout": 10000
-}
-```
-
-## 📋 Vollständiger Changelog v1.0.22 (2025-07-29)
-
-### 🐛 ES6 Klassen-Konstruktor Fix
-
-#### Behobene Probleme
-- **TypeError: Class constructors cannot be invoked without 'new'**: ES6 Klassen-Syntax korrigiert
-- **Platform-Initialisierung**: Korrekte Instanziierung mit `new FritzPlatform()`
-- **Homebridge-Kompatibilität**: Volle Unterstützung für Homebridge v1.8.0+
-
-## 📋 Vollständiger Changelog v1.0.21 (2025-07-28)
-
-### 🔥 Kritischer Bug-Fix: Smart Home API Case-Sensitivity
-
-#### Das Problem
-- FRITZ!Box API erwartet lowercase Parameter
-- Code verwendete `getDeviceListInfos` (CamelCase)
-- API erwartete `getdevicelistinfos` (lowercase)
-- Resultat: Error 400, keine Smart Home Geräte gefunden
-
-#### Die Lösung
-- One-Line Fix: CamelCase zu lowercase
-- Betroffene Funktion: getDeviceList in fritz-api.js
-- Minimale, sichere Änderung
-
-#### Ergebnis
-- ✅ Alle Smart Home Geräte werden erkannt
-- ✅ Steckdosen (FRITZ!DECT 200/210) funktionieren
-- ✅ Thermostate (FRITZ!DECT 301) funktionieren
-- ✅ Error 400 ist behoben
-
-## 📋 Vollständiger Changelog v1.0.20 (2025-07-28)
-
-### 🧹 Code-Qualität und Linting
-
-#### Behobene Probleme
-- **Misleading line break**: Ternary operators in einer Zeile formatiert
-- **ES8 Support**: .jshintrc mit esversion: 8 für async/await hinzugefügt
-- **Sauberer Code**: Alle JSHint-Warnungen eliminiert
-- **Linting erfolgreich**: npm run lint läuft fehlerfrei
-
-#### Betroffene Dateien
-- alarmsensor.js: Ternary operator Formatierung
-- outlet.js: ES8 Support und async functions
-- thermostat.js: Ternary operator Formatierung
-- .jshintrc: Neue Konfigurationsdatei
-
-## 📋 Vollständiger Changelog v1.0.19 (2025-07-28)
-
-### 🔐 Digest Authentication für TR-064
-
-#### Das Problem war:
-- TR-064 erwartet Digest Authentication (RFC 2617)
-- Unser Code sendete nur Basic Authentication
-- WWW-Authenticate Header zeigte: `Digest realm="HTTPS Access",algorithm=MD5,qop="auth"`
-
-#### Die Lösung:
-- Integration von `@mhoc/axios-digest-auth` Library
-- Korrekte Implementierung von MD5 Digest Authentication
-- Unterstützung für nonce-basierte Challenge-Response
-
-#### Technische Details:
-- Digest Auth mit MD5 Hash-Algorithmus
-- Quality of Protection (qop) = "auth"
-- Behält Multi-Username Fallback-Strategie
-- Funktioniert auf beiden Ports (49443 HTTPS, 49000 HTTP)
-
-## 📋 Vollständiger Changelog v1.0.18 (2025-07-28)
-
-### 🔍 TR-064 Authentication Debug-Features
-
-#### Neue Features
-- **Multi-Username-Tests**: Probiert automatisch verschiedene Username-Formate bei 401-Fehlern
-- **Auth-Fallback-Strategie**: Versucht nacheinander: Konfigurierter User → Leerer User → "admin"
-- **WWW-Authenticate Logging**: Zeigt Server-Response-Header für Auth-Methoden-Analyse
-- **Detaillierte Auth-Logs**: Username-Länge, versuchte Methoden, alle Fehlversuche
-
-#### Technische Details
-- Bei 401-Fehlern werden automatisch alternative Usernames versucht
-- FRITZ!Box erwartet möglicherweise leeren Username für lokale Zugriffe
-- Debug-Output zeigt genau welche Auth-Methode erwartet wird
-- Hilft bei der Diagnose von TR-064 spezifischen Auth-Anforderungen
-
-#### Debug-Hinweise
-- Manche FRITZ!Box-Modelle erwarten einen leeren Username für TR-064
-- Der Standard-User "admin" wird als Fallback versucht
-- WWW-Authenticate Header zeigt ob Basic oder Digest Auth erwartet wird
-
-## 📋 Vollständiger Changelog v1.0.17 (2025-07-28)
-
-### 🎯 UnhandledPromiseRejections endgültig behoben
-
-#### Behobene Probleme
-- **Globaler Error-Handler**: Die gesamte accessories() Promise-Chain ist jetzt abgesichert
-- **Debug-Promise gesichert**: Auch Debug-Log Promises haben jetzt catch-Handler
-- **Callback-Garantie**: Der callback wird immer aufgerufen, auch bei Fehlern
-- **100% Crash-Schutz**: Keine UnhandledPromiseRejections mehr möglich
-
-#### Technische Details
-- Alle Promise-Chains haben jetzt umfassende Error-Handler
-- accessories() Method hat globalen catch-Block
-- Debug-Promise in fritz() Methode abgesichert
-- Defensive Programmierung für maximale Stabilität
-
-## 📋 Vollständiger Changelog v1.0.16 (2025-07-28)
-
-### 📊 Versionsanzeige und Debug-Verbesserungen
-
-#### Neue Features
-- **Versionsanzeige**: Plugin zeigt beim Start `homebridge-fritz-new v1.0.16 starting up`
-- **Erweiterte TR-064 Debug-Logs**: URLs, Request-Details, Response-Fehler
-- **Bessere Fehlerdiagnose**: Spezifische Hinweise bei 401-Fehlern
-- **Service-Discovery-Logs**: Zeigt verfügbare TR-064 Services im Debug-Modus
-
-#### Technische Details
-- Version wird aus package.json gelesen und einmalig geloggt
-- TR-064 verwendet bereits korrekten Port 49443 (nicht 443)
-- Debug-Ausgaben zeigen vollständige URLs und Fehlerdetails
-- Hinweis auf TR-064 Berechtigungen bei Authentication-Fehlern
-
-#### Wichtiger Hinweis
-Falls TR-064 Authentication fehlschlägt: Prüfen Sie in der FRITZ!Box unter
-System > FRITZ!Box-Benutzer, ob der Benutzer die Berechtigung
-"FRITZ!Box Einstellungen" hat. Diese ist für TR-064 zwingend erforderlich!
-
-## 📋 Vollständiger Changelog v1.0.15 (2025-07-28)
-
-### 🐛 Vollständige Promise-Fehlerbehandlung
-
-#### Behobene Probleme
-- **Alle UnhandledPromiseRejections behoben**: Keine Abstürze mehr durch unbehandelte Promises
-- **getSwitchList Fehlerbehandlung**: Eigener catch-Handler verhindert Crash
-- **getThermostatList Fehlerbehandlung**: Eigener catch-Handler verhindert Crash
-- **Individuelle Error-Handler**: Jede API-Anfrage behandelt Fehler separat
-
-#### Technische Details
-- Jeder `self.fritz()` Aufruf hat jetzt eigenen `.catch()` Handler
-- Fehler werden geloggt, aber andere Accessories laden weiter
-- Promise.all() kann jetzt sicher mit bereits gefangenen Fehlern umgehen
-
-## 📋 Vollständiger Changelog v1.0.14 (2025-07-28)
-
-### 🐛 Kritischer Bug-Fix: UnhandledPromiseRejection
-
-#### Behobene Probleme
-- **Homebridge Absturz behoben**: UnhandledPromiseRejection führte zum Absturz
-- **Promise-Fehlerbehandlung**: Vollständige catch-Handler für alle Promises
-- **Robuste Fehlerbehandlung**: Plugin läuft weiter auch wenn getDeviceList fehlschlägt
-- **Debug-Logging funktioniert**: Log-Funktionalität in fritz-api.js repariert
-
-#### Technische Details
-- FritzApi akzeptiert nun optionalen log Parameter
-- updateDeviceList gibt bei Fehler leere Liste zurück statt Exception zu werfen
-- Promise.all() hat jetzt proper error handling
-- Platform übergibt log über options an API-Calls
-
-## 📋 Vollständiger Changelog v1.0.13 (2025-07-28)
-
-### 🔍 Debug-Logging für TR-064 Authentifizierung
-
-#### Neue Features
-- **Erweitertes Debug-Logging**: Detaillierte Ausgaben für TR-064 Verbindungsprobleme
-- **Session-ID Tracking**: Logging der Session-ID bei getDeviceList Aufrufen
-- **TR-064 Connection Info**: Ausgabe von Host, Port, SSL und User-Informationen
-- **Verbesserte Fehlerbehandlung**: Klarere Fehlermeldungen bei undefined Errors
-
-## 📋 Vollständiger Changelog v1.0.12 (2025-07-28)
-
-### 🔒 SSL-Support für FRITZ!Box HTTPS
-
-#### Neue Features
-- **Self-signed Certificate Support**: HTTPS-Verbindungen zur FRITZ!Box funktionieren jetzt
-- **SSL-Agent Konfiguration**: Automatische Handhabung von selbst-signierten Zertifikaten
-- **TR-064 SSL-Support**: SSL-Verbindungen für TR-064 API aktiviert
-
-#### Technische Details
-- `rejectUnauthorized: false` für HTTPS-Verbindungen
-- Unterstützt sowohl Smart Home API als auch TR-064 über HTTPS
-- Keine manuellen Zertifikatsimporte mehr nötig
-
-## 📋 Vollständiger Changelog v1.0.3 (2025-07-28)
 
 ### 📝 Dokumentations- und Badge-Update
 
