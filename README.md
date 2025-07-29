@@ -104,6 +104,15 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
+## 🎉 Was ist neu in Version 1.0.31?
+
+### 🛡️ Kritische Stabilitäts-Fixes
+- **UnhandledPromiseRejections behoben**: Keine unbehandelten Promise-Fehler mehr
+- **Session-Management verbessert**: Timeout-Fehler werden korrekt als Session-Fehler erkannt
+- **Login-Concurrency-Schutz**: Verhindert Race-Conditions bei parallelen Logins
+- **Async/Await Migration**: Alle Accessories nutzen moderne Fehlerbehandlung
+- **Verbesserte Stabilität**: Homebridge bleibt auch bei API-Fehlern stabil
+
 ## 🎉 Was ist neu in Version 1.0.30?
 
 ### 🚀 Robustes Session-Management
@@ -162,6 +171,39 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.31 (2025-07-29)
+- **Kritische Stabilität-Fixes**: UnhandledPromiseRejections behoben
+- **Session-Management verbessert**: Timeout-Fehler werden jetzt korrekt als Session-Fehler erkannt
+- **Login-Concurrency-Schutz implementiert**: Verhindert Race-Conditions bei parallelen Logins
+- **Alle Accessories auf async/await mit robuster Fehlerbehandlung umgestellt**
+- **Promise-Fehlerbehandlung in allen Accessories hinzugefügt**
+
+### Version 1.0.30 (2025-07-29)
+- **Robustes Session-Management**: Intelligente API-Schicht mit Auto-Retry
+- **Fehler-Normalisierung**: Erkennt "inval" und leere Antworten als Session-Fehler
+- **Promise-Fehler behoben**: Alle UnhandledPromiseRejections beseitigt
+- **Timeout erhöht**: Von 5 auf 10 Sekunden für stabilere Verbindungen
+
+### Version 1.0.29 (2025-07-29)
+- **Dokumentations-Update**: README.md überarbeitet und verbessert
+- **Code-Kommentare**: Erweiterte Inline-Dokumentation
+
+### Version 1.0.28 (2025-07-29)
+- **Aufräumarbeiten**: Code-Qualität und Dokumentation verbessert
+- **Test-Suite**: Vorbereitungen für stabilere Tests
+
+### Version 1.0.27 (2025-07-29)
+- **Weitere Stabilitätsverbesserungen**: Erweiterte Promise-Behandlung
+- **Session-Wartezeit**: Polling-System wartet auf erste Session
+- **WiFi-Accessory Timing**: 2 Sekunden Verzögerung vor erstem Update
+- **Login-Retry Timer**: Wird bei Cleanup sauber entfernt
+
+### Version 1.0.26 (2025-07-29)
+- **Kritische Bugfixes**: UnhandledPromiseRejection und Session Management Fixes
+- **Promise Error Handling**: Alle Promise-Ketten haben .catch() Handler
+- **Login Retry**: Automatischer Retry nach 30 Sekunden bei Login-Fehler
+- **Homebridge Crash Prevention**: Verhindert Absturz bei API-Fehlern
 
 ### Version 1.0.25 (2025-07-29)
 - **GitHub Actions Workflow Fix**: Tests sind jetzt optional, NPM Publishing funktioniert wieder
@@ -298,6 +340,22 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Performance**: Optimiertes Polling, Connection-Pooling, Smart Caching
 
 ## 📋 Detaillierte Änderungen ab Version 1.0.3
+
+### Version 1.0.31 (2025-07-29) - 🛡️ KRITISCHE STABILITÄTS-FIXES
+
+#### 🐛 Kritische Fehler behoben
+- **UnhandledPromiseRejections behoben**: Keine unbehandelten Promise-Fehler mehr in der gesamten Codebasis
+- **Session-Management verbessert**: Timeout-Fehler werden jetzt korrekt als Session-Fehler erkannt
+- **Login-Concurrency-Schutz implementiert**: Verhindert Race-Conditions bei parallelen Login-Versuchen
+- **Alle Accessories auf async/await umgestellt**: Konsistente asynchrone Fehlerbehandlung überall
+- **Promise-Fehlerbehandlung hinzugefügt**: Jeder API-Call hat jetzt robuste Error-Handler
+
+#### 🔧 Technische Verbesserungen
+- **Async/Await Migration**: Alle Accessories nutzen jetzt moderne async/await Syntax
+- **Race-Condition Prevention**: Login-Prozess ist jetzt thread-safe mit Mutex-Pattern
+- **Timeout-Erkennung**: ETIMEDOUT und ESOCKETTIMEDOUT werden als Session-Fehler behandelt
+- **Fehler-Propagierung**: Fehler werden sauber durch die Promise-Chain weitergegeben
+- **Verbesserte Stabilität**: Homebridge bleibt auch bei API-Fehlern stabil
 
 ### Version 1.0.30 (2025-07-29) - 🚀 ROBUSTES SESSION-MANAGEMENT
 

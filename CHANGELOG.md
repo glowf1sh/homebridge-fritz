@@ -5,6 +5,27 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.31] - 2025-07-29
+
+### 🐛 Fixed
+- **UnhandledPromiseRejections behoben**: Keine unbehandelten Promise-Fehler mehr in der gesamten Codebasis
+- **Session-Management verbessert**: Timeout-Fehler (ETIMEDOUT, ESOCKETTIMEDOUT) werden jetzt korrekt als Session-Fehler erkannt
+- **Login-Concurrency-Schutz implementiert**: Verhindert Race-Conditions bei parallelen Login-Versuchen durch Mutex-Pattern
+- **Promise-Fehlerbehandlung**: Jeder API-Call hat jetzt robuste Error-Handler mit korrekter Fehler-Propagierung
+
+### 🔧 Changed
+- **Async/Await Migration**: Alle Accessories nutzen jetzt moderne async/await Syntax für konsistente Fehlerbehandlung
+- **Race-Condition Prevention**: Login-Prozess ist jetzt thread-safe mit einem Login-in-Progress Flag
+- **Verbesserte Fehler-Erkennung**: makeRequest() erkennt jetzt auch Timeout-Fehler als Session-Probleme
+
+### ✨ Added
+- **Login Concurrency Control**: Neue Logik verhindert mehrere gleichzeitige Login-Versuche
+- **Erweiterte Fehlerbehandlung**: Alle Accessories haben jetzt try-catch Blöcke für alle asynchronen Operationen
+
+### 🚀 Performance
+- **Stabilität erhöht**: Homebridge bleibt auch bei API-Fehlern oder Netzwerkproblemen stabil
+- **Bessere Fehler-Recovery**: Automatische Session-Erneuerung bei allen erkannten Session-Fehlern
+
 ## [1.0.8] - 2025-07-28
 
 ### ⚠️ Breaking Changes
