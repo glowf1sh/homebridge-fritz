@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.24 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.26 - Aktueller Fork mit Sicherheitsupdates
 
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
@@ -260,6 +260,22 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - **Performance**: Optimiertes Polling, Connection-Pooling, Smart Caching
 
 ## 📋 Detaillierte Änderungen ab Version 1.0.3
+
+### Version 1.0.26 (2025-07-29) - 🚨 KRITISCHE BUGFIXES
+
+#### 🐛 Kritische Fehler behoben
+- **UnhandledPromiseRejection Fix**: Polling startet nicht mehr bevor Session existiert
+- **Promise Error Handling**: Alle Promise-Ketten haben jetzt .catch() Handler
+- **Session Management**: Polling-Methoden prüfen ob Session vorhanden ist
+- **Login Retry**: Automatischer Retry nach 30 Sekunden bei Login-Fehler
+- **Homebridge Crash Prevention**: Verhindert kompletten Absturz bei API-Fehlern
+
+#### 🔧 Technische Verbesserungen
+- Polling wartet auf initiale Session bevor Start
+- Fehler in einzelnen Geräte-Polls crashen nicht mehr das gesamte System
+- Verbesserte Debug-Logs bei Polling-Fehlern
+- WiFi-Accessory wartet 2 Sekunden vor erstem Update
+- Cleanup entfernt auch Login-Retry Timer
 
 
 ### 📝 Dokumentations- und Badge-Update
