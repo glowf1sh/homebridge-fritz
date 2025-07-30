@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.41 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.42 - Aktueller Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -104,6 +104,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
 ## 📚 Versionshistorie
+
+## 🎉 Was ist neu in Version 1.0.42?
+
+### 🚀 Performance-Verbesserungen
+- **Schnelleres Schalten**: HomeKit-Callbacks erfolgen sofort (kein "Status unknown" mehr)
+- **Keine Retries**: Verhindert mehrfache Schaltbefehle durch HomeKit
+- **Polling-Report-Timing**: Erste Zusammenfassung nach genau 60 Sekunden
 
 ## 🎉 Was ist neu in Version 1.0.41?
 
