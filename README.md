@@ -177,6 +177,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Debug-Logs**: Verbesserte Fehlersuche für Polling-Reports
 - **STABIL**: Erste Version die vollständig fehlerfrei läuft!
 
+## 🔥 Was ist neu in Version 1.0.53?
+
+### 🔥 Thermostat OFF/ON Fix
+- **Heizung ausschalten**: OFF-Befehl funktioniert wieder zuverlässig
+- **ON-Befehl**: Auch der ON-Befehl (Komfort-Modus) arbeitet korrekt
+- **Robuste API-Kommunikation**: Leere Responses werden bei OFF/ON akzeptiert
+- **Session-Stabilität**: Keine falschen Re-Authentications mehr bei OFF-Befehlen
+
 ## 🎯 Was ist neu in Version 1.0.52?
 
 ### 🎯 Kritischer Thermostat-Fix
@@ -337,6 +345,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.53 (2025-07-30) - 🔥 THERMOSTAT OFF/ON FIX
+- **OFF-Befehl funktioniert**: Heizung kann wieder ausgeschaltet werden
+- **Leere API-Responses**: Bei OFF/ON-Befehlen werden leere Antworten akzeptiert
+- **Session-Retry verbessert**: Parameter werden bei Re-Authentication korrekt übergeben
+- **Keine [object Object] Fehler mehr**: Retry-Logik nutzt jetzt makeRequest
 
 ### Version 1.0.52 (2025-07-30) - 🎯 KRITISCHER THERMOSTAT-FIX
 - **[object Object] Fehler behoben**: Temperaturwerte werden korrekt an API übergeben
