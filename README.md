@@ -1,5 +1,12 @@
-# homebridge-fritz-new v1.0.39 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.40 - Aktueller Fork mit Sicherheitsupdates
 
+
+## Was ist neu in Version 1.0.40?
+
+- **Status-Updates**: Schaltzustände werden jetzt korrekt in HomeKit angezeigt
+- **Polling funktioniert**: Regelmäßige Aktualisierung alle 3 Sekunden für Schalter
+- **Bugfix**: Service is not defined Fehler behoben
+- **Verbessertes Logging**: Debug-Meldungen zeigen Status-Änderungen
 
 ## Was ist neu in Version 1.0.39?
 
@@ -162,6 +169,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🎉 Was ist neu in Version 1.0.40?
+
+### 🔧 Status-Updates und Polling
+- **HomeKit Status-Updates**: Schaltzustände werden nach dem Schalten sofort in HomeKit angezeigt
+- **Funktionierendes Polling**: Automatische Aktualisierung alle 3 Sekunden für Schalter
+- **Service is not defined behoben**: Kritischer Fehler beim Geräte-Update behoben
+- **Async/Await für setOn**: Wartet auf Bestätigung der Fritz!Box vor Status-Update
+
 ## 🎉 Was ist neu in Version 1.0.39?
 
 ### 🐛 Kritischer Hotfix
@@ -291,6 +306,11 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.40 (2025-07-30)
+- **Status-Updates**: Schaltzustände werden sofort in HomeKit angezeigt
+- **Polling-System**: Automatische Updates alle 3 Sekunden
+- **Bugfixes**: Service is not defined und async setOn()
 
 ### Version 1.0.39 (2025-07-30)
 - **Hotfix**: Target Temperature null-Fehler behoben (HomeKit Warnungen)
