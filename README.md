@@ -9,7 +9,7 @@
 > Letzte Aktivität: 2019 • 22 bekannte Sicherheitslücken • Keine Reaktion auf Issues/PRs
 > 
 > **Dieses Repository `homebridge-fritz-new` ist ein aktiv gewarteter Fork mit:**
-> - ✅ Alle 22 Sicherheitslücken behoben (0 Vulnerabilities)
+> - ✅ Alle 24 Sicherheitslücken behoben (0 Vulnerabilities) - Stand v1.0.46
 > - ✅ Kompatibilität mit aktuellen Node.js/Homebridge Versionen
 > - ✅ Regelmäßige Updates und Support
 > - ✅ Aktive Community-Betreuung
@@ -198,72 +198,55 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Device-List-Caching**: 10 Sekunden Cache reduziert API-Anfragen drastisch
 - **Stabilere Kommunikation**: Keine Überlastung der Fritz!Box mehr
 
-## 🎉 Was ist neu in Version 1.0.33?
+## 🔒 Was ist neu in Version 1.0.46?
 
-### 🔧 Timeout-Optimierungen
-- **Timeout-Fix**: Platform-Timeout wird korrekt an alle API-Calls weitergegeben
-- **Konsistente Timeout-Behandlung**: Alle API-Operationen nutzen das konfigurierte Timeout
-- **Verbesserte Options-Vererbung**: Platform-Optionen werden korrekt propagiert
+### 🔒 Kritisches Security Update
+- **Behebt 2 High-Severity Vulnerabilities** aus früheren Versionen
+- **0 NPM Vulnerabilities**: Alle Sicherheitslücken vollständig behoben
+- **Eigene Digest-Auth Implementierung**: Keine externen unsicheren Dependencies mehr
+- **README bereinigt**: Versionsnummer aus Titel entfernt für bessere Wartbarkeit
 
-## 🎉 Was ist neu in Version 1.0.32?
+## 🎯 Was ist neu in Version 1.0.43?
 
-### ⏱️ Erweiterte Timeouts
-- **Timeout erhöht**: Von 5 auf 15 Sekunden für stabilere API-Kommunikation
-- **Retry-Flag korrigiert**: isRetry wird korrekt übergeben um Endlos-Schleifen zu verhindern
-- **Bessere Unterstützung**: Für langsame Fritz!Box Antworten
+### 🎯 Produktionsreife Version
+- **Priority Queue**: Schaltbefehle bekommen höchste Priorität (10)
+- **Request-Priorisierung**: Kritische Befehle überholen Polling-Requests  
+- **Schnellere Reaktion**: Keine zusätzlichen Verzögerungen durch Polling
+- **Debug-Logs**: Verbesserte Fehlersuche für Polling-Reports
+- **STABIL**: Erste Version die vollständig fehlerfrei läuft!
 
-## 🎉 Was ist neu in Version 1.0.31?
+## 🚀 Was ist neu in Version 1.0.42?
 
-### 🛡️ Kritische Stabilitäts-Fixes
-- **UnhandledPromiseRejections behoben**: Keine unbehandelten Promise-Fehler mehr
-- **Session-Management verbessert**: Timeout-Fehler werden korrekt als Session-Fehler erkannt
-- **Login-Concurrency-Schutz**: Verhindert Race-Conditions bei parallelen Logins
-- **Async/Await Migration**: Alle Accessories nutzen moderne Fehlerbehandlung
-- **Verbesserte Stabilität**: Homebridge bleibt auch bei API-Fehlern stabil
+### 🚀 HomeKit Performance
+- **HomeKit Retries verhindert**: callback() wird sofort aufgerufen
+- **Status Unknown behoben**: Keine mehrfachen Schaltversuche mehr
+- **Polling-Reports**: Erste Zusammenfassung nach 60 Sekunden
+- **Performance**: Schnellere HomeKit-Reaktion ohne Timeouts
 
-## 🎉 Was ist neu in Version 1.0.30?
+## 📊 Was ist neu in Version 1.0.41?
 
-### 🚀 Robustes Session-Management
-- **Intelligente API-Schicht**: Automatische Session-Erneuerung bei Fehlern
-- **Fehler-Normalisierung**: Erkennt "inval" und leere Antworten als Session-Fehler
-- **Auto-Retry**: Bei Session-Fehlern wird automatisch neu eingeloggt
-- **Promise-Fehler behoben**: Alle UnhandledPromiseRejections beseitigt
-- **Timeout erhöht**: Von 5 auf 10 Sekunden für stabilere Verbindungen
+### 📊 Polling-System Optimierung
+- **Polling-System gefixt**: Startet jetzt nach erfolgreichem Login
+- **Zusammenfassungs-Berichte**: Alle 60 Sekunden statt Spam-Logs
+- **Fehler-Tracking**: Zeigt genau welche Geräte Probleme haben
+- **Statistik-System**: Erfolgs- und Fehlerstatistiken pro Polling-Typ
 
-## 📝 Was ist neu in Version 1.0.29?
+## 🔄 Was ist neu in Version 1.0.40?
 
-### 📝 Dokumentations-Update
-- **README.md**: Überarbeitung und Verbesserung der Dokumentation
-- **Code-Kommentare**: Erweiterte Inline-Dokumentation
+### 🔄 Status-Update System
+- **Status-Updates**: Schaltzustände werden sofort in HomeKit angezeigt
+- **Polling-System**: Automatische Updates alle 3 Sekunden
+- **Bugfixes**: Service is not defined und async setOn()
 
-## 🧹 Was ist neu in Version 1.0.28?
+## 🛠️ Was ist neu in den Versionen 1.0.26 - 1.0.39?
 
-### 🧹 Aufräumarbeiten
-- **Code-Qualität**: Bessere Kommentare und Dokumentation
-- **Test-Suite**: Vorbereitungen für stabilere Tests
-
-## 🔧 Was ist neu in Version 1.0.27?
-
-### 🔧 Weitere Stabilitätsverbesserungen
-- **Erweiterte Promise-Behandlung**: Noch mehr .catch() Handler für absolute Stabilität
-- **Session-Wartezeit**: Polling-System wartet jetzt explizit auf erste Session
-- **WiFi-Accessory Timing**: 2 Sekunden Verzögerung vor erstem Update
-- **Login-Retry Timer**: Wird jetzt auch bei Cleanup sauber entfernt
-
-## 🚨 Was ist neu in Version 1.0.26?
-
-### 🚨 Kritische Bugfixes
-- **UnhandledPromiseRejection Fix**: Polling startet nicht mehr bevor Session existiert
-- **Promise Error Handling**: Alle Promise-Ketten haben jetzt .catch() Handler
-- **Session Management**: Polling-Methoden prüfen ob Session vorhanden ist
-- **Login Retry**: Automatischer Retry nach 30 Sekunden bei Login-Fehler
-- **Homebridge Crash Prevention**: Verhindert kompletten Absturz bei API-Fehlern
-
-## 🎉 Was ist neu in Version 1.0.25?
-
-### 🔧 Workflow-Fix für NPM Publishing
-- **GitHub Actions Workflow repariert**: Tests sind jetzt optional
-- **NPM Publishing funktioniert wieder**: Auch ohne Test-Dateien
+### 🛠️ Stabilitäts- und Feature-Updates
+- **Offline-Handling**: Robuste Behandlung für offline Geräte (v1.0.39)
+- **SimpleOnOff Support**: Moderne FRITZ!Smart Energy Geräte (v1.0.38)
+- **XML-First Feature-Erkennung**: Zukunftssichere Geräteerkennung (v1.0.36)
+- **Request-Queue**: Nur 1 Request gleichzeitig verhindert Überlastung (v1.0.34)
+- **Session-Management**: Intelligente API mit Auto-Retry (v1.0.30)
+- **UnhandledPromiseRejections**: Vollständig behoben (v1.0.26-31)
 
 ## 📋 Was war neu in Version 1.0.24?
 
