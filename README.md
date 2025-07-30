@@ -177,6 +177,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Debug-Logs**: Verbesserte Fehlersuche für Polling-Reports
 - **STABIL**: Erste Version die vollständig fehlerfrei läuft!
 
+## 🎯 Was ist neu in Version 1.0.52?
+
+### 🎯 Kritischer Thermostat-Fix
+- **Thermostat-Steuerung repariert**: Temperaturänderungen über HomeKit funktionieren wieder
+- **[object Object] Fehler behoben**: Temperaturwerte werden korrekt übertragen
+- **API-Kommunikation**: Parameter werden nun richtig an FRITZ!Box gesendet
+- **Zuverlässigkeit**: Thermostate reagieren wieder auf HomeKit-Befehle
+
 ## 🚀 Was ist neu in Version 1.0.42?
 
 ### 🚀 HomeKit Performance
