@@ -330,6 +330,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
 
+### Version 1.0.52 (2025-07-30) - 🎯 KRITISCHER THERMOSTAT-FIX
+- **[object Object] Fehler behoben**: Temperaturwerte werden korrekt an API übergeben
+- **makeRequest korrigiert**: Spezialbehandlung für setTempTarget implementiert
+- **HomeKit Integration**: Thermostat-Steuerung funktioniert wieder zuverlässig
+- **Parameter-Mismatch behoben**: 3-Parameter vs 4-Parameter Aufruf korrigiert
+
 ### Version 1.0.51 (2025-07-30) - 🔧 THERMOSTAT-BUGFIX
 - **NaN-Fehler behoben**: param=NaN führte zu HTTP 500 Fehlern
 - **String zu Number Konvertierung**: Temperaturwerte werden korrekt umgewandelt
