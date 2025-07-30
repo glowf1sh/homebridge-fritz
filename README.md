@@ -198,6 +198,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Device-List-Caching**: 10 Sekunden Cache reduziert API-Anfragen drastisch
 - **Stabilere Kommunikation**: Keine Überlastung der Fritz!Box mehr
 
+## ⚙️ Was ist neu in Version 1.0.47?
+
+### ⚙️ Konfigurierbare Polling-Intervalle
+- **Anpassbare Polling-Intervalle**: Nutzer können alle Polling-Zeiten individuell konfigurieren
+- **Performance-Optimierung**: Balance zwischen Reaktionsgeschwindigkeit und Systemlast
+- **Robuste Validierung**: Minimum-Werte verhindern Systemüberlastung
+- **Transparentes Logging**: Zeigt verwendete Intervalle beim Start an
+
 ## 🔒 Was ist neu in Version 1.0.46?
 
 ### 🔒 Kritisches Security Update
@@ -262,6 +270,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.47 (2025-07-30) - ⚙️ KONFIGURIERBARE POLLING-INTERVALLE
+- **Polling-Intervalle konfigurierbar**: Alle Polling-Zeiten können individuell angepasst werden
+- **Neue config.json Option**: `polling` Objekt für discovery, switchStates, sensorData, batteryStatus
+- **Validierung**: Minimum 1000ms pro Intervall zum Schutz der Fritz!Box
+- **Performance**: Nutzer können Balance zwischen Last und Reaktionszeit selbst bestimmen
 
 ### Version 1.0.46 (2025-07-30) - 🔒 SECURITY UPDATE
 - **README Updates**: Versionsnummer aus Titel entfernt
@@ -1007,6 +1021,7 @@ Das Plugin unterstützt folgende AVM FRITZ!-Geräte:
 | `debug` | boolean | `false` | Debug-Logging aktivieren |
 | `timeout` | number | `20000` | API-Timeout in Millisekunden |
 | `devices` | object | `{}` | Geräte-spezifische Einstellungen |
+| `polling` | object | `{}` | Anpassbare Polling-Intervalle (siehe unten) |
 
 ### Erweiterte Konfiguration mit Geräte-Optionen
 
@@ -1050,6 +1065,40 @@ Das Plugin unterstützt folgende AVM FRITZ!-Geräte:
 
 #### Für Outlets (Steckdosen)
 - `detectOutletInUse`: Boolean - Stromverbrauch überwachen (Standard: true)
+
+### Anpassbare Polling-Intervalle
+
+Sie können die Polling-Intervalle individuell anpassen, um die Balance zwischen Systemlast und Reaktionsgeschwindigkeit zu optimieren. Fügen Sie das `polling` Objekt zu Ihrer Konfiguration hinzu. Alle Werte sind in Millisekunden.
+
+```json
+{
+  "platforms": [
+    {
+      "platform": "Fritz!Platform",
+      "name": "Fritz!Box",
+      "username": "admin",
+      "password": "mypassword",
+      "polling": {
+        "discovery": 300000,
+        "switchStates": 2000,
+        "sensorData": 10000,
+        "batteryStatus": 900000
+      }
+    }
+  ]
+}
+```
+
+#### Polling-Intervalle im Detail
+
+| Intervall | Standard | Beschreibung |
+|-----------|----------|--------------|
+| `discovery` | 300000 (5 Min) | Erkennung neuer/entfernter Geräte |
+| `switchStates` | 3000 (3 Sek) | Status-Updates für Schalter/Steckdosen |
+| `sensorData` | 10000 (10 Sek) | Temperatur, Luftfeuchtigkeit, Stromverbrauch |
+| `batteryStatus` | 900000 (15 Min) | Batteriestand der Geräte |
+
+**Warnung:** Sehr niedrige Werte (unter 1000ms) können zu Instabilität führen. Das Plugin erzwingt ein Minimum von 1000ms zum Schutz Ihrer Fritz!Box.
 
 ## 🔧 Troubleshooting
 
