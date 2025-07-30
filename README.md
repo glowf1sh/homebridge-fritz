@@ -1000,7 +1000,13 @@ Das Plugin unterstützt folgende AVM FRITZ!-Geräte:
       "interval": 60,
       "concurrent": true,
       "debug": false,
-      "timeout": 20000
+      "timeout": 20000,
+      "polling": {
+        "discovery": 300000,
+        "switchStates": 3000,
+        "sensorData": 10000,
+        "batteryStatus": 900000
+      }
     }
   ]
 }
@@ -1035,6 +1041,12 @@ Das Plugin unterstützt folgende AVM FRITZ!-Geräte:
       "password": "mypassword",
       "url": "http://fritz.box",
       "interval": 60,
+      "polling": {
+        "discovery": 600000,
+        "switchStates": 2000,
+        "sensorData": 5000,
+        "batteryStatus": 1800000
+      },
       "devices": {
         "FRITZ!DECT 200 Wohnzimmer": {
           "display": false
