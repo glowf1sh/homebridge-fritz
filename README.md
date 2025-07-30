@@ -120,6 +120,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🔍 Was ist neu in Version 1.0.50?
+
+### 🔍 Debug-Verbesserungen für Thermostate
+- **Erweiterte Debug-Logs**: Zeigt exakte API-Parameter bei Temperaturänderungen
+- **Fehlerdetails**: Bei HTTP 500 Fehlern werden mehr Details geloggt
+- **API-Debugging**: Zeigt AIN, Temperatur und umgerechnete Parameter
+- **Fritz!Box Antworten**: Loggt was die Fritz!Box bei Fehlern zurückgibt
+
 ## 🌡️ Was ist neu in Version 1.0.49?
 
 ### 🌡️ Thermostat-Verbesserungen
@@ -313,6 +321,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.50 (2025-07-30) - 🔍 DEBUG-VERBESSERUNGEN
+- **Erweiterte Debug-Logs**: Details zu API-Calls für Thermostate
+- **Fehleranalyse**: Zeigt Fritz!Box Antworten bei HTTP 500 Fehlern
+- **Parameter-Logging**: AIN, Temperatur und umgerechnete Werte
+- **Debugging-Hilfe**: Zur Fehlersuche bei Thermostat-Problemen
 
 ### Version 1.0.49 (2025-07-30) - 🌡️ THERMOSTAT-VERBESSERUNGEN
 - **Temperatur-Logging verbessert**: Zeigt eingestellte Zieltemperatur im Log
