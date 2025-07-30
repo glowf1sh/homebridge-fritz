@@ -126,7 +126,7 @@ hb-service add ./homebridge-fritz-new-*.tgz
 [![Build Status](https://github.com/glowf1sh/homebridge-fritz-new/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/glowf1sh/homebridge-fritz-new/actions/workflows/npm-publish.yml)
 [![Last Commit](https://img.shields.io/github/last-commit/glowf1sh/homebridge-fritz-new.svg)](https://github.com/glowf1sh/homebridge-fritz-new/commits/master)
 [![GitHub Stars](https://img.shields.io/github/stars/glowf1sh/homebridge-fritz-new.svg?style=social)](https://github.com/glowf1sh/homebridge-fritz-new/stargazers)
-[![Dependencies](https://img.shields.io/badge/dependencies-5-brightgreen.svg)](https://github.com/glowf1sh/homebridge-fritz-new/blob/master/package.json)
+[![Dependencies](https://img.shields.io/badge/dependencies-6-brightgreen.svg)](https://github.com/glowf1sh/homebridge-fritz-new/blob/master/package.json)
 [![Actively Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/glowf1sh/homebridge-fritz-new/graphs/commit-activity)
 
 > **Dieser Fork ersetzt das veraltete [homebridge-fritz](https://github.com/andig/homebridge-fritz) Paket**, welches seit 2019 nicht mehr gewartet wird und 22 kritische Sicherheitslücken enthält.
@@ -491,7 +491,7 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 - Nur die tatsächlich benötigten Funktionen
 - Native Promises statt Bluebird
 - Vollständige Testabdeckung
-- Reduzierung der Dependencies von 201 auf 156 Pakete
+- Reduzierung der Dependencies von 201 auf 195 Pakete (nur 6 direkte Dependencies)
 
 ### 🐛 Behobene Bugs
 - **NaN-Temperaturwerte**: Keine falschen Temperaturanzeigen mehr in HomeKit
@@ -515,7 +515,7 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 ### Version 1.0.0 (2025-07-27)
 - **100% Sicherheit**: Alle 22 Sicherheitslücken behoben (0 Vulnerabilities)
 - **Modernisierung**: Vollständige Code-Modernisierung auf ES6+
-- **Dependencies reduziert**: Von 201 auf 156 Packages
+- **Dependencies reduziert**: Von 201 auf 195 Packages (nur 6 direkte Dependencies)
 - **Bug Fixes**: NaN-Temperaturwerte, Null-Batteriewerte, Guest WLAN Status
 - **Performance**: Optimiertes Polling, Connection-Pooling, Smart Caching
 
@@ -896,7 +896,7 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 
 ### 📦 Dependencies - Abhängigkeiten modernisiert
 
-#### Entfernte Packages (45 Dependencies weniger)
+#### Entfernte Packages (Reduzierung von 201 auf 195 Packages)
 - **fritzapi** (und 89 transitive Dependencies):
   - Grund: Veraltet, unsicher, überdimensioniert
   - Ersatz: Eigene schlanke Implementierung in `lib/fritz-api.js`
