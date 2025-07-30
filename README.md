@@ -120,6 +120,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🔧 Was ist neu in Version 1.0.51?
+
+### 🔧 Thermostat-Bugfix
+- **NaN-Fehler behoben**: Temperaturwerte werden korrekt in Zahlen umgewandelt
+- **Dezimalwerte unterstützt**: Sowohl Punkt als auch Komma als Dezimaltrennzeichen
+- **Robuste Konvertierung**: String zu Number Konvertierung mit Fehlerbehandlung
+- **0,5°C Schritte**: Unterstützt alle gültigen Thermostat-Temperaturen
+
 ## 🔍 Was ist neu in Version 1.0.50?
 
 ### 🔍 Debug-Verbesserungen für Thermostate
@@ -321,6 +329,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.51 (2025-07-30) - 🔧 THERMOSTAT-BUGFIX
+- **NaN-Fehler behoben**: param=NaN führte zu HTTP 500 Fehlern
+- **String zu Number Konvertierung**: Temperaturwerte werden korrekt umgewandelt
+- **Komma-Support**: "23,5" wird genauso akzeptiert wie "23.5"
+- **Fehlerbehandlung**: Ungültige Temperaturwerte werden abgefangen
 
 ### Version 1.0.50 (2025-07-30) - 🔍 DEBUG-VERBESSERUNGEN
 - **Erweiterte Debug-Logs**: Details zu API-Calls für Thermostate
