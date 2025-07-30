@@ -1,4 +1,4 @@
-# homebridge-fritz-new v1.0.42 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.43 - Aktueller Fork mit Sicherheitsupdates
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -104,6 +104,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
 ## 📚 Versionshistorie
+
+## 🎉 Was ist neu in Version 1.0.43?
+
+### ⚡ Priority Queue für schnelleres Schalten
+- **Schaltbefehle haben Vorrang**: Nutzt p-queue Priority-Feature (Priorität 10)
+- **Weniger Wartezeit**: Kritische Befehle überholen Polling-Requests
+- **Fritz!Box bleibt langsam**: Hardware-bedingte 10s können wir nicht ändern, aber Priorisierung hilft
 
 ## 🎉 Was ist neu in Version 1.0.42?
 
