@@ -5,7 +5,7 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.40] - 2025-07-30
+## [1.0.41] - 2025-07-30\n\n### 🐛 Fixed\n- **Polling-System**: Startet jetzt korrekt nach erfolgreichem Login\n- **Session-Timing**: setupPollingSystem() wird erst nach Session-Erstellung aufgerufen\n- **Keine Spam-Logs mehr**: Debug-Nachrichten alle 3 Sekunden entfernt\n\n### ✨ Added\n- **Polling-Zusammenfassung**: Alle 60 Sekunden eine Übersicht über Erfolg/Fehler\n- **Fehler-Tracking**: Zeigt genau welche Geräte bei Polling fehlschlagen\n- **Statistik-System**: Sammelt Erfolgs- und Fehlerstatistiken pro Polling-Typ\n\n### 🔧 Changed\n- **Polling-Initialisierung**: Verschoben von didFinishLaunching zu nach Login-Erfolg\n- **Log-Ausgaben**: Reduziert auf wichtige Events und 60-Sekunden-Zusammenfassungen\n- **Timer-Cleanup**: statsTimer wird jetzt auch bei Shutdown gestoppt\n\n## [1.0.40] - 2025-07-30
 
 ### 🐛 Fixed
 - **Status-Updates in HomeKit**: Schaltzustände werden nach dem Schalten korrekt angezeigt

@@ -1,7 +1,7 @@
-# homebridge-fritz-new v1.0.40 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.41 - Aktueller Fork mit Sicherheitsupdates
 
 
-## Was ist neu in Version 1.0.40?
+## Was ist neu in Version 1.0.41?\n\n- **Polling-System gefixt**: Polling startet jetzt korrekt nach erfolgreichem Login\n- **Zusammenfassungs-Berichte**: Alle 60 Sekunden eine Übersicht statt ständiger Logs\n- **Fehler-Tracking**: Zeigt genau welche Geräte Probleme haben\n- **Saubere Logs**: Keine Spam-Nachrichten mehr alle 3 Sekunden\n\n## Was ist neu in Version 1.0.40?
 
 - **Status-Updates**: Schaltzustände werden jetzt korrekt in HomeKit angezeigt
 - **Polling funktioniert**: Regelmäßige Aktualisierung alle 3 Sekunden für Schalter
@@ -168,6 +168,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
 ## 📚 Versionshistorie
+
+## 🎉 Was ist neu in Version 1.0.41?
+
+### 🐛 Polling-System repariert
+- **Polling startet jetzt korrekt**: setupPollingSystem() wird erst nach erfolgreichem Login aufgerufen
+- **Zusammenfassungs-Berichte**: Alle 60 Sekunden eine Übersicht über alle Polling-Aktivitäten
+- **Fehler-Tracking**: Zeigt genau welche Geräte Probleme haben
+- **Saubere Logs**: Keine Spam-Nachrichten mehr alle 3 Sekunden
 
 ## 🎉 Was ist neu in Version 1.0.40?
 
