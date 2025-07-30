@@ -120,84 +120,6 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
-## 🎉 Was ist neu in Version 1.0.43?
-
-### ⚡ Priority Queue für schnelleres Schalten
-- **Schaltbefehle haben Vorrang**: Nutzt p-queue Priority-Feature (Priorität 10)
-- **Weniger Wartezeit**: Kritische Befehle überholen Polling-Requests
-- **Fritz!Box bleibt langsam**: Hardware-bedingte 10s können wir nicht ändern, aber Priorisierung hilft
-
-## 🎉 Was ist neu in Version 1.0.42?
-
-### 🚀 Performance-Verbesserungen
-- **Schnelleres Schalten**: HomeKit-Callbacks erfolgen sofort (kein "Status unknown" mehr)
-- **Keine Retries**: Verhindert mehrfache Schaltbefehle durch HomeKit
-- **Polling-Report-Timing**: Erste Zusammenfassung nach genau 60 Sekunden
-
-## 🎉 Was ist neu in Version 1.0.41?
-
-### 🐛 Polling-System repariert
-- **Polling startet jetzt korrekt**: setupPollingSystem() wird erst nach erfolgreichem Login aufgerufen
-- **Zusammenfassungs-Berichte**: Alle 60 Sekunden eine Übersicht über alle Polling-Aktivitäten
-- **Fehler-Tracking**: Zeigt genau welche Geräte Probleme haben
-- **Saubere Logs**: Keine Spam-Nachrichten mehr alle 3 Sekunden
-
-## 🎉 Was ist neu in Version 1.0.40?
-
-### 🔧 Status-Updates und Polling
-- **HomeKit Status-Updates**: Schaltzustände werden nach dem Schalten sofort in HomeKit angezeigt
-- **Funktionierendes Polling**: Automatische Aktualisierung alle 3 Sekunden für Schalter
-- **Service is not defined behoben**: Kritischer Fehler beim Geräte-Update behoben
-- **Async/Await für setOn**: Wartet auf Bestätigung der Fritz!Box vor Status-Update
-
-## 🎉 Was ist neu in Version 1.0.39?
-
-### 🐛 Kritischer Hotfix
-- **Target Temperature null-Fehler behoben**: Keine HomeKit Warnungen mehr über "illegal value: null"
-- **Verbesserte Offline-Behandlung**: Geräte behalten ihre letzten bekannten Werte
-- **Debug-Logging**: Zeigt jetzt wenn Geräte offline sind oder nicht antworten
-
-## 🎉 Was ist neu in Version 1.0.38?
-
-### ✨ Erweiterte Fritz!Box Features
-- **SimpleOnOff Element Support**: Nutzt simpleonoff als primäre Statusquelle für moderne FRITZ!Smart Energy Geräte
-- **Voltage-Anzeige**: Zeigt die aktuelle Netzspannung bei Steckdosen an (Eve-kompatibel)
-- **Window-Open Detection**: Thermostate erkennen offene Fenster und passen HomeKit-Status automatisch an
-- **Boost Mode Support**: Thermostate zeigen aktiven Boost-Modus im HomeKit an
-- **Robustes Offline-Handling**: Neue DeviceOfflineError Klasse für saubere Fehlerbehandlung
-- **Test-Driven Development**: Alle Features mit umfassenden Tests abgesichert
-
-## 🎉 Was ist neu in Version 1.0.37?
-
-### 🐛 Hotfix für Session-Management
-- **"inval" Fehlerbehandlung**: "inval" Antworten werden nicht mehr als Session-Fehler behandelt
-- **Stabilere Session**: Keine unnötigen Re-Authentifizierungen bei inkompatiblen Befehlen
-- **Verbesserte Fehlerbehandlung**: getTemperature/getTempTarget geben null zurück statt Fehler zu werfen
-
-## 🎉 Was ist neu in Version 1.0.36?
-
-### 🔮 XML-First Ansatz
-- **XML-First Feature-Erkennung**: Features werden aus tatsächlichen XML-Elementen erkannt
-- **Zukunftssichere Architektur**: Unbekannte XML-Elemente werden automatisch erkannt
-- **Generische Wert-Extraktion**: Auch neue Gerätetypen werden automatisch unterstützt
-- **SimpleOnOff Element**: Unterstützung für das neu entdeckte simpleonoff Element
-
-## 🎉 Was ist neu in Version 1.0.35?
-
-### 🎯 Feature-basierte API-Calls
-- **Intelligente API-Calls**: Keine falschen getBatteryCharge/getTempTarget mehr auf unpassenden Geräten
-- **HTTP 400/500 Fehler behoben**: API-Befehle nur noch bei passenden Gerätetypen
-- **Fritz!Smart Thermo 301 Fix**: Thermostate mit falscher Bitmask werden zuverlässig erkannt
-- **Verbesserte Battery-Erkennung**: Batterie-Info wird aus HKR-Element gelesen
-
-## 🎉 Was ist neu in Version 1.0.34?
-
-### 🚦 Request-Queue Implementation
-- **Request-Overload behoben**: Nur noch 1 Request gleichzeitig verhindert Fritz!Box Überlastung
-- **p-queue Integration**: Professionelle Request-Limitierung mit 200ms Intervall
-- **Device-List-Caching**: 10 Sekunden Cache reduziert API-Anfragen drastisch
-- **Stabilere Kommunikation**: Keine Überlastung der Fritz!Box mehr
-
 ## 🐛 Was ist neu in Version 1.0.48?
 
 ### 🐛 Bugfix für Polling-Konfiguration
@@ -254,15 +176,120 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Polling-System**: Automatische Updates alle 3 Sekunden
 - **Bugfixes**: Service is not defined und async setOn()
 
-## 🛠️ Was ist neu in den Versionen 1.0.26 - 1.0.39?
+## 🛠️ Was ist neu in Version 1.0.39?
 
-### 🛠️ Stabilitäts- und Feature-Updates
-- **Offline-Handling**: Robuste Behandlung für offline Geräte (v1.0.39)
-- **SimpleOnOff Support**: Moderne FRITZ!Smart Energy Geräte (v1.0.38)
-- **XML-First Feature-Erkennung**: Zukunftssichere Geräteerkennung (v1.0.36)
-- **Request-Queue**: Nur 1 Request gleichzeitig verhindert Überlastung (v1.0.34)
-- **Session-Management**: Intelligente API mit Auto-Retry (v1.0.30)
-- **UnhandledPromiseRejections**: Vollständig behoben (v1.0.26-31)
+### 🛠️ Kritischer Hotfix
+- **Target Temperature null-Fehler behoben**: Keine HomeKit Warnungen mehr über "illegal value: null"
+- **Verbesserte Offline-Behandlung**: Geräte behalten ihre letzten bekannten Werte
+- **Debug-Logging**: Zeigt jetzt wenn Geräte offline sind oder nicht antworten
+
+## ✨ Was ist neu in Version 1.0.38?
+
+### ✨ Erweiterte Fritz!Box Features
+- **SimpleOnOff Element Support**: Nutzt simpleonoff als primäre Statusquelle für moderne FRITZ!Smart Energy Geräte
+- **Voltage-Anzeige**: Zeigt die aktuelle Netzspannung bei Steckdosen an (Eve-kompatibel)
+- **Window-Open Detection**: Thermostate erkennen offene Fenster und passen HomeKit-Status automatisch an
+- **Boost Mode Support**: Thermostate zeigen aktiven Boost-Modus im HomeKit an
+- **Robustes Offline-Handling**: Neue DeviceOfflineError Klasse für saubere Fehlerbehandlung
+- **Test-Driven Development**: Alle Features mit umfassenden Tests abgesichert
+
+## 🐞 Was ist neu in Version 1.0.37?
+
+### 🐞 Hotfix für Session-Management
+- **"inval" Fehlerbehandlung**: "inval" Antworten werden nicht mehr als Session-Fehler behandelt
+- **Stabilere Session**: Keine unnötigen Re-Authentifizierungen bei inkompatiblen Befehlen
+- **Verbesserte Fehlerbehandlung**: getTemperature/getTempTarget geben null zurück statt Fehler zu werfen
+
+## 🔮 Was ist neu in Version 1.0.36?
+
+### 🔮 XML-First Ansatz
+- **XML-First Feature-Erkennung**: Features werden aus tatsächlichen XML-Elementen erkannt
+- **Zukunftssichere Architektur**: Unbekannte XML-Elemente werden automatisch erkannt
+- **Generische Wert-Extraktion**: Auch neue Gerätetypen werden automatisch unterstützt
+- **SimpleOnOff Element**: Unterstützung für das neu entdeckte simpleonoff Element
+
+## 🎯 Was ist neu in Version 1.0.35?
+
+### 🎯 Feature-basierte API-Calls
+- **Intelligente API-Calls**: Keine falschen getBatteryCharge/getTempTarget mehr auf unpassenden Geräten
+- **HTTP 400/500 Fehler behoben**: API-Befehle nur noch bei passenden Gerätetypen
+- **Fritz!Smart Thermo 301 Fix**: Thermostate mit falscher Bitmask werden zuverlässig erkannt
+- **Verbesserte Battery-Erkennung**: Batterie-Info wird aus HKR-Element gelesen
+
+## 🚦 Was ist neu in Version 1.0.34?
+
+### 🚦 Request-Queue Implementation
+- **Request-Overload behoben**: Nur noch 1 Request gleichzeitig verhindert Fritz!Box Überlastung
+- **p-queue Integration**: Professionelle Request-Limitierung mit 200ms Intervall
+- **Device-List-Caching**: 10 Sekunden Cache reduziert API-Anfragen drastisch
+- **Stabilere Kommunikation**: Keine Überlastung der Fritz!Box mehr
+
+## 🔧 Was ist neu in Version 1.0.33?
+
+### 🔧 Timeout-Optimierungen
+- **Timeout-Fix**: Platform-Timeout wird korrekt an alle API-Calls weitergegeben
+- **Konsistente Timeout-Behandlung**: Alle API-Operationen nutzen das konfigurierte Timeout
+- **Verbesserte Options-Vererbung**: Platform-Optionen werden korrekt propagiert
+
+## ⏱️ Was ist neu in Version 1.0.32?
+
+### ⏱️ Erweiterte Timeouts
+- **Timeout erhöht**: Von 5 auf 15 Sekunden für stabilere API-Kommunikation
+- **Retry-Flag korrigiert**: isRetry wird korrekt übergeben um Endlos-Schleifen zu verhindern
+- **Bessere Unterstützung**: Für langsame Fritz!Box Antworten
+
+## 🛡️ Was ist neu in Version 1.0.31?
+
+### 🛡️ Kritische Stabilitäts-Fixes
+- **UnhandledPromiseRejections behoben**: Keine unbehandelten Promise-Fehler mehr
+- **Session-Management verbessert**: Timeout-Fehler werden korrekt als Session-Fehler erkannt
+- **Login-Concurrency-Schutz**: Verhindert Race-Conditions bei parallelen Logins
+- **Async/Await Migration**: Alle Accessories nutzen moderne Fehlerbehandlung
+- **Verbesserte Stabilität**: Homebridge bleibt auch bei API-Fehlern stabil
+
+## 🚀 Was ist neu in Version 1.0.30?
+
+### 🚀 Robustes Session-Management
+- **Intelligente API-Schicht**: Automatische Session-Erneuerung bei Fehlern
+- **Fehler-Normalisierung**: Erkennt "inval" und leere Antworten als Session-Fehler
+- **Auto-Retry**: Bei Session-Fehlern wird automatisch neu eingeloggt
+- **Promise-Fehler behoben**: Alle UnhandledPromiseRejections beseitigt
+- **Timeout erhöht**: Von 5 auf 10 Sekunden für stabilere Verbindungen
+
+## 📝 Was ist neu in Version 1.0.29?
+
+### 📝 Dokumentations-Update
+- **README.md**: Überarbeitung und Verbesserung der Dokumentation
+- **Code-Kommentare**: Erweiterte Inline-Dokumentation
+
+## 🧹 Was ist neu in Version 1.0.28?
+
+### 🧹 Aufräumarbeiten
+- **Code-Qualität**: Bessere Kommentare und Dokumentation
+- **Test-Suite**: Vorbereitungen für stabilere Tests
+
+## 🔧 Was ist neu in Version 1.0.27?
+
+### 🔧 Weitere Stabilitätsverbesserungen
+- **Erweiterte Promise-Behandlung**: Noch mehr .catch() Handler für absolute Stabilität
+- **Session-Wartezeit**: Polling-System wartet jetzt explizit auf erste Session
+- **WiFi-Accessory Timing**: 2 Sekunden Verzögerung vor erstem Update
+- **Login-Retry Timer**: Wird jetzt auch bei Cleanup sauber entfernt
+
+## 🚨 Was ist neu in Version 1.0.26?
+
+### 🚨 Kritische Bugfixes
+- **UnhandledPromiseRejection Fix**: Polling startet nicht mehr bevor Session existiert
+- **Promise Error Handling**: Alle Promise-Ketten haben jetzt .catch() Handler
+- **Session Management**: Polling-Methoden prüfen ob Session vorhanden ist
+- **Login Retry**: Automatischer Retry nach 30 Sekunden bei Login-Fehler
+- **Homebridge Crash Prevention**: Verhindert kompletten Absturz bei API-Fehlern
+
+## 🎉 Was ist neu in Version 1.0.25?
+
+### 🎉 Workflow-Fix für NPM Publishing
+- **GitHub Actions Workflow repariert**: Tests sind jetzt optional
+- **NPM Publishing funktioniert wieder**: Auch ohne Test-Dateien
 
 ## 📋 Was war neu in Version 1.0.24?
 
