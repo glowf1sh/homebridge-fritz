@@ -280,9 +280,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
 
-### Version 1.0.45 (2025-07-30) - 🔒 SECURITY UPDATE
+### Version 1.0.46 (2025-07-30) - 🔒 SECURITY UPDATE
 - **README Updates**: Versionsnummer aus Titel entfernt
 - **NPM Package Management**: Aufräumarbeiten
+
+### Version 1.0.45 (2025-07-30) - 🔒 SECURITY UPDATE
+- Identisch mit 1.0.46 (NPM Publishing Issue)
 
 ### Version 1.0.44 (2025-07-30) - 🔒 KRITISCHES SECURITY UPDATE
 - **Behebt 2 High-Severity Vulnerabilities** in @mhoc/axios-digest-auth
