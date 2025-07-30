@@ -2,18 +2,33 @@
   "platforms": [
     {
       "platform": "FRITZ!Box",
-      "name": "My FRITZ!Box",
-      "username": "",
-      "password": "",
+      "name": "Fritz!Box",
+      "username": "admin",
+      "password": "mypassword",
       "url": "http://fritz.box",
+      "interval": 60,
+      "concurrent": true,
+      "debug": false,
+      "timeout": 15000,
+      "polling": {
+        "discovery": 300000,
+        "switchStates": 3000,
+        "sensorData": 10000,
+        "batteryStatus": 900000
+      },
       "devices": {
-        "wifi": {
-          "name": "Guest WLAN",
+        "FRITZ!DECT 200 Wohnzimmer": {
+          "display": true
+        },
+        "FRITZ!DECT 301 Schlafzimmer": {
+          "minValue": 15,
+          "maxValue": 25,
+          "minStep": 0.5
+        },
+        "Gäste WLAN": {
           "display": true
         }
-      },
-      "interval": 60,
-      "debug": false
+      }
     }
   ]
 }

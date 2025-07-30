@@ -992,7 +992,7 @@ Das Plugin unterstützt folgende AVM FRITZ!-Geräte:
 {
   "platforms": [
     {
-      "platform": "Fritz!Platform",
+      "platform": "FRITZ!Box",
       "name": "Fritz!Box",
       "username": "admin",
       "password": "mypassword",
@@ -1016,7 +1016,7 @@ Das Plugin unterstützt folgende AVM FRITZ!-Geräte:
 
 | Option | Typ | Default | Beschreibung |
 |--------|-----|---------|--------------|
-| `platform` | string | **required** | Muss immer `"Fritz!Platform"` sein |
+| `platform` | string | **required** | Muss immer `"FRITZ!Box"` sein |
 | `name` | string | `"Fritz!Box"` | Name der Platform in HomeKit |
 | `username` | string | - | Benutzername für FRITZ!Box Login |
 | `password` | string | **required** | Passwort für FRITZ!Box Login |
@@ -1035,7 +1035,7 @@ Das Plugin unterstützt folgende AVM FRITZ!-Geräte:
 {
   "platforms": [
     {
-      "platform": "Fritz!Platform",
+      "platform": "FRITZ!Box",
       "name": "Fritz!Box",
       "username": "admin",
       "password": "mypassword",
@@ -1086,7 +1086,7 @@ Sie können die Polling-Intervalle individuell anpassen, um die Balance zwischen
 {
   "platforms": [
     {
-      "platform": "Fritz!Platform",
+      "platform": "FRITZ!Box",
       "name": "Fritz!Box",
       "username": "admin",
       "password": "mypassword",
