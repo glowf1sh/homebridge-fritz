@@ -1,5 +1,13 @@
-# homebridge-fritz-new v1.0.37 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.38 - Aktueller Fork mit Sicherheitsupdates
 
+
+## Was ist neu in Version 1.0.38?
+
+- **SimpleOnOff Support**: Nutzt das simpleonoff Element als primäre Statusquelle
+- **Voltage-Anzeige**: Zeigt die aktuelle Spannung bei Steckdosen an (Custom Characteristic)
+- **HKR Features**: Window-Open und Boost-Status werden korrekt angezeigt
+- **Robustes Offline-Handling**: DeviceOfflineError für saubere Fehlerbehandlung
+- **TDD-Ansatz**: Alle Features mit Tests abgesichert
 
 ## Was ist neu in Version 1.0.37?
 
@@ -214,6 +222,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.38 (2025-07-30)
+- **SimpleOnOff Support**: Primäre Statusquelle für moderne FRITZ!Smart Energy Geräte
+- **Voltage-Anzeige**: Spannungsanzeige als Custom Characteristic (Eve-kompatibel)
+- **Window-Open Erkennung**: Thermostate zeigen Fenster-offen-Status korrekt an
+- **Boost-Mode**: Thermostate zeigen aktiven Boost-Modus an
+- **Robustes Offline-Handling**: Saubere Fehlerbehandlung für offline Geräte
 
 ### Version 1.0.37 (2025-07-29)
 - **"inval" Fehlerbehandlung**: "inval" wird nicht mehr als Session-Fehler behandelt

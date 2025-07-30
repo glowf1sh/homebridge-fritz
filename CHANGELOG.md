@@ -5,6 +5,26 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.38] - 2025-07-30
+
+### ✨ Added
+- **SimpleOnOff Element Support**: Nutzt simpleonoff als primäre Statusquelle für moderne Geräte
+- **Voltage Characteristic**: Zeigt Netzspannung bei Steckdosen an (Eve-kompatibel)
+- **Window-Open Detection**: Thermostate erkennen offene Fenster und zeigen Status korrekt an
+- **Boost Mode Support**: Thermostate zeigen aktiven Boost-Modus im HomeKit an
+- **DeviceOfflineError**: Neue Error-Klasse für saubere Offline-Behandlung
+- **Test Coverage**: Umfassende Tests für Offline-Handling
+
+### 🔧 Changed
+- **normalizeDevice()**: Erweitert um simpleonoff, voltage, und HKR-Features
+- **calculateCurrentHeatingCoolingState()**: Berücksichtigt windowopenactive und boostactive
+- **update() Methoden**: Akzeptieren jetzt device-Parameter für Live-Updates
+- **TDD-Ansatz**: Alle neuen Features test-getrieben entwickelt
+
+### 🚀 Performance
+- **Robusteres Offline-Handling**: Keine unnötigen API-Calls bei offline Geräten
+- **Effizientere Status-Updates**: Direkte Updates über device-Objekt
+
 ## [1.0.37] - 2025-07-29
 
 ### 🐛 Fixed
