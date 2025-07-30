@@ -177,6 +177,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Debug-Logs**: Verbesserte Fehlersuche für Polling-Reports
 - **STABIL**: Erste Version die vollständig fehlerfrei läuft!
 
+## ⚡ Was ist neu in Version 1.0.54?
+
+### ⚡ HomeKit Performance Fix
+- **Keine 30-Sekunden-Wartezeit mehr**: Änderungen werden sofort bestätigt
+- **Schnelle Reaktion**: HomeKit zeigt Änderungen ohne Verzögerung an
+- **Zuverlässige Updates**: Temperaturwerte werden korrekt synchronisiert
+- **Bessere Benutzererfahrung**: Keine "Lädt..." Anzeigen mehr
+
 ## 🔥 Was ist neu in Version 1.0.53?
 
 ### 🔥 Thermostat OFF/ON Fix
@@ -345,6 +353,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.54 (2025-07-30) - ⚡ HOMEKIT PERFORMANCE FIX
+- **30-Sekunden-Verzögerung behoben**: HomeKit Callbacks werden sofort aufgerufen
+- **Sofortige Reaktion**: Temperaturänderungen werden ohne Verzögerung angezeigt
+- **Optimistische Updates**: Werte werden sofort in HomeKit aktualisiert
+- **Automatisches Refresh**: Nach Änderungen wird der aktuelle Wert abgefragt
 
 ### Version 1.0.53 (2025-07-30) - 🔥 THERMOSTAT OFF/ON FIX
 - **OFF-Befehl funktioniert**: Heizung kann wieder ausgeschaltet werden
