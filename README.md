@@ -280,6 +280,25 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
 
+### Version 1.0.43 (2025-07-30) - 🎯 PRODUKTIONSREIF!
+- **Priority Queue**: Schaltbefehle bekommen höchste Priorität (10)
+- **Request-Priorisierung**: Kritische Befehle überholen Polling-Requests  
+- **Schnellere Reaktion**: Keine zusätzlichen Verzögerungen durch Polling
+- **Debug-Logs**: Verbesserte Fehlersuche für Polling-Reports
+- **STABIL**: Erste Version die vollständig fehlerfrei läuft!
+
+### Version 1.0.42 (2025-07-30)
+- **HomeKit Retries verhindert**: callback() wird sofort aufgerufen
+- **Status Unknown behoben**: Keine mehrfachen Schaltversuche mehr
+- **Polling-Reports**: Erste Zusammenfassung nach 60 Sekunden
+- **Performance**: Schnellere HomeKit-Reaktion ohne Timeouts
+
+### Version 1.0.41 (2025-07-30)  
+- **Polling-System gefixt**: Startet jetzt nach erfolgreichem Login
+- **Zusammenfassungs-Berichte**: Alle 60 Sekunden statt Spam-Logs
+- **Fehler-Tracking**: Zeigt genau welche Geräte Probleme haben
+- **Statistik-System**: Erfolgs- und Fehlerstatistiken pro Polling-Typ
+
 ### Version 1.0.40 (2025-07-30)
 - **Status-Updates**: Schaltzustände werden sofort in HomeKit angezeigt
 - **Polling-System**: Automatische Updates alle 3 Sekunden
