@@ -198,6 +198,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Device-List-Caching**: 10 Sekunden Cache reduziert API-Anfragen drastisch
 - **Stabilere Kommunikation**: Keine Überlastung der Fritz!Box mehr
 
+## 🐛 Was ist neu in Version 1.0.48?
+
+### 🐛 Bugfix für Polling-Konfiguration
+- **Polling-Validierung verbessert**: Ignoriert unbekannte Keys in der Konfiguration
+- **JSON-Kompatibilität**: config.json ohne inkompatible Kommentare
+- **Robustere Fehlerbehandlung**: Keine undefined-Fehlermeldungen mehr
+- **Saubere Logs**: Nur relevante Warnungen werden angezeigt
+
 ## ⚙️ Was ist neu in Version 1.0.47?
 
 ### ⚙️ Konfigurierbare Polling-Intervalle
@@ -270,6 +278,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.48 (2025-07-30) - 🐛 POLLING-VALIDIERUNG FIX
+- **Polling-Validierung verbessert**: Ignoriert unbekannte Keys wie _comment
+- **Keine undefined Fehler**: Robuste Validierung nur für erwartete Intervalle
+- **config.json bereinigt**: JSON-kompatible Struktur ohne Kommentare
+- **Bessere Fehlerbehandlung**: Klare Meldungen bei ungültigen Werten
 
 ### Version 1.0.47 (2025-07-30) - ⚙️ KONFIGURIERBARE POLLING-INTERVALLE
 - **Polling-Intervalle konfigurierbar**: Alle Polling-Zeiten können individuell angepasst werden
