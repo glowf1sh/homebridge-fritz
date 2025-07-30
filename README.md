@@ -525,6 +525,126 @@ Das ursprüngliche Plugin hatte **22 bekannte Sicherheitslücken**. Diese wurden
 
 ## 📋 Detaillierte Änderungen ab Version 1.0.3
 
+### Version 1.0.47 (2025-07-30) - ⚙️ KONFIGURIERBARE POLLING-INTERVALLE
+
+#### 🆕 Neue Features
+- **Konfigurierbare Polling-Intervalle**: Alle Polling-Zeiten können individuell angepasst werden
+- **Neue config.json Option**: `polling` Objekt mit discovery, switchStates, sensorData, batteryStatus
+- **Robuste Validierung**: Minimum-Werte (1000ms) verhindern Systemüberlastung
+- **Transparentes Logging**: Zeigt verwendete Intervalle beim Start an
+
+#### 🔧 Verbesserungen
+- **config.json modernisiert**: Generische Beispiele ohne echte Gerätenamen
+- **config-sample.json hinzugefügt**: Ausführlich kommentierte Beispiel-Konfiguration
+- **README aktualisiert**: Platform-Name Korrektur auf "FRITZ!Box"
+
+### Version 1.0.46 (2025-07-30) - 🔒 SECURITY UPDATE
+
+#### 🔒 Security Fixes
+- **Behebt 2 High-Severity Vulnerabilities** in @mhoc/axios-digest-auth
+  - CVE-2023-45857 (CSRF in axios ≤0.29.0)
+  - CVE-2023-26159 (SSRF in axios ≤0.29.0)
+- **0 NPM Vulnerabilities**: Alle Sicherheitslücken behoben
+- **Eigene Digest-Auth Implementierung**: Axios Interceptor ohne externe Dependencies
+
+#### 🔧 Sonstige Änderungen
+- **README bereinigt**: Versionsnummer aus Titel entfernt
+- **NPM Package Management**: Aufräumarbeiten
+
+### Version 1.0.45 (2025-07-30) - 🔒 SECURITY UPDATE
+- Identisch mit Version 1.0.46 (NPM Publishing Issue)
+
+### Version 1.0.44 (2025-07-30) - 🔒 SECURITY UPDATE
+- Erste Version mit Security Fixes (siehe 1.0.46)
+
+### Version 1.0.43 (2025-07-30) - 🎯 PRODUKTIONSREIF
+
+#### 🚀 Performance & Stabilität
+- **Priority Queue**: Schaltbefehle bekommen höchste Priorität (10)
+- **Request-Priorisierung**: Kritische Befehle überholen Polling-Requests
+- **Schnellere Reaktion**: Keine zusätzlichen Verzögerungen durch Polling
+- **Debug-Logs**: Verbesserte Fehlersuche für Polling-Reports
+- **STABIL**: Erste Version die vollständig fehlerfrei läuft!
+
+### Version 1.0.42 (2025-07-30) - 🚀 HOMEKIT PERFORMANCE
+
+#### 🚀 Verbesserungen
+- **HomeKit Retries verhindert**: callback() wird sofort aufgerufen
+- **Status Unknown behoben**: Keine mehrfachen Schaltversuche mehr
+- **Polling-Reports**: Erste Zusammenfassung nach 60 Sekunden
+- **Performance**: Schnellere HomeKit-Reaktion ohne Timeouts
+
+### Version 1.0.41 (2025-07-30) - 📊 POLLING-OPTIMIERUNG
+
+#### 📊 Verbesserungen
+- **Polling-System gefixt**: Startet jetzt nach erfolgreichem Login
+- **Zusammenfassungs-Berichte**: Alle 60 Sekunden statt Spam-Logs
+- **Fehler-Tracking**: Zeigt genau welche Geräte Probleme haben
+- **Statistik-System**: Erfolgs- und Fehlerstatistiken pro Polling-Typ
+
+### Version 1.0.40 (2025-07-30) - 🔄 STATUS-UPDATE SYSTEM
+
+#### 🔄 Neue Features
+- **Status-Updates**: Schaltzustände werden sofort in HomeKit angezeigt
+- **Polling-System**: Automatische Updates alle 3 Sekunden
+- **Bugfixes**: Service is not defined und async setOn()
+
+### Version 1.0.39 (2025-07-30) - 🛠️ OFFLINE-HANDLING
+
+#### 🐛 Fehler behoben
+- **Target Temperature null-Fehler**: HomeKit Warnungen behoben
+- **Offline-Handling**: Geräte behalten letzte bekannte Werte
+- **Debug-Logging**: Verbesserte Meldungen für offline Geräte
+
+### Version 1.0.38 (2025-07-30) - 🔌 SIMPLEONOFF SUPPORT
+
+#### 🆕 Neue Features
+- **SimpleOnOff Support**: Primäre Statusquelle für moderne FRITZ!Smart Energy Geräte
+- **Voltage-Anzeige**: Spannungsanzeige als Custom Characteristic (Eve-kompatibel)
+- **Window-Open Erkennung**: Thermostate zeigen Fenster-offen-Status korrekt an
+- **Boost-Mode**: Thermostate zeigen aktiven Boost-Modus an
+- **Robustes Offline-Handling**: Saubere Fehlerbehandlung für offline Geräte
+
+### Version 1.0.37 (2025-07-29) - 🐛 INVAL FEHLERBEHANDLUNG
+
+#### 🐛 Fehler behoben
+- **"inval" Fehlerbehandlung**: "inval" wird nicht mehr als Session-Fehler behandelt
+- **Stabilere Session**: Keine unnötigen Re-Authentifizierungen bei inkompatiblen Befehlen
+- **Null-Rückgabe**: getTemperature/getTempTarget geben null zurück statt Fehler zu werfen
+
+### Version 1.0.36 (2025-07-29) - 🔮 XML-FIRST ANSATZ
+
+#### 🔮 Architektur-Verbesserung
+- **XML-First Feature-Erkennung**: Features werden aus XML-Elementen erkannt statt aus Bitmask
+- **Zukunftssicher**: Automatische Erkennung unbekannter XML-Elemente
+- **SimpleOnOff Support**: Neues Element in FRITZ!Smart Energy Geräten wird unterstützt
+
+### Version 1.0.35 (2025-07-29) - 🎯 FEATURE-BASIERTE API
+
+#### 🎯 Verbesserungen
+- **Feature-basierte API-Calls**: Keine falschen getBatteryCharge/getTempTarget mehr
+- **Fritz!Smart Thermo 301 Fix**: Thermostate mit falscher Bitmask werden erkannt
+- **Verbesserte Battery-Erkennung**: Batterie-Info aus HKR-Element
+
+### Version 1.0.34 (2025-07-29) - 🚦 REQUEST-QUEUE
+
+#### 🚦 Performance
+- **Request-Queue**: Nur noch 1 Request gleichzeitig verhindert Fritz!Box Überlastung
+- **Device-List-Caching**: 10 Sekunden Cache reduziert API-Anfragen drastisch
+- **p-queue Integration**: Professionelle Request-Limitierung
+
+### Version 1.0.33 (2025-07-29) - 🔧 TIMEOUT-OPTIMIERUNGEN
+
+#### 🔧 Verbesserungen
+- **Timeout-Fix**: Platform-Timeout wird korrekt an alle API-Calls weitergegeben
+- **Default-Timeout erhöht**: Von 10s auf 15s für bessere Stabilität
+
+### Version 1.0.32 (2025-07-29) - ⏱️ ERWEITERTE TIMEOUTS
+
+#### ⏱️ Verbesserungen
+- **Timeout erhöht**: Von 5s auf 15s für stabilere Kommunikation
+- **Retry-Flag korrigiert**: Verhindert endlose Re-Auth-Loops
+
 ### Version 1.0.31 (2025-07-29) - 🛡️ KRITISCHE STABILITÄTS-FIXES
 
 #### 🐛 Kritische Fehler behoben
