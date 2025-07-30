@@ -1,5 +1,10 @@
-# homebridge-fritz-new v1.0.38 - Aktueller Fork mit Sicherheitsupdates
+# homebridge-fritz-new v1.0.39 - Aktueller Fork mit Sicherheitsupdates
 
+
+## Was ist neu in Version 1.0.39?
+
+- **Hotfix**: Target Temperature wird niemals null - verhindert HomeKit Warnungen
+- **Verbesserte Offline-Behandlung**: Letzte bekannte Werte bleiben erhalten
 
 ## Was ist neu in Version 1.0.38?
 
@@ -157,6 +162,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🎉 Was ist neu in Version 1.0.39?
+
+### 🐛 Kritischer Hotfix
+- **Target Temperature null-Fehler behoben**: Keine HomeKit Warnungen mehr über "illegal value: null"
+- **Verbesserte Offline-Behandlung**: Geräte behalten ihre letzten bekannten Werte
+- **Debug-Logging**: Zeigt jetzt wenn Geräte offline sind oder nicht antworten
+
 ## 🎉 Was ist neu in Version 1.0.38?
 
 ### ✨ Erweiterte Fritz!Box Features
@@ -279,6 +291,11 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.39 (2025-07-30)
+- **Hotfix**: Target Temperature null-Fehler behoben (HomeKit Warnungen)
+- **Offline-Handling**: Geräte behalten letzte bekannte Werte
+- **Debug-Logging**: Verbesserte Meldungen für offline Geräte
 
 ### Version 1.0.38 (2025-07-30)
 - **SimpleOnOff Support**: Primäre Statusquelle für moderne FRITZ!Smart Energy Geräte

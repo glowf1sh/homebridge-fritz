@@ -5,6 +5,17 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.39] - 2025-07-30
+
+### 🐛 Fixed
+- **Target Temperature null-Fehler**: HomeKit Warnungen "characteristic was supplied illegal value: null" behoben
+- **Offline-Geräte**: Behalten jetzt ihre letzten bekannten Werte statt null zu setzen
+
+### 🔧 Changed
+- **queryTargetTemperature()**: Ignoriert null-Antworten und behält letzte Werte
+- **queryCurrentTemperature()**: Ignoriert null-Antworten und behält letzte Werte
+- **Besseres Logging**: Debug-Meldungen zeigen wenn Geräte offline sind
+
 ## [1.0.38] - 2025-07-30
 
 ### ✨ Added
