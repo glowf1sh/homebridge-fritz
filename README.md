@@ -1,7 +1,7 @@
-# homebridge-fritz-new v1.0.43 - Produktionsreifer Fork mit Sicherheitsupdates
+# homebridge-fritz-new - Produktionsreifer Fork mit Sicherheitsupdates
 
-> **Version 1.0.43 ist die erste vollständig stabile und produktionsreife Version!**  
-> Endlich läuft das Plugin fehlerfrei ohne ständige UnhandledPromiseRejections oder Session-Errors.
+> **Produktionsreifer Fork des Original homebridge-fritz**  
+> Vollständig stabil, ohne UnhandledPromiseRejections oder Session-Errors.
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
@@ -279,6 +279,18 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.45 (2025-07-30) - 🔒 SECURITY UPDATE
+- **README Updates**: Versionsnummer aus Titel entfernt
+- **NPM Package Management**: Aufräumarbeiten
+
+### Version 1.0.44 (2025-07-30) - 🔒 KRITISCHES SECURITY UPDATE
+- **Behebt 2 High-Severity Vulnerabilities** in @mhoc/axios-digest-auth
+  - CVE-2023-45857 (CSRF in axios ≤0.29.0)
+  - CVE-2023-26159 (SSRF in axios ≤0.29.0)
+- **0 NPM Vulnerabilities**: Alle Sicherheitslücken behoben!
+- **Eigene Digest-Auth Implementierung**: Axios Interceptor ohne externe Dependencies
+- **Entfernt unsichere Abhängigkeit**: @mhoc/axios-digest-auth komplett ersetzt
 
 ### Version 1.0.43 (2025-07-30) - 🎯 PRODUKTIONSREIF!
 - **Priority Queue**: Schaltbefehle bekommen höchste Priorität (10)
