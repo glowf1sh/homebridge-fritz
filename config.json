@@ -2,31 +2,30 @@
   "platforms": [
     {
       "platform": "FRITZ!Box",
-      "name": "Fritz!Box",
-      "username": "admin",
-      "password": "mypassword",
+      "name": "My FRITZ!Box",
+      "username": "",
+      "password": "",
       "url": "http://fritz.box",
       "interval": 60,
-      "concurrent": true,
+      "concurrent": false,
       "debug": false,
       "timeout": 15000,
       "polling": {
+        "_comment": "All polling intervals in milliseconds. Omit this section to use defaults.",
         "discovery": 300000,
         "switchStates": 3000,
         "sensorData": 10000,
         "batteryStatus": 900000
       },
       "devices": {
-        "FRITZ!DECT 200 Wohnzimmer": {
-          "display": true
+        "_comment": "Optional: Configure specific devices by their exact name from FRITZ!Box",
+        "My Device Name": {
+          "display": false
         },
-        "FRITZ!DECT 301 Schlafzimmer": {
+        "My Thermostat": {
           "minValue": 15,
           "maxValue": 25,
           "minStep": 0.5
-        },
-        "Gäste WLAN": {
-          "display": true
         }
       }
     }
