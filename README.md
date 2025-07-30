@@ -155,6 +155,63 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 **Hinweis:** Falls das alte `homebridge-fritz` installiert ist, deinstallieren Sie es zuerst!
 
+## 📚 Versionshistorie
+
+## 🎉 Was ist neu in Version 1.0.38?
+
+### ✨ Erweiterte Fritz!Box Features
+- **SimpleOnOff Element Support**: Nutzt simpleonoff als primäre Statusquelle für moderne FRITZ!Smart Energy Geräte
+- **Voltage-Anzeige**: Zeigt die aktuelle Netzspannung bei Steckdosen an (Eve-kompatibel)
+- **Window-Open Detection**: Thermostate erkennen offene Fenster und passen HomeKit-Status automatisch an
+- **Boost Mode Support**: Thermostate zeigen aktiven Boost-Modus im HomeKit an
+- **Robustes Offline-Handling**: Neue DeviceOfflineError Klasse für saubere Fehlerbehandlung
+- **Test-Driven Development**: Alle Features mit umfassenden Tests abgesichert
+
+## 🎉 Was ist neu in Version 1.0.37?
+
+### 🐛 Hotfix für Session-Management
+- **"inval" Fehlerbehandlung**: "inval" Antworten werden nicht mehr als Session-Fehler behandelt
+- **Stabilere Session**: Keine unnötigen Re-Authentifizierungen bei inkompatiblen Befehlen
+- **Verbesserte Fehlerbehandlung**: getTemperature/getTempTarget geben null zurück statt Fehler zu werfen
+
+## 🎉 Was ist neu in Version 1.0.36?
+
+### 🔮 XML-First Ansatz
+- **XML-First Feature-Erkennung**: Features werden aus tatsächlichen XML-Elementen erkannt
+- **Zukunftssichere Architektur**: Unbekannte XML-Elemente werden automatisch erkannt
+- **Generische Wert-Extraktion**: Auch neue Gerätetypen werden automatisch unterstützt
+- **SimpleOnOff Element**: Unterstützung für das neu entdeckte simpleonoff Element
+
+## 🎉 Was ist neu in Version 1.0.35?
+
+### 🎯 Feature-basierte API-Calls
+- **Intelligente API-Calls**: Keine falschen getBatteryCharge/getTempTarget mehr auf unpassenden Geräten
+- **HTTP 400/500 Fehler behoben**: API-Befehle nur noch bei passenden Gerätetypen
+- **Fritz!Smart Thermo 301 Fix**: Thermostate mit falscher Bitmask werden zuverlässig erkannt
+- **Verbesserte Battery-Erkennung**: Batterie-Info wird aus HKR-Element gelesen
+
+## 🎉 Was ist neu in Version 1.0.34?
+
+### 🚦 Request-Queue Implementation
+- **Request-Overload behoben**: Nur noch 1 Request gleichzeitig verhindert Fritz!Box Überlastung
+- **p-queue Integration**: Professionelle Request-Limitierung mit 200ms Intervall
+- **Device-List-Caching**: 10 Sekunden Cache reduziert API-Anfragen drastisch
+- **Stabilere Kommunikation**: Keine Überlastung der Fritz!Box mehr
+
+## 🎉 Was ist neu in Version 1.0.33?
+
+### 🔧 Timeout-Optimierungen
+- **Timeout-Fix**: Platform-Timeout wird korrekt an alle API-Calls weitergegeben
+- **Konsistente Timeout-Behandlung**: Alle API-Operationen nutzen das konfigurierte Timeout
+- **Verbesserte Options-Vererbung**: Platform-Optionen werden korrekt propagiert
+
+## 🎉 Was ist neu in Version 1.0.32?
+
+### ⏱️ Erweiterte Timeouts
+- **Timeout erhöht**: Von 5 auf 15 Sekunden für stabilere API-Kommunikation
+- **Retry-Flag korrigiert**: isRetry wird korrekt übergeben um Endlos-Schleifen zu verhindern
+- **Bessere Unterstützung**: Für langsame Fritz!Box Antworten
+
 ## 🎉 Was ist neu in Version 1.0.31?
 
 ### 🛡️ Kritische Stabilitäts-Fixes
