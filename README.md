@@ -120,6 +120,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🌡️ Was ist neu in Version 1.0.49?
+
+### 🌡️ Thermostat-Verbesserungen
+- **Temperatur-Logging**: Zeigt jetzt die eingestellte Temperatur im Log an
+- **Erfolgsmeldungen**: Bestätigung wenn Temperatur erfolgreich gesetzt wurde
+- **Bessere Fehlerbehandlung**: Detaillierte Fehlermeldungen bei Problemen
+- **HomeKit-Feedback**: Fehler werden korrekt an HomeKit zurückgemeldet
+
 ## 🐛 Was ist neu in Version 1.0.48?
 
 ### 🐛 Bugfix für Polling-Konfiguration
@@ -305,6 +313,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Vollständige Sensor-Unterstützung**: Alle FRITZ! Gerätetypen werden unterstützt
 
 ## 📋 Changelog - Alle Versionen (neueste zuerst)
+
+### Version 1.0.49 (2025-07-30) - 🌡️ THERMOSTAT-VERBESSERUNGEN
+- **Temperatur-Logging verbessert**: Zeigt eingestellte Zieltemperatur im Log
+- **Erfolgsbestätigung**: Meldet erfolgreiche Temperaturänderungen
+- **Fehlerbehandlung**: Detaillierte Fehlermeldungen bei Problemen
+- **HomeKit-Integration**: Fehler werden korrekt an HomeKit zurückgemeldet
 
 ### Version 1.0.48 (2025-07-30) - 🐛 POLLING-VALIDIERUNG FIX
 - **Polling-Validierung verbessert**: Ignoriert unbekannte Keys wie _comment
