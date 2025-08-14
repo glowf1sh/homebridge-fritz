@@ -5,6 +5,30 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.55] - 2025-08-14
+
+### 🔥 Critical Thermostat Fixes
+- **OFF-Befehl korrigiert**: Verwendet jetzt korrekt "253" statt "off" für FRITZ!DECT Thermostate
+- **Temperatur-Limits**: Strikte Einhaltung von 8-28°C Bereich (unter 8°C → OFF, über 28°C → ON)
+- **Command Queue**: Rate-Limiting mit 100ms Verzögerung zwischen Befehlen verhindert API-Überlastung
+- **Batterie-Status**: Implementiert via `getdeviceinfos` XML-API für zuverlässige Batterieanzeige
+- **Debouncing**: 500ms Verzögerung bei Slider-Bewegungen verhindert Befehlsflut
+
+### 🐛 Fixed
+- **Session Auto-Relogin**: Automatische Neuanmeldung bei 403-Fehlern ohne Plugin-Neustart
+- **Thermostat OFF-Modus**: FRITZ!DECT 301/302 können jetzt zuverlässig ausgeschaltet werden
+- **Batterie-Anzeige**: Thermostate zeigen Batteriestand korrekt in HomeKit an
+
+### 🚀 Performance
+- **Weniger API-Calls**: Command Queue verhindert gleichzeitige Anfragen
+- **Responsive UI**: Debouncing macht Temperatur-Slider flüssiger
+- **Stabilere Verbindung**: Session-Management verhindert Verbindungsabbrüche
+
+### 🔧 Technical
+- **fritz-api.js**: Command Queue mit FIFO-Verarbeitung und Rate-Limiting
+- **thermostat.js**: Debounce-Timer für setTargetTemperature()
+- **Test Coverage**: Umfassende Unit-Tests für alle kritischen Fixes
+
 ## [1.0.43] - 2025-07-30\n\n### ✨ Added\n- **Priority Queue**: Schaltbefehle bekommen jetzt Priorität 10 (höchste)\n- **Debug-Logs**: Mehr Informationen für Polling-Report-Debugging\n- **Request-Priorisierung**: Wichtige Befehle überholen unwichtige Polling-Requests\n\n### 🚀 Performance\n- **Schnellere Schaltreaktion**: Kritische Befehle werden bevorzugt behandelt\n- **Weniger Wartezeit**: Schaltbefehle müssen nicht mehr auf Polling warten\n- **Fritz!Box API**: 10 Sekunden Verzögerung ist Hardware-bedingt, aber Priorisierung hilft\n\n### 🔧 Changed\n- **fritz() Funktion**: Unterstützt jetzt priority-Parameter im options-Objekt\n- **setSwitchOn/Off**: Verwendet priority: 10 für sofortige Ausführung\n- **p-queue Integration**: Nutzt jetzt das Priority-Feature\n\n## [1.0.42] - 2025-07-30\n\n### 🐛 Fixed\n- **HomeKit Retries verhindert**: callback() wird sofort aufgerufen um Timeouts zu vermeiden\n- **Status Unknown Problem**: Keine mehrfachen Schaltversuche mehr durch HomeKit\n- **Polling-Reports**: Erste Zusammenfassung kommt jetzt nach 60 Sekunden (nicht erst nach 2 Minuten)\n\n### 🔧 Changed\n- **setOn() Callback-Timing**: Callback erfolgt sofort, Status-Update asynchron\n- **Fehlerbehandlung**: Bei Schaltfehlern wird der Status in HomeKit zurückgesetzt\n- **Initial Report**: setTimeout für erste Polling-Zusammenfassung nach 60s\n\n### 🚀 Performance\n- **Schnellere HomeKit-Reaktion**: Keine 10-Sekunden-Timeouts mehr\n- **Weniger API-Calls**: Verhindert doppelte Schaltbefehle durch HomeKit-Retries\n\n## [1.0.41] - 2025-07-30\n\n### 🐛 Fixed\n- **Polling-System**: Startet jetzt korrekt nach erfolgreichem Login\n- **Session-Timing**: setupPollingSystem() wird erst nach Session-Erstellung aufgerufen\n- **Keine Spam-Logs mehr**: Debug-Nachrichten alle 3 Sekunden entfernt\n\n### ✨ Added\n- **Polling-Zusammenfassung**: Alle 60 Sekunden eine Übersicht über Erfolg/Fehler\n- **Fehler-Tracking**: Zeigt genau welche Geräte bei Polling fehlschlagen\n- **Statistik-System**: Sammelt Erfolgs- und Fehlerstatistiken pro Polling-Typ\n\n### 🔧 Changed\n- **Polling-Initialisierung**: Verschoben von didFinishLaunching zu nach Login-Erfolg\n- **Log-Ausgaben**: Reduziert auf wichtige Events und 60-Sekunden-Zusammenfassungen\n- **Timer-Cleanup**: statsTimer wird jetzt auch bei Shutdown gestoppt\n\n## [1.0.40] - 2025-07-30
 
 ### 🐛 Fixed
