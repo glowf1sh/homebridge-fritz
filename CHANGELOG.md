@@ -5,6 +5,19 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.61] - 2025-08-14
+
+### 🔧 Was neu
+- **StatusFault entfernt**: Verwendet nur noch StatusActive für HomeKit-Konformität
+- **Keine doppelten Batterie-Warnungen**: Intelligentes Logging nur bei signifikanten Änderungen (≥5%)
+- **Bessere Initialisierung**: getCurrentTemperature gibt Default-Wert zurück wenn noch nicht initialisiert
+- **Offline/Kritisch-Anzeige**: StatusActive wird auf false gesetzt bei offline oder kritischer Batterie
+
+### 🐛 Was neu
+- **HomeKit Warnung behoben**: "Characteristic not in required or optional" für StatusFault
+- **Startup-Fehler behoben**: Keine HAP Status Error -70402 mehr beim Start
+- **Log-Spam reduziert**: Batterie-Warnungen nur noch bei tatsächlichen Änderungen
+
 ## [1.0.60] - 2025-08-14
 
 ### 🔴 Was neu

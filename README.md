@@ -120,6 +120,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🔧 Was ist neu in Version 1.0.61?
+
+### 🔧 Bugfixes und Verbesserungen
+- **StatusFault entfernt**: Nur noch StatusActive (HomeKit-konform)
+- **Keine doppelten Batterie-Warnungen**: Intelligentes Logging nur bei Änderungen
+- **Bessere Initialisierung**: Keine Fehler mehr beim Start
+- **Offline-Status**: Nur StatusActive wird auf false gesetzt
+
 ## 🔴 Was ist neu in Version 1.0.60?
 
 ### 🔴 Offline-Geräte besser kenntlich
