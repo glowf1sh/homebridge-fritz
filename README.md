@@ -120,6 +120,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🐛 Was ist neu in Version 1.0.57?
+
+### 🐛 BatteryService Fix für Thermostate
+- **Fehlende Batterieanzeige behoben**: Gecachte Thermostate zeigen jetzt Batterie an
+- **Automatische Reparatur**: Fehlende BatteryServices werden ergänzt
+- **updateAccessoryServices**: Prüft jetzt auch Thermostate
+
 ## 🐛 Was ist neu in Version 1.0.56?
 
 ### 🐛 Thermostat Command-Delay Fix
