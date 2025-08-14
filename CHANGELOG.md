@@ -40,7 +40,156 @@ und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.
 - **thermostat.js**: Debounce-Timer für setTargetTemperature()
 - **Test Coverage**: Umfassende Unit-Tests für alle kritischen Fixes
 
-## [1.0.43] - 2025-07-30\n\n### ✨ Added\n- **Priority Queue**: Schaltbefehle bekommen jetzt Priorität 10 (höchste)\n- **Debug-Logs**: Mehr Informationen für Polling-Report-Debugging\n- **Request-Priorisierung**: Wichtige Befehle überholen unwichtige Polling-Requests\n\n### 🚀 Performance\n- **Schnellere Schaltreaktion**: Kritische Befehle werden bevorzugt behandelt\n- **Weniger Wartezeit**: Schaltbefehle müssen nicht mehr auf Polling warten\n- **Fritz!Box API**: 10 Sekunden Verzögerung ist Hardware-bedingt, aber Priorisierung hilft\n\n### 🔧 Changed\n- **fritz() Funktion**: Unterstützt jetzt priority-Parameter im options-Objekt\n- **setSwitchOn/Off**: Verwendet priority: 10 für sofortige Ausführung\n- **p-queue Integration**: Nutzt jetzt das Priority-Feature\n\n## [1.0.42] - 2025-07-30\n\n### 🐛 Fixed\n- **HomeKit Retries verhindert**: callback() wird sofort aufgerufen um Timeouts zu vermeiden\n- **Status Unknown Problem**: Keine mehrfachen Schaltversuche mehr durch HomeKit\n- **Polling-Reports**: Erste Zusammenfassung kommt jetzt nach 60 Sekunden (nicht erst nach 2 Minuten)\n\n### 🔧 Changed\n- **setOn() Callback-Timing**: Callback erfolgt sofort, Status-Update asynchron\n- **Fehlerbehandlung**: Bei Schaltfehlern wird der Status in HomeKit zurückgesetzt\n- **Initial Report**: setTimeout für erste Polling-Zusammenfassung nach 60s\n\n### 🚀 Performance\n- **Schnellere HomeKit-Reaktion**: Keine 10-Sekunden-Timeouts mehr\n- **Weniger API-Calls**: Verhindert doppelte Schaltbefehle durch HomeKit-Retries\n\n## [1.0.41] - 2025-07-30\n\n### 🐛 Fixed\n- **Polling-System**: Startet jetzt korrekt nach erfolgreichem Login\n- **Session-Timing**: setupPollingSystem() wird erst nach Session-Erstellung aufgerufen\n- **Keine Spam-Logs mehr**: Debug-Nachrichten alle 3 Sekunden entfernt\n\n### ✨ Added\n- **Polling-Zusammenfassung**: Alle 60 Sekunden eine Übersicht über Erfolg/Fehler\n- **Fehler-Tracking**: Zeigt genau welche Geräte bei Polling fehlschlagen\n- **Statistik-System**: Sammelt Erfolgs- und Fehlerstatistiken pro Polling-Typ\n\n### 🔧 Changed\n- **Polling-Initialisierung**: Verschoben von didFinishLaunching zu nach Login-Erfolg\n- **Log-Ausgaben**: Reduziert auf wichtige Events und 60-Sekunden-Zusammenfassungen\n- **Timer-Cleanup**: statsTimer wird jetzt auch bei Shutdown gestoppt\n\n## [1.0.40] - 2025-07-30
+## [1.0.54] - 2025-08-13
+
+### 🔥 HomeKit Performance Fix
+- **Massiver Performance-Boost**: HomeKit reagiert jetzt sofort auf Befehle
+- **Keine UI-Freezes mehr**: Callbacks werden sofort aufgerufen, API-Calls laufen asynchron
+- **Verbesserte User Experience**: Schalter und Thermostate reagieren ohne Verzögerung
+
+### 🐛 Fixed
+- **HomeKit Timeout-Problem**: 10-Sekunden-Verzögerungen komplett eliminiert
+- **Callback-Timing**: Alle Accessories rufen Callback sofort auf
+- **Status-Updates**: Werden asynchron im Hintergrund verarbeitet
+
+### 🔧 Changed
+- **Async Callback-Pattern**: Alle setOn/setTargetTemperature Methoden nutzen sofortige Callbacks
+- **Error Handling**: Fehler werden geloggt aber blockieren nicht die UI
+- **Code Cleanup**: Entfernung von ungenutzten Debouncing-Code
+
+## [1.0.53] - 2025-08-13
+
+### 🐛 Fixed
+- **Thermostat OFF/ON Fix**: String-Parameter "off"/"on" werden korrekt behandelt
+- **setTempTarget Debugging**: Erweiterte Logs zeigen alle Parameter und Fehlerdetails
+- **HTTP 500 Fehler**: Bessere Fehlerbehandlung bei ungültigen Thermostat-Befehlen
+
+### 🔧 Changed
+- **Logging verbessert**: Debug-Ausgaben zeigen AIN, Temperatur und API-Parameter
+- **Error Response Logging**: Fritz!Box Fehlermeldungen werden detailliert geloggt
+
+## [1.0.52] - 2025-08-12
+
+### 🔥 Kritischer Thermostat-Fix
+- **Temperatur-Konvertierung repariert**: OFF/ON Modi funktionieren wieder korrekt
+- **String/Number Handling**: Robuste Behandlung verschiedener Temperatur-Formate
+- **Dezimalwerte**: Unterstützung für Komma und Punkt als Dezimaltrennzeichen
+
+### 🐛 Fixed
+- **NaN-Fehler behoben**: Keine "NaN" Werte mehr bei Temperaturänderungen
+- **OFF/ON Modi**: Werden korrekt als String "off"/"on" übergeben
+- **Temperatur-Berechnung**: Korrekte Umrechnung in 0,5°C Schritte
+
+## [1.0.51] - 2025-08-12
+
+### 🔧 Thermostat-Bugfix
+- **NaN-Fehler behoben**: Temperaturwerte werden korrekt in Zahlen umgewandelt
+- **Dezimalwerte unterstützt**: Sowohl Punkt als auch Komma als Dezimaltrennzeichen
+- **Robuste Konvertierung**: String zu Number Konvertierung mit Fehlerbehandlung
+- **0,5°C Schritte**: Unterstützt alle gültigen Thermostat-Temperaturen
+
+## [1.0.50] - 2025-08-11
+
+### 🔍 Debug-Verbesserungen für Thermostate
+- **Erweiterte Debug-Logs**: Zeigt exakte API-Parameter bei Temperaturänderungen
+- **Fehlerdetails**: Bei HTTP 500 Fehlern werden mehr Details geloggt
+- **API-Debugging**: Zeigt AIN, Temperatur und umgerechnete Parameter
+- **Fritz!Box Antworten**: Loggt was die Fritz!Box bei Fehlern zurückgibt
+
+## [1.0.49] - 2025-08-10
+
+### 🌡️ Thermostat-Verbesserungen
+- **Temperatur-Logging**: Zeigt jetzt die eingestellte Temperatur im Log an
+- **Erfolgsmeldungen**: Bestätigung wenn Temperatur erfolgreich gesetzt wurde
+- **Bessere Fehlerbehandlung**: Detaillierte Fehlermeldungen bei Problemen
+- **HomeKit-Feedback**: Fehler werden korrekt an HomeKit zurückgemeldet
+
+## [1.0.48] - 2025-08-09
+
+### 🐛 Bugfix für Polling-Konfiguration
+- **config.interval Fix**: Verwendet jetzt korrekt den konfigurierten Wert
+- **Default-Werte**: Sinnvolle Defaults wenn keine Konfiguration vorhanden
+- **Polling-Intervalle**: Respektiert jetzt die Benutzer-Einstellungen
+
+## [1.0.47] - 2025-08-08
+
+### 🚀 Performance & Stabilitäts-Update
+- **Optimierte Polling-Intervalle**: Angepasst für bessere Performance
+- **Reduzierte API-Last**: Weniger häufige Abfragen schonen die Fritz!Box
+- **Batterie-Polling**: Nur noch alle 15 Minuten statt alle 30 Sekunden
+
+## [1.0.46] - 2025-08-07
+
+### 🔒 Sicherheitsupdate
+- **Alle Sicherheitslücken behoben**: 0 bekannte Vulnerabilities
+- **Dependencies aktualisiert**: Alle Pakete auf neueste sichere Versionen
+- **Audit Clean**: npm audit zeigt keine Probleme mehr
+
+## [1.0.45] - 2025-08-06
+
+### 🐛 Critical Bugfixes
+- **Session-Fehler behoben**: Keine "Cannot read property 'log' of undefined" mehr
+- **API-Initialisierung**: Fritz-API wird korrekt mit Platform-Instanz initialisiert
+- **Stabilität verbessert**: Keine Abstürze mehr bei API-Calls
+
+## [1.0.44] - 2025-08-05
+
+### 🏗️ Architektur-Verbesserungen
+- **Singleton-Pattern**: Fritz-API nutzt jetzt Singleton für Session-Management
+- **Session-Persistenz**: Session bleibt zwischen API-Calls erhalten
+- **Code-Qualität**: Verbesserte Modularität und Wartbarkeit
+
+## [1.0.43] - 2025-07-30
+
+### ✨ Added
+- **Priority Queue**: Schaltbefehle bekommen jetzt Priorität 10 (höchste)
+- **Debug-Logs**: Mehr Informationen für Polling-Report-Debugging
+- **Request-Priorisierung**: Wichtige Befehle überholen unwichtige Polling-Requests
+
+### 🚀 Performance
+- **Schnellere Schaltreaktion**: Kritische Befehle werden bevorzugt behandelt
+- **Weniger Wartezeit**: Schaltbefehle müssen nicht mehr auf Polling warten
+- **Fritz!Box API**: 10 Sekunden Verzögerung ist Hardware-bedingt, aber Priorisierung hilft
+
+### 🔧 Changed
+- **fritz() Funktion**: Unterstützt jetzt priority-Parameter im options-Objekt
+- **setSwitchOn/Off**: Verwendet priority: 10 für sofortige Ausführung
+- **p-queue Integration**: Nutzt jetzt das Priority-Feature
+
+## [1.0.42] - 2025-07-30
+
+### 🐛 Fixed
+- **HomeKit Retries verhindert**: callback() wird sofort aufgerufen um Timeouts zu vermeiden
+- **Status Unknown Problem**: Keine mehrfachen Schaltversuche mehr durch HomeKit
+- **Polling-Reports**: Erste Zusammenfassung kommt jetzt nach 60 Sekunden (nicht erst nach 2 Minuten)
+
+### 🔧 Changed
+- **setOn() Callback-Timing**: Callback erfolgt sofort, Status-Update asynchron
+- **Fehlerbehandlung**: Bei Schaltfehlern wird der Status in HomeKit zurückgesetzt
+- **Initial Report**: setTimeout für erste Polling-Zusammenfassung nach 60s
+
+### 🚀 Performance
+- **Schnellere HomeKit-Reaktion**: Keine 10-Sekunden-Timeouts mehr
+- **Weniger API-Calls**: Verhindert doppelte Schaltbefehle durch HomeKit-Retries
+
+## [1.0.41] - 2025-07-30
+
+### 🐛 Fixed
+- **Polling-System**: Startet jetzt korrekt nach erfolgreichem Login
+- **Session-Timing**: setupPollingSystem() wird erst nach Session-Erstellung aufgerufen
+- **Keine Spam-Logs mehr**: Debug-Nachrichten alle 3 Sekunden entfernt
+
+### ✨ Added
+- **Polling-Zusammenfassung**: Alle 60 Sekunden eine Übersicht über Erfolg/Fehler
+- **Fehler-Tracking**: Zeigt genau welche Geräte bei Polling fehlschlagen
+- **Statistik-System**: Sammelt Erfolgs- und Fehlerstatistiken pro Polling-Typ
+
+### 🔧 Changed
+- **Polling-Initialisierung**: Verschoben von didFinishLaunching zu nach Login-Erfolg
+- **Log-Ausgaben**: Reduziert auf wichtige Events und 60-Sekunden-Zusammenfassungen
+- **Timer-Cleanup**: statsTimer wird jetzt auch bei Shutdown gestoppt
+
+## [1.0.40] - 2025-07-30
 
 ### 🐛 Fixed
 - **Status-Updates in HomeKit**: Schaltzustände werden nach dem Schalten korrekt angezeigt
