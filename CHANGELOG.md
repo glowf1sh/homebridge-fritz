@@ -5,6 +5,19 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.63] - 2025-08-14
+
+### 🛠️ Was neu
+- **Startup-Probleme behoben**: Keine falschen Offline-Erkennungen mehr beim Start
+- **isOffline Flag**: Speichert Offline-Status pro Gerät für bessere Kontrolle
+- **Offline-Logging optimiert**: Nur noch bei tatsächlichen Statusänderungen (went OFFLINE/back ONLINE)
+- **getCurrentTemperature vereinfacht**: Keine Offline-Prüfung mehr (verhindert falsche Fehler)
+
+### 🐛 Was neu
+- **Falsche Offline-Warnungen**: Alle Geräte wurden beim Start als offline erkannt
+- **Mehrfache Temperatur-Fehler**: HomeKit fragt mehrfach ab und erzeugt viele Fehler
+- **"Aktualisieren" Problem**: Online Geräte zeigten "Aktualisieren" statt Werte
+
 ## [1.0.62] - 2025-08-14
 
 ### 🔋 Was neu

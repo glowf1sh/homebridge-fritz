@@ -120,6 +120,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🛠️ Was ist neu in Version 1.0.63?
+
+### 🛠️ Kritische Startup-Fixes
+- **Keine falschen Offline-Warnungen**: Beim Start werden Geräte nicht mehr fälschlich als offline erkannt
+- **Offline-Status Logging**: Nur noch bei tatsächlichen Statusänderungen
+- **getCurrentTemperature**: Keine Offline-Prüfung mehr (verhindert Fehler beim Start)
+- **isOffline Flag**: Speichert Offline-Status für bessere Kontrolle
+
 ## 🔋 Was ist neu in Version 1.0.62?
 
 ### 🔋 Batterie-Warnung Fix
