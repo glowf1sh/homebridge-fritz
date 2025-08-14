@@ -5,6 +5,17 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.56] - 2025-08-14
+
+### 🐛 Fixed
+- **Thermostat Verzögerung**: Debouncing entfernt - Befehle werden sofort ausgeführt
+- **HomeKit UI**: Temperatur-Slider springt nicht mehr zurück
+- **Command Queue**: Funktioniert jetzt korrekt mit sofortiger Ausführung
+
+### 🔧 Changed
+- **setTargetTemperature**: Sendet Befehle ohne Verzögerung an FRITZ!Box
+- **HomeKit Feedback**: Wert wird sofort in der UI aktualisiert
+
 ## [1.0.55] - 2025-08-14
 
 ### 🔥 Critical Thermostat Fixes
