@@ -5,6 +5,25 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.60] - 2025-08-14
+
+### 🔴 Was neu
+- **StatusFault bei Offline**: Zeigt Fehler-Symbol in HomeKit wenn Gerät offline
+- **StatusActive Characteristic**: Zeigt aktiv/inaktiv Status visuell in HomeKit
+- **Kritische Batterie-Warnung**: Bei ≤5% wird StatusFault gesetzt und Error geloggt
+- **Temperatur-Fehler bei Offline**: getCurrentTemperature wirft SERVICE_COMMUNICATION_FAILURE
+- **Erweiterte Logs**: Warnt bei offline Geräten und kritischer Batterie
+
+### 🔧 Was neu
+- **thermostat.js**: StatusFault und StatusActive Characteristics hinzugefügt
+- **update() Methode**: Prüft device.present für offline Status
+- **queryBatteryLevel**: Setzt StatusFault bei kritischer Batterie (≤5%)
+- **getCurrentTemperature**: Wirft Fehler wenn Gerät offline ist
+
+### 📝 Was neu
+- **Bessere Sichtbarkeit**: Offline und kritische Batterie sind jetzt in HomeKit deutlich erkennbar
+- **Fehler-Icons**: HomeKit zeigt Warnsymbole bei Problemen
+
 ## [1.0.59] - 2025-08-14
 
 ### 🐛 Was neu

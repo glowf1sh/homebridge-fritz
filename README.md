@@ -120,6 +120,15 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🔴 Was ist neu in Version 1.0.60?
+
+### 🔴 Offline-Geräte besser kenntlich
+- **StatusFault bei Offline**: Zeigt Fehler-Symbol in HomeKit bei offline Geräten
+- **StatusActive Characteristic**: Zeigt aktiv/inaktiv Status in HomeKit
+- **Kritische Batterie-Warnung**: Bei ≤5% wird StatusFault gesetzt
+- **Temperatur-Fehler bei Offline**: Wirft Fehler wenn offline Gerät abgefragt wird
+- **Erweiterte Logs**: Warnt bei offline Geräten und kritischer Batterie
+
 ## 🐛 Was ist neu in Version 1.0.59?
 
 ### 🐛 BatteryService vollständig gefixt
