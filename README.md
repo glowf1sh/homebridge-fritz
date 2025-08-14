@@ -120,6 +120,12 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🔋 Was ist neu in Version 1.0.62?
+
+### 🔋 Batterie-Warnung Fix
+- **Erste Warnung garantiert**: Kritische Batterie wird beim ersten Check gewarnt
+- **Logging verbessert**: Debug-Log für normale Batterie (≥80%) beim Start
+
 ## 🔧 Was ist neu in Version 1.0.61?
 
 ### 🔧 Bugfixes und Verbesserungen

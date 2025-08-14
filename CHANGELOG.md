@@ -5,6 +5,17 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.62] - 2025-08-14
+
+### 🔋 Was neu
+- **Erste Batterie-Warnung garantiert**: Kritische/niedrige Batterie wird beim ersten Check immer gewarnt
+- **isFirstCheck Logic**: Prüft ob es der erste Battery-Check für das Gerät ist
+- **Debug-Log für gute Batterie**: Nur beim ersten Check und wenn ≥80%
+
+### 🐛 Was neu
+- **Fix für 1% Batterie beim Start**: Warnung wird jetzt korrekt ausgegeben
+- **lastLoggedBatteryLevel**: Verwendet undefined statt -1 für bessere Logik
+
 ## [1.0.61] - 2025-08-14
 
 ### 🔧 Was neu
