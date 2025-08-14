@@ -5,7 +5,7 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.57] - 2025-08-14
+## [1.0.58] - 2025-08-14
 
 ### 🐛 Was neu
 - **BatteryService Fix**: Fehlende Batterieanzeige bei gecachten Thermostaten behoben
@@ -16,6 +16,9 @@ und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.
 - **platform.js**: updateAccessoryServices prüft jetzt auch Thermostate
 - **Automatische Reparatur**: Fehlende BatteryServices werden automatisch ergänzt
 - **Logging**: Debug-Meldungen wenn BatteryService hinzugefügt wird
+
+### 📝 Was neu
+- **Version 1.0.57 übersprungen**: Wegen NPM Versionskonflikt
 
 ## [1.0.56] - 2025-08-14
 

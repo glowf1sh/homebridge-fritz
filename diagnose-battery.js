@@ -155,7 +155,8 @@ async function runDiagnostics() {
         const thermostatInfo = [];
         
         for (const device of thermostats) {
-            const ain = device.$?.id || device.id;
+            // Die echte AIN ist im identifier Attribut!
+            const ain = device.$?.identifier || device.identifier || device.$?.id || 'Unknown';
             const name = device.name || 'Unknown';
             const productname = device.$?.productname || 'Unknown';
             
@@ -183,9 +184,13 @@ async function runDiagnostics() {
             }
             
             // Check battery low status
-            const batteryLow = device.batterylow || device.hkr?.batterylow || '0';
-            log(`  Battery Low: ${batteryLow === '1' ? 'YES' : 'NO'}`, 
-                batteryLow === '1' ? colors.red : colors.green);
+            const batteryLowFlag = device.batterylow || device.hkr?.batterylow || '0';
+            // Zusätzlich prüfen: Bei weniger als 20% ist die Batterie definitiv low!
+            const batteryLevel = batteryInXML || batteryViaAPI || 100;
+            const isLow = batteryLowFlag === '1' || batteryLevel < 20;
+            
+            log(`  Battery Low: ${isLow ? 'YES' : 'NO'} (Flag: ${batteryLowFlag}, Level: ${batteryLevel}%)`, 
+                isLow ? colors.red : colors.green);
             
             thermostatInfo.push({
                 ain,

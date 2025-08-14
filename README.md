@@ -120,12 +120,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
-## 🐛 Was ist neu in Version 1.0.57?
+## 🐛 Was ist neu in Version 1.0.58?
 
 ### 🐛 BatteryService Fix für Thermostate
 - **Fehlende Batterieanzeige behoben**: Gecachte Thermostate zeigen jetzt Batterie an
 - **Automatische Reparatur**: Fehlende BatteryServices werden ergänzt
 - **updateAccessoryServices**: Prüft jetzt auch Thermostate
+- **Hinweis**: Version 1.0.57 übersprungen wegen NPM Konflikt
 
 ## 🐛 Was ist neu in Version 1.0.56?
 
