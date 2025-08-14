@@ -5,6 +5,18 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.59] - 2025-08-14
+
+### 🐛 Was neu
+- **BatteryService vollständig gefixt**: Alle Thermostate zeigen jetzt Batterie in HomeKit
+- **Initial Values**: BatteryLevel und StatusLowBattery werden mit updateValue initialisiert
+- **Startup Battery Query**: Alle Thermostate fragen beim Start ihre Batterie ab
+
+### 🔧 Was neu
+- **thermostat.js**: Initial battery query nach 2 Sekunden
+- **platform.js**: Globale battery query für alle Thermostate nach 5 Sekunden
+- **HomeKit Compatibility**: Services werden nur angezeigt wenn Characteristics Werte haben
+
 ## [1.0.58] - 2025-08-14
 
 ### 🐛 Was neu

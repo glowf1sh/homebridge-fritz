@@ -120,6 +120,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🐛 Was ist neu in Version 1.0.59?
+
+### 🐛 BatteryService vollständig gefixt
+- **Alle Thermostate zeigen Batterie**: Kompletter Fix für HomeKit Batterieanzeige
+- **Initial Values gesetzt**: updateValue() für BatteryLevel und StatusLowBattery
+- **Startup Query**: Batterie wird direkt beim Start abgefragt
+
 ## 🐛 Was ist neu in Version 1.0.58?
 
 ### 🐛 BatteryService Fix für Thermostate
