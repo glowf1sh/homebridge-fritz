@@ -120,26 +120,33 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## ✅ Was ist neu in Version 1.0.68?
+
+### ✅ OFF richtig implementiert
+- **maxValue wieder auf 28**: HomeKit erwartet normale Temperaturwerte (8-28°C)
+- **Bei OFF wird Temperaturwert NICHT aktualisiert**: Nur Heating States werden auf OFF gesetzt
+- **Kein 253-Wert in HomeKit**: API-Werte bleiben intern
+- **Behebt Spinning-Wheel Problem**: Temperaturänderungen funktionieren wieder
+
 ## ❌ Was ist neu in Version 1.0.67?
 
-### ❌ OFF = 253 (FRITZ!Box konform)
-- **OFF zeigt 253**: Wie in der FRITZ!Box API definiert
-- **Kein Temperatur-Hack**: OFF ist OFF, nicht die letzte Temperatur
-- **maxValue erweitert**: Unterstützt jetzt den vollen Bereich bis 253
+### ❌ OFF = 253 (Fehlerhafter Versuch)
+- **FEHLER**: maxValue auf 253 gesetzt - HomeKit erwartet aber normale Temperaturen
+- **Version übersprungen**: Durch v1.0.68 ersetzt
 
 ## 🌡️ Was ist neu in Version 1.0.66?
 
-### 🌡️ OFF Mode korrekt implementiert
-- **OFF zeigt letzten Wert**: Bei OFF wird die zuletzt aktive Temperatur angezeigt (ausgegraut)
-- **Beim Einschalten**: Thermostat kehrt zur letzten Temperatur zurück
-- **Kein 8°C Hack mehr**: OFF ist jetzt ein echter Zustand, keine Fake-Temperatur
+### 🌡️ OFF Mode Versuch
+- **Versuch**: Letzte Temperatur bei OFF anzeigen
+- **Problem**: User wollte keine Temperatur bei OFF sehen
+- **Version übersprungen**: Durch v1.0.68 ersetzt
 
 ## 🔧 Was ist neu in Version 1.0.65?
 
 ### 🔧 HomeKit Temperatur-Feedback Fix
-- **OFF Mode zeigt 8°C**: Statt alter Temperatur wird bei OFF korrekt 8°C angezeigt
-- **Rädchen-Problem behoben**: Temperaturänderungen werden nicht mehr überschrieben
-- **Stabiles UI**: Keine endlos drehenden Rädchen mehr in Apple Home
+- **getTargetTemperature() gefixt**: Überschreibt nicht mehr gesetzte Werte
+- **OFF auf 8°C**: Versuch OFF als Minimaltemperatur darzustellen
+- **Teilweise gelöst**: Spinning-Wheel Problem reduziert
 
 ## 🔋 Was ist neu in Version 1.0.64?
 
