@@ -12,6 +12,7 @@
   - 📈 **Gesamtverbrauch** in kWh seit Inbetriebnahme
   - 🔋 **Netzspannung** in Volt
   - 🌡️ **Temperatur** am Gerät
+  - ℹ️ **Hinweis**: Energiedaten sind nur in Apps wie Eve sichtbar, nicht in Apple Home (siehe FAQ)
 - 📡 **Gäste-WLAN** - Ein/Aus-Schaltung
 - 💡 **Alle FRITZ! Smart Home Geräte** mit HomeKit-Integration
 
@@ -472,6 +473,28 @@ npm test
 npm run lint
 npm run coverage
 ```
+
+## ❓ FAQ - Häufig gestellte Fragen
+
+### Warum sehe ich die Watt-Anzeige nicht in Apple Home?
+
+Apple's Home App zeigt bewusst nur Standard-HomeKit-Funktionen. Für FRITZ!DECT 200 Steckdosen bedeutet das:
+
+**In Apple Home sichtbar:**
+- ✅ Ein/Aus-Schalter
+- ✅ Status (an/aus)
+
+**Nur in Eve App (oder ähnlichen) sichtbar:**
+- ⚡ Aktuelle Leistung in Watt
+- 📈 Energieverbrauch in kWh
+- 🔋 Spannung in Volt
+- 📊 Verlaufsgraphen
+
+**Empfehlung**: Installieren Sie die kostenlose [Eve App](https://apps.apple.com/app/eve-for-homekit/id917695792) für vollständige Energiedaten. Die Eve App zeigt ALLE Daten, auch Custom Characteristics wie Leistungsmessung.
+
+### Warum dauerte die Temperaturänderung früher so lange?
+
+Bis Version 1.0.69 mussten Thermostat-Befehle in einer Queue warten. Seit v1.0.70 haben alle Schaltbefehle Priority und werden sofort ausgeführt.
 
 ## 📄 Lizenz
 
