@@ -120,6 +120,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## ❌ Was ist neu in Version 1.0.67?
+
+### ❌ OFF = 253 (FRITZ!Box konform)
+- **OFF zeigt 253**: Wie in der FRITZ!Box API definiert
+- **Kein Temperatur-Hack**: OFF ist OFF, nicht die letzte Temperatur
+- **maxValue erweitert**: Unterstützt jetzt den vollen Bereich bis 253
+
 ## 🌡️ Was ist neu in Version 1.0.66?
 
 ### 🌡️ OFF Mode korrekt implementiert
