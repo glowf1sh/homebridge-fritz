@@ -1,9 +1,9 @@
 # homebridge-fritz-new - Produktionsreifer Fork mit Sicherheitsupdates
 
-> **🎆 STABLE RELEASE 1.0.73 - Produktionsreif für FRITZ!DECT 301 und DECT 200**  
+> **🎆 STABLE RELEASE 1.0.75 - Produktionsreif für FRITZ!DECT 301 und DECT 200**  
 > Vollständig stabil, ohne UnhandledPromiseRejections oder Session-Errors.
 
-## ✅ Produktionsstatus Version 1.0.73
+## ✅ Produktionsstatus Version 1.0.75
 
 **Offiziell stabil und produktionsreif für:**
 - 🌡️ **FRITZ!DECT 301 Heizkörperregler** - Sofortige Temperaturänderungen, OFF-Mode, Batterieanzeige
@@ -16,7 +16,7 @@
 - 📡 **Gäste-WLAN** - Ein/Aus-Schaltung
 - 💡 **Alle FRITZ! Smart Home Geräte** mit HomeKit-Integration
 
-**Gelöste Probleme in v1.0.73:**
+**Gelöste Probleme in v1.0.75:**
 - ✅ Thermostate reagieren jetzt sofort (keine 2-3 Minuten Wartezeit mehr)
 - ✅ OFF-Mode wird korrekt in HomeKit angezeigt
 - ✅ Batteriestatus für alle Thermostate sichtbar
@@ -138,6 +138,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 - ✅ Optimierte Performance durch intelligentes Request-Management
 
 ## 📚 Versionshistorie
+
+## 🎆 Was ist neu in Version 1.0.75?
+
+### 📚 FAQ-Bereich für Energiemessung hinzugefügt
+- **Neue FAQ**: "Warum sehe ich die Watt-Anzeige nicht in Apple Home?"
+- **Klarstellung**: Apple Home zeigt nur Standard-HomeKit-Funktionen
+- **Lösung**: Eve App zeigt alle Energiedaten (Watt, kWh, Volt)
+- **Dokumentation**: Vollständige Erklärung für FRITZ!DECT 200 Nutzer
 
 ## 🎆 Was ist neu in Version 1.0.74?
 
