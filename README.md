@@ -196,6 +196,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 - **Erweiterte Logs**: Zeigen alle Parameter und Fehlerdetails
 - **HTTP 500 Fehler**: Bessere Fehlerbehandlung bei ungültigen Befehlen
 
+## 🔋 Was ist neu in Version 1.0.64?
+
+### 🔋 Thermostat Batterie-Fix
+- **Batterie-Anzeige repariert**: Alle Thermostate zeigen jetzt Batterie in HomeKit
+- **XML-basierte Abfrage**: Batterie-Daten kommen direkt aus XML statt fehlerhafter API-Calls
+- **Offline-Geräte**: Zeigen weiterhin gecachte Batterie-Werte an
+
 ## 🎯 Was ist neu in Version 1.0.52?
 
 ### 🎯 Kritischer Thermostat-Fix
