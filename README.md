@@ -7,11 +7,15 @@
 
 **Offiziell stabil und produktionsreif für:**
 - 🌡️ **FRITZ!DECT 301 Heizkörperregler** - Sofortige Temperaturänderungen, OFF-Mode, Batterieanzeige
-- 🔌 **FRITZ!DECT 200 Steckdosen** - Schaltbare Steckdosen mit Leistungsmesser, sofortiges Schalten
+- 🔌 **FRITZ!DECT 200 Steckdosen** - Schaltbare Steckdosen mit vollständiger Leistungsmessung:
+  - ⚡ **Aktuelle Leistung** in Watt (wird alle 2 Minuten aktualisiert)
+  - 📈 **Gesamtverbrauch** in kWh seit Inbetriebnahme
+  - 🔋 **Netzspannung** in Volt
+  - 🌡️ **Temperatur** am Gerät
 - 📡 **Gäste-WLAN** - Ein/Aus-Schaltung
 - 💡 **Alle FRITZ! Smart Home Geräte** mit HomeKit-Integration
 
-**Gelöste Probleme in v1.0.70:**
+**Gelöste Probleme in v1.0.73:**
 - ✅ Thermostate reagieren jetzt sofort (keine 2-3 Minuten Wartezeit mehr)
 - ✅ OFF-Mode wird korrekt in HomeKit angezeigt
 - ✅ Batteriestatus für alle Thermostate sichtbar
@@ -133,6 +137,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 - ✅ Optimierte Performance durch intelligentes Request-Management
 
 ## 📚 Versionshistorie
+
+## 🎆 Was ist neu in Version 1.0.74?
+
+### 🔌 FRITZ!DECT 200 Leistungsmessung dokumentiert
+- **Vollständige Energiedaten**: Leistung (W), Verbrauch (kWh), Spannung (V)
+- **Automatische Updates**: Werte werden alle 2 Minuten von der FRITZ!Box aktualisiert
+- **HomeKit Integration**: Als Custom Characteristics in der Home App sichtbar
+- **API Unterstützung**: getswitchpower, getswitchenergy aus der AHA-HTTP-API
 
 ## 🎆 Was ist neu in Version 1.0.73? - FINALE STABLE RELEASE
 
