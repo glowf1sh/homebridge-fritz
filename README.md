@@ -1,9 +1,9 @@
 # homebridge-fritz-new - Produktionsreifer Fork mit Sicherheitsupdates
 
-> **🎆 STABLE RELEASE 1.0.70 - Produktionsreif für FRITZ!DECT 301 Thermostate und Schalter**  
+> **🎆 STABLE RELEASE 1.0.73 - Produktionsreif für FRITZ!DECT 301 und DECT 200**  
 > Vollständig stabil, ohne UnhandledPromiseRejections oder Session-Errors.
 
-## ✅ Produktionsstatus Version 1.0.70
+## ✅ Produktionsstatus Version 1.0.73
 
 **Offiziell stabil und produktionsreif für:**
 - 🌡️ **FRITZ!DECT 301 Heizkörperregler** - Sofortige Temperaturänderungen, OFF-Mode, Batterieanzeige
@@ -134,56 +134,27 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
-## 🎯 Was ist neu in Version 1.0.70?
+## 🎆 Was ist neu in Version 1.0.73? - FINALE STABLE RELEASE
 
-### 🎯 Thermostate mit Priority wie Schalter
-- **Sofortige Reaktion**: Thermostat-Commands bekommen priority: 10
-- **Keine 2+ Minuten Wartezeit mehr**: Überspringen die Polling-Queue
-- **Konsistentes Verhalten**: Alle Schaltbefehle reagieren gleich schnell
-- **Behebt**: Thermostate mussten auf Queue warten, Schalter nicht
+### 🎆 Produktionsreife Version mit allen Fixes
 
-## ⚡ Was ist neu in Version 1.0.69?
+**Zusammenfassung aller Lösungen:**
+- ✅ **Sofortige Reaktion**: Alle Schaltbefehle mit Priority (keine 2-3 Min Wartezeit)
+- ✅ **Performance**: 4x schnellere Reaktionszeit (50ms/25ms statt 200ms/100ms)
+- ✅ **OFF Mode**: Funktioniert korrekt in HomeKit
+- ✅ **Batterieanzeige**: Für alle FRITZ!DECT 301 Thermostate
+- ✅ **Keine Fehler**: Keine UnhandledPromiseRejections oder Session-Errors
 
-### ⚡ Performance-Optimierung für Thermostate
-- **4x schnellere Reaktionszeit**: Request-Interval von 200ms auf 50ms reduziert
-- **Behebt 2-3 Minuten Verzögerung**: Temperaturänderungen kommen jetzt in Sekunden an
-- **Command-Queue optimiert**: Von 100ms auf 25ms reduziert
-- **Stabile Performance**: Sequenzielle Verarbeitung bleibt erhalten
+**Getestete Geräte:**
+- 🌡️ FRITZ!DECT 301 Heizkörperregler
+- 🔌 FRITZ!DECT 200 Steckdosen mit Leistungsmesser
+- 📡 Gäste-WLAN Steuerung
 
-## ✅ Was ist neu in Version 1.0.68?
-
-### ✅ OFF richtig implementiert
-- **maxValue wieder auf 28**: HomeKit erwartet normale Temperaturwerte (8-28°C)
-- **Bei OFF wird Temperaturwert NICHT aktualisiert**: Nur Heating States werden auf OFF gesetzt
-- **Kein 253-Wert in HomeKit**: API-Werte bleiben intern
-- **Behebt Spinning-Wheel Problem**: Temperaturänderungen funktionieren wieder
-
-## ❌ Was ist neu in Version 1.0.67?
-
-### ❌ OFF = 253 (Fehlerhafter Versuch)
-- **FEHLER**: maxValue auf 253 gesetzt - HomeKit erwartet aber normale Temperaturen
-- **Version übersprungen**: Durch v1.0.68 ersetzt
-
-## 🌡️ Was ist neu in Version 1.0.66?
-
-### 🌡️ OFF Mode Versuch
-- **Versuch**: Letzte Temperatur bei OFF anzeigen
-- **Problem**: User wollte keine Temperatur bei OFF sehen
-- **Version übersprungen**: Durch v1.0.68 ersetzt
-
-## 🔧 Was ist neu in Version 1.0.65?
-
-### 🔧 HomeKit Temperatur-Feedback Fix
-- **getTargetTemperature() gefixt**: Überschreibt nicht mehr gesetzte Werte
-- **OFF auf 8°C**: Versuch OFF als Minimaltemperatur darzustellen
-- **Teilweise gelöst**: Spinning-Wheel Problem reduziert
-
-## 🔋 Was ist neu in Version 1.0.64?
-
-### 🔋 Thermostat Batterie-Fix
-- **Batterie aus XML**: Thermostate unterstützen getBatteryCharge nicht - jetzt aus XML
-- **Alle Thermostate zeigen Batterie**: Auch bei 80-100% Ladung
-- **Keine 400 Fehler mehr**: API-Call entfernt, nur noch XML-Daten
+**Technische Details:**
+- Thermostat-Commands mit `priority: 10`
+- Request-Interval: 50ms, Queue-Delay: 25ms
+- OFF Mode aktualisiert nur Heating States
+- Batterie-Info aus XML statt API
 
 ## 🛠️ Was ist neu in Version 1.0.63?
 
