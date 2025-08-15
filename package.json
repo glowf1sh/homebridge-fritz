@@ -1,12 +1,12 @@
 {
   "name": "homebridge-fritz-new",
-  "version": "1.0.75",
+  "version": "1.0.76",
   "author": "glowf1sh",
   "contributors": [
     "Andreas Goetz <cpuidle@gmx.de> (Original Author)"
   ],
   "homepage": "https://github.com/glowf1sh/homebridge-fritz-new#readme",
-  "description": "STABLE RELEASE 1.0.75 - Production-ready Homebridge plugin for FRITZ!DECT 301 thermostats and FRITZ!DECT 200 smart outlets with full power monitoring (visible in Eve app). All issues fixed. The definitive HomeKit integration for FRITZ!Box.",
+  "description": "STABLE RELEASE 1.0.76 - Production-ready Homebridge plugin for FRITZ!DECT 301 thermostats and FRITZ!DECT 200 smart outlets with full power monitoring (visible in Eve app). All issues fixed. The definitive HomeKit integration for FRITZ!Box.",
   "keywords": [
     "homebridge-plugin",
     "homebridge",

@@ -5,6 +5,36 @@ Alle bemerkenswerten Änderungen an diesem Projekt werden in dieser Datei dokume
 Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
 und dieses Projekt befolgt [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.76] - 2025-08-15
+
+### 📄 Dokumentation
+- **NPM-Synchronisation**: Dokumentation mit NPM-Release vereinheitlicht
+- **Cleanup**: Unnötige individuelle Release-Notes-Dateien entfernt
+- **Produktionsstatus**: Version 1.0.76 als aktueller Stable Release markiert
+- **Keine Code-Änderungen**: Reiner Dokumentations-Patch für Konsistenz zwischen GitHub und NPM
+
+## [1.0.75] - 2025-08-15
+
+### 📚 Dokumentation
+- **FAQ hinzugefügt**: "Warum sehe ich die Watt-Anzeige nicht in Apple Home?"
+- **Klarstellung**: Apple Home zeigt nur Standard-HomeKit-Funktionen
+- **Lösung dokumentiert**: Eve App für vollständige Energiedaten empfohlen
+- **FRITZ!DECT 200**: Vollständige Erklärung der Leistungsmessung
+
+## [1.0.74] - 2025-08-15
+
+### 🔌 Features
+- **FRITZ!DECT 200 Leistungsmessung**: Dokumentation erweitert
+- **Energiedaten**: Leistung (W), Verbrauch (kWh), Spannung (V) erklärt
+- **Update-Intervall**: Alle 2 Minuten von der FRITZ!Box
+
+## [1.0.73] - 2025-08-15
+
+### 🎆 Produktionsreife
+- **Finale Stable Release**: Alle kritischen Issues behoben
+- **Performance**: 4x schnellere Reaktionszeit
+- **Stabilität**: Keine UnhandledPromiseRejections mehr
+
 ## [1.0.63] - 2025-08-14
 
 ### 🛠️ Was neu
