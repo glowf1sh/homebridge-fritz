@@ -120,6 +120,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🎯 Was ist neu in Version 1.0.70?
+
+### 🎯 Thermostate mit Priority wie Schalter
+- **Sofortige Reaktion**: Thermostat-Commands bekommen priority: 10
+- **Keine 2+ Minuten Wartezeit mehr**: Überspringen die Polling-Queue
+- **Konsistentes Verhalten**: Alle Schaltbefehle reagieren gleich schnell
+- **Behebt**: Thermostate mussten auf Queue warten, Schalter nicht
+
 ## ⚡ Was ist neu in Version 1.0.69?
 
 ### ⚡ Performance-Optimierung für Thermostate
