@@ -120,6 +120,13 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🌡️ Was ist neu in Version 1.0.66?
+
+### 🌡️ OFF Mode korrekt implementiert
+- **OFF zeigt letzten Wert**: Bei OFF wird die zuletzt aktive Temperatur angezeigt (ausgegraut)
+- **Beim Einschalten**: Thermostat kehrt zur letzten Temperatur zurück
+- **Kein 8°C Hack mehr**: OFF ist jetzt ein echter Zustand, keine Fake-Temperatur
+
 ## 🔧 Was ist neu in Version 1.0.65?
 
 ### 🔧 HomeKit Temperatur-Feedback Fix
