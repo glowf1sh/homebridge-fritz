@@ -6,10 +6,10 @@
 ## ✅ Produktionsstatus Version 1.0.70
 
 **Offiziell stabil und produktionsreif für:**
-- 🌡️ **FRITZ!DECT 301 Thermostate** - Sofortige Temperaturänderungen, OFF-Mode, Batterieanzeige
-- 💡 **FRITZ!DECT Schalter/Steckdosen** - Sofortiges Schalten ohne Verzögerung
+- 🌡️ **FRITZ!DECT 301 Heizkörperregler** - Sofortige Temperaturänderungen, OFF-Mode, Batterieanzeige
+- 🔌 **FRITZ!DECT 200 Steckdosen** - Schaltbare Steckdosen mit Leistungsmesser, sofortiges Schalten
 - 📡 **Gäste-WLAN** - Ein/Aus-Schaltung
-- 🔌 **Alle FRITZ! Smart Home Geräte** mit HomeKit-Integration
+- 💡 **Alle FRITZ! Smart Home Geräte** mit HomeKit-Integration
 
 **Gelöste Probleme in v1.0.70:**
 - ✅ Thermostate reagieren jetzt sofort (keine 2-3 Minuten Wartezeit mehr)

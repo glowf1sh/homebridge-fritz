@@ -6,7 +6,7 @@
     "Andreas Goetz <cpuidle@gmx.de> (Original Author)"
   ],
   "homepage": "https://github.com/glowf1sh/homebridge-fritz-new#readme",
-  "description": "STABLE RELEASE - Production-ready Homebridge plugin for FRITZ!Box thermostats (DECT 301) and switches. Instant response, battery status, OFF mode working correctly. Actively maintained fork with all security vulnerabilities fixed.",
+  "description": "STABLE RELEASE - Production-ready Homebridge plugin for FRITZ!DECT 301 thermostats and FRITZ!DECT 200 smart outlets with power monitoring. Instant response, battery status, OFF mode working. Actively maintained fork with all security vulnerabilities fixed.",
   "keywords": [
     "homebridge-plugin",
     "homebridge",
