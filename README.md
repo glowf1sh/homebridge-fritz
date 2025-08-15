@@ -120,6 +120,14 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## ⚡ Was ist neu in Version 1.0.69?
+
+### ⚡ Performance-Optimierung für Thermostate
+- **4x schnellere Reaktionszeit**: Request-Interval von 200ms auf 50ms reduziert
+- **Behebt 2-3 Minuten Verzögerung**: Temperaturänderungen kommen jetzt in Sekunden an
+- **Command-Queue optimiert**: Von 100ms auf 25ms reduziert
+- **Stabile Performance**: Sequenzielle Verarbeitung bleibt erhalten
+
 ## ✅ Was ist neu in Version 1.0.68?
 
 ### ✅ OFF richtig implementiert
