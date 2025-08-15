@@ -1,7 +1,21 @@
 # homebridge-fritz-new - Produktionsreifer Fork mit Sicherheitsupdates
 
-> **Produktionsreifer Fork des Original homebridge-fritz**  
+> **🎆 STABLE RELEASE 1.0.70 - Produktionsreif für FRITZ!DECT 301 Thermostate und Schalter**  
 > Vollständig stabil, ohne UnhandledPromiseRejections oder Session-Errors.
+
+## ✅ Produktionsstatus Version 1.0.70
+
+**Offiziell stabil und produktionsreif für:**
+- 🌡️ **FRITZ!DECT 301 Thermostate** - Sofortige Temperaturänderungen, OFF-Mode, Batterieanzeige
+- 💡 **FRITZ!DECT Schalter/Steckdosen** - Sofortiges Schalten ohne Verzögerung
+- 📡 **Gäste-WLAN** - Ein/Aus-Schaltung
+- 🔌 **Alle FRITZ! Smart Home Geräte** mit HomeKit-Integration
+
+**Gelöste Probleme in v1.0.70:**
+- ✅ Thermostate reagieren jetzt sofort (keine 2-3 Minuten Wartezeit mehr)
+- ✅ OFF-Mode wird korrekt in HomeKit angezeigt
+- ✅ Batteriestatus für alle Thermostate sichtbar
+- ✅ Konsistente Performance für alle Gerätetypen
 
 ## ⚠️ WARUM DIESER FORK EXISTIERT
 
