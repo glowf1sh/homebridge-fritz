@@ -120,6 +120,20 @@ Wenn Sie Homebridge Config UI X verwenden:
 
 ## 📚 Versionshistorie
 
+## 🔧 Was ist neu in Version 1.0.65?
+
+### 🔧 HomeKit Temperatur-Feedback Fix
+- **OFF Mode zeigt 8°C**: Statt alter Temperatur wird bei OFF korrekt 8°C angezeigt
+- **Rädchen-Problem behoben**: Temperaturänderungen werden nicht mehr überschrieben
+- **Stabiles UI**: Keine endlos drehenden Rädchen mehr in Apple Home
+
+## 🔋 Was ist neu in Version 1.0.64?
+
+### 🔋 Thermostat Batterie-Fix
+- **Batterie aus XML**: Thermostate unterstützen getBatteryCharge nicht - jetzt aus XML
+- **Alle Thermostate zeigen Batterie**: Auch bei 80-100% Ladung
+- **Keine 400 Fehler mehr**: API-Call entfernt, nur noch XML-Daten
+
 ## 🛠️ Was ist neu in Version 1.0.63?
 
 ### 🛠️ Kritische Startup-Fixes
